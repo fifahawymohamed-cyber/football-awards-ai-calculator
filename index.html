@@ -501,6 +501,44 @@ text-shadow:0 0 20px #fff;
 animation:glow 1.2s infinite;
 }
 
+/* FOOTER THANKS */
+
+.footer-thanks{
+width:fit-content;
+margin:40px auto 20px;
+padding:12px 22px;
+border-radius:999px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+font-family:'Cinzel';
+font-size:.8rem;
+letter-spacing:2px;
+text-align:center;
+box-shadow:
+0 0 12px rgba(212,175,55,.35),
+0 0 22px rgba(0,229,255,.25);
+animation:thanksGlow 2.5s infinite alternate;
+}
+
+.footer-thanks span{
+background:linear-gradient(90deg,var(--gold),#fff,var(--cyan));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:700;
+}
+
+@keyframes thanksGlow{
+from{
+transform:scale(1);
+opacity:.85;
+}
+to{
+transform:scale(1.03);
+opacity:1;
+}
+}
+
 /* MOBILE */
 
 @media(max-width:900px){
@@ -570,6 +608,13 @@ padding:8px 12px;
 top:72px;
 font-size:.8rem;
 padding:10px 14px;
+}
+
+.footer-thanks{
+font-size:.65rem;
+padding:10px 18px;
+margin:30px auto 18px;
+max-width:92%;
 }
 
 }
@@ -652,7 +697,7 @@ BALLON D'OR AI
 <label>ASSISTS</label>
 <input type="number" id="ba" placeholder="0">
 
-<label>INDIVIDUAL AWARDS</label>
+<label>INDIVIDUAL AWARDS (player of match-golden shoe) </label>
 <input type="number" id="bm" placeholder="0">
 
 </div>
@@ -715,7 +760,7 @@ THE BEST AI
 <label>ASSISTS</label>
 <input type="number" id="ta" placeholder="0">
 
-<label>INDIVIDUAL AWARDS</label>
+<label>INDIVIDUAL AWARDS (player of match-golden shoe) </label>
 <input type="number" id="tm" placeholder="0">
 
 </div>
@@ -813,6 +858,12 @@ TEAM VS TEAM
 </div>
 
 </section>
+
+<!-- THANKS -->
+
+<div class="footer-thanks">
+<span>THANKS B.S.S X ISCHOOL</span>
+</div>
 
 <script>
 
@@ -999,8 +1050,6 @@ const m=parseInt(document.getElementById(type+"m").value)||0;
 const trophiesCount=type==="b"
 ? bSel.size
 : tSel.size;
-
-/* goals & assists weak effect */
 
 let score=0;
 
