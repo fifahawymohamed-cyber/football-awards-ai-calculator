@@ -1,1577 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L56NXTTZ66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L56NXTTZ66');
-</script>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estimate Ballon d'Or and FIFA The Best win chances with goals, assists, individual awards, and 80+ weighted team trophies — a cinematic fan-built calculator.">
-<meta name="keywords" content="Ballon d'Or, The Best FIFA, football awards, calculator, win chance, trophies, soccer">
-<meta name="author" content="mohamed aboshanab">
-<meta name="theme-color" content="#0a1620">
-<meta name="color-scheme" content="dark">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<!-- When you deploy: replace example.com in canonical + og:url with your real domain -->
-<meta property="og:url" content="https://example.com/football-awards-ai-calculator.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Football Awards AI Calculator">
-<meta property="og:description" content="Weighted trophy engine for Ballon d'Or & The Best — stats, cups, and instant estimates.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=630&fit=crop&q=85">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Football Awards AI Calculator">
-<meta name="twitter:description" content="Ballon d'Or & The Best win-chance estimator with 80+ trophies.">
-<link rel="canonical" href="https://example.com/football-awards-ai-calculator.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='%230c1a14' stroke='%23D4AF37' stroke-width='4'/%3E%3Ctext x='50' y='64' font-size='44' text-anchor='middle' fill='%23D4AF37'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="theme-color" content="#000000"/>
+<title>Football Awards AI Ultimate</title>
 
-<title>Football Awards AI Calculator</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Bebas+Neue&family=Inter:wght@300;600&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Football Awards AI Calculator","description":"Fan-built estimator for Ballon d'Or and FIFA The Best win probability using stats and weighted trophies.","applicationCategory":"SportsApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"mohamed aboshanab"}}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --gold:#D4AF37;
-    --cyan:#00E5FF;
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-::selection{
-    background:rgba(212,175,55,0.35);
-    color:#fff;
+--gold:#d4af37;
+--cyan:#00e5ff;
+--dark:#050505;
+--card:rgba(255,255,255,0.08);
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html,body{
-    width:100%;
-    min-height:100%;
-    overflow-x:hidden;
-    font-family:'Inter',sans-serif;
-    background:#000;
-    color:#fff;
+width:100%;
+overflow-x:hidden;
+font-family:'Inter',sans-serif;
+background:#000;
+color:#fff;
+scroll-behavior:smooth;
 }
-
-.skip-link{
-
-    position:absolute;
-
-    top:-100px;
-
-    left:12px;
-
-    z-index:1000000;
-
-    padding:12px 20px;
-
-    border-radius:12px;
-
-    background:var(--gold);
-
-    color:#000;
-
-    font-weight:700;
-
-    text-decoration:none;
-
-    transition:top 0.25s var(--ease-out);
-}
-
-.skip-link:focus{
-
-    top:12px;
-
-    outline:2px solid #fff;
-
-    outline-offset:3px;
-}
-
-.site-main{
-    position:relative;
-}
-
-@media (prefers-reduced-motion:reduce){
-
-    html{
-        scroll-behavior:auto;
-    }
-
-}
-
-/* BACKGROUND */
 
 body{
-    background:
-    linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.72)),
-    url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1920');
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+background:
+linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.82)),
+url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1600&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+min-height:100vh;
 }
 
-/* GLOW */
+/* LOADING */
 
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-    radial-gradient(circle at top left,
-    rgba(212,175,55,0.15),
-    transparent 30%),
-
-    radial-gradient(circle at bottom right,
-    rgba(0,229,255,0.15),
-    transparent 30%);
-
-    z-index:-3;
-
-    animation:bgMove 22s ease-in-out infinite alternate;
+#loading-screen{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999999;
+animation:hideLoading .8s ease 2s forwards;
 }
 
-@keyframes bgMove{
-
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.03);
-    }
-
+.loader{
+width:85px;
+height:85px;
+border-radius:50%;
+border:6px solid rgba(255,255,255,.15);
+border-top:6px solid var(--gold);
+border-right:6px solid var(--cyan);
+animation:spin .8s linear infinite;
+margin-bottom:25px;
 }
 
-/* TOP BAR */
-
-.top-bar{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:4px;
-
-    background:
-    linear-gradient(
-    90deg,
-    gold,
-    cyan,
-    gold
-    );
-
-    background-size:300% 100%;
-
-    z-index:999999;
-
-    animation:barMove 10s linear infinite;
+.loading-text{
+font-family:'Cinzel';
+font-size:1rem;
+letter-spacing:3px;
+animation:pulse 1s infinite;
+text-align:center;
+padding:0 20px;
 }
 
-@keyframes barMove{
-
-    from{
-        background-position:0%;
-    }
-
-    to{
-        background-position:300%;
-    }
-
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
 }
 
-/* PARTICLES — خفيفة للأداء */
+@keyframes pulse{
+50%{
+opacity:.4;
+}
+}
+
+@keyframes hideLoading{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* PARTICLES */
 
 .particles{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    z-index:-2;
+position:fixed;
+inset:0;
+z-index:-1;
+overflow:hidden;
 }
 
 .particles span{
-
-    position:absolute;
-
-    width:2px;
-    height:2px;
-
-    background:white;
-
-    border-radius:50%;
-
-    opacity:0.22;
-
-    animation:particleMove linear infinite;
+position:absolute;
+width:3px;
+height:3px;
+background:#fff;
+border-radius:50%;
+opacity:.18;
+animation:move linear infinite;
 }
 
-@keyframes particleMove{
-
-    from{
-        transform:translateY(100vh);
-    }
-
-    to{
-        transform:translateY(-100vh);
-    }
-
+@keyframes move{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-120vh);
+}
 }
 
-/* FLOATING BALLS */
+/* TOP */
 
-.floating-ball{
-
-    position:fixed;
-
-    opacity:0.12;
-
-    z-index:-1;
-
-    animation:floatBall linear infinite;
+.topbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(90deg,var(--gold),var(--cyan),var(--gold));
+background-size:300%;
+animation:bar 8s linear infinite;
+z-index:9999;
 }
 
-@keyframes floatBall{
-
-    from{
-        transform:translateY(120vh) rotate(0deg);
-    }
-
-    to{
-        transform:translateY(-140vh) rotate(720deg);
-    }
-
+@keyframes bar{
+100%{
+background-position:300%;
+}
 }
 
-/* AUTHOR BADGE (top — pill like status) */
-
-.author-badge{
-
-    position:fixed;
-
-    top:12px;
-
-    left:14px;
-
-    z-index:999;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    padding:8px 16px 8px 12px;
-
-    border-radius:999px;
-
-    background:
-    linear-gradient(180deg,
-    rgba(0,48,32,0.94) 0%,
-    rgba(0,82,52,0.9) 100%);
-
-    border:1px solid rgba(0,255,160,0.55);
-
-    box-shadow:
-    0 0 20px rgba(0,255,140,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.07);
-
-    backdrop-filter:blur(8px);
-
-    -webkit-backdrop-filter:blur(8px);
-
-    font-family:'Cinzel',serif;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:0.06em;
-
-    text-transform:uppercase;
-
-    color:#e8fff5;
-
-    text-shadow:0 0 12px rgba(0,255,180,0.35);
-
-    max-width:calc(100vw - 160px);
+.author{
+position:fixed;
+top:12px;
+left:12px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(10px);
+padding:10px 18px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.1);
+font-size:.78rem;
+z-index:999;
+font-weight:700;
 }
 
-.author-badge .author-dot{
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#00ff99;
-
-    box-shadow:0 0 10px #00ff99;
-
-    flex-shrink:0;
+.ai{
+position:fixed;
+top:12px;
+right:12px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(10px);
+padding:10px 18px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.1);
+font-size:.72rem;
+z-index:999;
+font-weight:700;
+color:#9effe8;
 }
 
-.author-badge .heart{
+/* PAGE */
 
-    color:#ff7eb3;
-
-    text-shadow:none;
-
-    font-size:1em;
-
-    text-transform:none;
+.page{
+display:none;
+min-height:100vh;
+padding:100px 14px 40px;
+justify-content:center;
+align-items:center;
 }
 
-/* AI STATUS */
-
-.ai-status{
-
-    position:fixed;
-
-    top:12px;
-
-    right:14px;
-
-    padding:8px 15px;
-
-    border-radius:999px;
-
-    background:
-    linear-gradient(180deg,
-    rgba(0,42,28,0.92) 0%,
-    rgba(0,72,48,0.88) 100%);
-
-    border:1px solid rgba(0,255,150,0.5);
-
-    box-shadow:
-    0 0 18px rgba(0,255,140,0.24),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-
-    backdrop-filter:blur(8px);
-
-    -webkit-backdrop-filter:blur(8px);
-
-    font-family:'Cinzel',serif;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:0.07em;
-
-    text-transform:uppercase;
-
-    color:#b8ffe8;
-
-    text-shadow:0 0 12px rgba(0,255,180,0.3);
-
-    z-index:999;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    max-width:min(260px,48vw);
-
-    line-height:1.25;
-
-    animation:pulseAI 2.5s ease-in-out infinite;
-}
-
-.ai-status .ai-dot{
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#00ff99;
-
-    box-shadow:0 0 9px #00ff99;
-
-    flex-shrink:0;
-}
-
-@keyframes pulseAI{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.025);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-
+.active{
+display:flex;
 }
 
 /* HOME */
 
-#home-page{
-
-    min-height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
+.home-wrap{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
 
-.home-content-wrap{
-
-    flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    width:100%;
-
-    padding:24px 16px 0;
+.main-title{
+font-family:'Cinzel';
+font-size:4rem;
+text-align:center;
+background:linear-gradient(90deg,#fff,var(--gold),var(--cyan));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:18px;
 }
 
-.home-title{
-
-    font-family:'Cinzel';
-
-    font-size:4rem;
-
-    text-align:center;
-
-    margin-bottom:18px;
-
-    background:linear-gradient(135deg,#fff 20%,var(--gold) 45%,#e8faff 70%,var(--cyan) 95%);
-
-    background-size:200% auto;
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-
-    -webkit-text-fill-color:transparent;
-
-    animation:
-    homeHeroIn 0.55s var(--ease-out) both,
-    titleGlow 5s ease-in-out 0.55s infinite;
+.sub{
+opacity:.8;
+letter-spacing:3px;
+margin-bottom:35px;
+text-align:center;
+padding:0 10px;
 }
 
-.home-sub{
-
-    font-size:1.1rem;
-
-    opacity:0.8;
-
-    margin-bottom:28px;
-
-    letter-spacing:2px;
-
-    padding-bottom:6px;
-
-    position:relative;
-
-    animation:homeHeroIn 0.5s 0.08s var(--ease-out) both;
+.home-buttons{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+width:100%;
 }
 
-.home-sub::after{
-
-    content:"";
-
-    display:block;
-
-    width:min(220px,72vw);
-
-    height:2px;
-
-    margin:16px auto 0;
-
-    border-radius:2px;
-
-    background:linear-gradient(90deg,transparent,rgba(212,175,55,0.95),rgba(0,229,255,0.9),transparent);
-
-    opacity:0.85;
+.home-btn{
+width:300px;
+height:390px;
+border-radius:28px;
+overflow:hidden;
+position:relative;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+padding:25px;
+cursor:pointer;
+transition:.4s;
+border:2px solid rgba(255,255,255,.15);
+background-size:cover;
+background-position:center;
+box-shadow:0 10px 45px rgba(0,0,0,.45);
 }
 
-@keyframes titleGlow{
-
-    0%,100%{
-        filter:drop-shadow(0 0 14px rgba(255,255,255,0.12));
-    }
-
-    50%{
-        filter:drop-shadow(0 0 18px rgba(212,175,55,0.35)) drop-shadow(0 0 24px rgba(0,229,255,0.2));
-    }
-
+.home-btn::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.95),transparent);
 }
 
-.btn-container{
-
-    display:flex;
-
-    gap:40px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
+.home-btn span{
+position:relative;
+z-index:2;
+font-family:'Cinzel';
+font-size:1.7rem;
+font-weight:900;
+text-align:center;
 }
 
-/* NAV BUTTONS */
-
-.nav-btn{
-
-    width:300px;
-    height:400px;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    padding:25px;
-
-    cursor:pointer;
-
-    transition:0.5s;
-
-    border:2px solid rgba(255,255,255,0.25);
-
-    background-color:#151515;
-
-    background-size:cover;
-
-    background-position:center;
-
-    box-shadow:
-    0 12px 40px rgba(0,0,0,0.45),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+.home-btn:hover{
+transform:translateY(-10px) scale(1.03);
 }
 
-.nav-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-    to top,
-    rgba(0,0,0,0.95),
-    transparent
-    );
+.gold{
+background-image:
+linear-gradient(rgba(212,175,55,.15),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1200&auto=format&fit=crop");
 }
 
-.nav-btn::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:-100%;
-    left:-100%;
-
-    width:250%;
-    height:250%;
-
-    background:
-    linear-gradient(
-    45deg,
-    transparent,
-    rgba(255,255,255,0.18),
-    transparent
-    );
-
-    transform:rotate(25deg);
-
-    transition:0.8s;
+.best{
+background-image:
+linear-gradient(rgba(0,229,255,.12),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop");
 }
 
-.nav-btn:hover::after{
-
-    top:100%;
-    left:100%;
+.result{
+background-image:
+linear-gradient(rgba(255,255,255,.08),rgba(0,0,0,.35)),
+url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop");
 }
 
-.nav-btn span{
+/* CARD */
 
-    position:relative;
-
-    z-index:2;
-
-    font-family:'Cinzel';
-
-    font-size:1.8rem;
-
-    text-align:center;
-
-    font-weight:900;
+.card{
+width:100%;
+max-width:1100px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.12);
+border-radius:30px;
+padding:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+box-shadow:0 20px 70px rgba(0,0,0,.45);
 }
 
-.nav-btn:hover{
-
-    transform:
-    translateY(-10px)
-    scale(1.03);
-
+.title{
+grid-column:span 2;
+text-align:center;
+font-family:'Cinzel';
+font-size:2.2rem;
+margin-bottom:5px;
 }
 
-.nav-btn.gold-btn{
-
-    animation:homeHeroIn 0.48s 0.2s var(--ease-out) both;
+.gold-text{
+color:var(--gold);
 }
 
-.nav-btn.best-btn{
-
-    animation:homeHeroIn 0.48s 0.28s var(--ease-out) both;
+.cyan-text{
+color:var(--cyan);
 }
 
-.gold-btn{
-
-    border-color:rgba(212,175,55,0.55);
-
-    background-image:
-    linear-gradient(165deg,
-    rgba(212,175,55,0.35) 0%,
-    rgba(0,0,0,0.25) 42%,
-    rgba(0,0,0,0.75) 100%),
-    url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=85');
-}
-
-.best-btn{
-
-    border-color:rgba(0,229,255,0.5);
-
-    background-image:
-    linear-gradient(165deg,
-    rgba(0,229,255,0.28) 0%,
-    rgba(0,0,0,0.2) 40%,
-    rgba(0,0,0,0.78) 100%),
-    url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=85');
-}
-
-.gold-btn:hover{
-
-    box-shadow:
-    0 12px 48px rgba(0,0,0,0.5),
-    0 0 40px rgba(212,175,55,0.55),
-    0 0 80px rgba(212,175,55,0.22);
-}
-
-.best-btn:hover{
-
-    box-shadow:
-    0 12px 48px rgba(0,0,0,0.5),
-    0 0 40px rgba(0,229,255,0.55),
-    0 0 80px rgba(0,229,255,0.22);
-}
-
-/* TOOL PAGE */
-
-.tool-page{
-
-    display:none;
-
-    min-height:100vh;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:30px;
-
-    position:relative;
-}
-
-.tool-page.page-enter{
-
-    animation:pageEnter 0.32s ease-out both;
-}
-
-@keyframes pageEnter{
-
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
-}
-
-.tool-page.page-enter .back-home{
-
-    animation:backSlide 0.28s ease-out 0.05s both;
-}
-
-@keyframes backSlide{
-
-    from{
-        opacity:0;
-        transform:translateX(12px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
-}
-
-/* GLASS SHELL — إطار ثابت خفيف (بدون filter animation) */
-
-.glass-shell{
-
-    width:1000px;
-
-    max-width:95%;
-
-    padding:2px;
-
-    border-radius:37px;
-
-    position:relative;
-
-    background:linear-gradient(
-    135deg,
-    rgba(212,175,55,0.5),
-    rgba(0,229,255,0.35),
-    rgba(212,175,55,0.4));
-
-    box-shadow:0 0 36px rgba(0,0,0,0.35);
-}
-
-.glass-shell--gold{
-
-    background:linear-gradient(
-    135deg,
-    rgba(212,175,55,0.55),
-    rgba(100,80,30,0.35),
-    rgba(212,175,55,0.45));
-
-    box-shadow:0 0 40px rgba(212,175,55,0.1);
-}
-
-.glass-shell--cyan{
-
-    background:linear-gradient(
-    135deg,
-    rgba(0,229,255,0.45),
-    rgba(0,80,90,0.35),
-    rgba(0,229,255,0.4));
-
-    box-shadow:0 0 40px rgba(0,229,255,0.12);
-}
-
-/* GLASS CARD */
-
-.glass-card{
-
-    width:100%;
-
-    max-width:100%;
-
-    padding:40px;
-
-    border-radius:35px;
-
-    background:rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(12px);
-
-    -webkit-backdrop-filter:blur(12px);
-
-    border:1px solid rgba(255,255,255,0.15);
-
-    display:grid;
-
-    grid-template-columns:1fr 1.2fr;
-
-    gap:30px;
-
-    transition:transform 0.35s ease,box-shadow 0.35s ease;
-
-    box-shadow:
-    0 24px 80px rgba(0,0,0,0.45),
-    0 0 0 1px rgba(255,255,255,0.06) inset,
-    0 0 60px rgba(0,229,255,0.07);
-}
-
-#ballon-page .glass-card{
-
-    box-shadow:
-    0 24px 80px rgba(0,0,0,0.45),
-    0 0 0 1px rgba(255,255,255,0.06) inset,
-    0 0 60px rgba(212,175,55,0.08);
-}
-
-.glass-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-    0 32px 90px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(255,255,255,0.08) inset,
-    0 0 80px rgba(0,229,255,0.11);
-}
-
-#ballon-page .glass-card:hover{
-
-    box-shadow:
-    0 32px 90px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(255,255,255,0.08) inset,
-    0 0 80px rgba(212,175,55,0.14);
-}
-
-.glass-card::before{
-
-    content:"";
-
-    grid-column:1/-1;
-
-    height:3px;
-
-    border-radius:3px;
-
-    margin:-6px 0 10px;
-
-    background:linear-gradient(90deg,var(--gold),var(--cyan));
-
-    opacity:0.55;
-}
-
-#ballon-page .glass-card::before{
-
-    opacity:0.65;
-
-    background:linear-gradient(90deg,var(--gold),rgba(255,255,255,0.35));
-}
-
-#best-page .glass-card::before{
-
-    opacity:0.65;
-
-    background:linear-gradient(90deg,rgba(255,255,255,0.35),var(--cyan));
-}
-
-.tool-page.page-enter .glass-card > *{
-
-    animation:pieceQuick 0.26s ease-out backwards;
-}
-
-.tool-page.page-enter .glass-card > *:nth-child(1){
-    animation-delay:0.02s;
-}
-
-.tool-page.page-enter .glass-card > *:nth-child(2){
-    animation-delay:0.04s;
-}
-
-.tool-page.page-enter .glass-card > *:nth-child(3){
-    animation-delay:0.06s;
-}
-
-.tool-page.page-enter .glass-card > *:nth-child(4){
-    animation-delay:0.08s;
-}
-
-.tool-page.page-enter .glass-card > *:nth-child(5){
-    animation-delay:0.1s;
-}
-
-.tool-page.page-enter .glass-card > *:nth-child(6){
-    animation-delay:0.12s;
-}
-
-@keyframes pieceQuick{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-
-}
-
-/* BACK */
-
-.back-home{
-
-    position:absolute;
-
-    top:56px;
-
-    right:18px;
-
-    left:auto;
-
-    padding:11px 20px;
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,0.2);
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    font-weight:bold;
-
-    z-index:50;
-
-    font-size:0.9rem;
-}
-
-.back-home:hover{
-
-    background:#fff;
-
-    color:#000;
-
-    transform:scale(1.05);
-}
-
-/* INPUTS */
-
-input[type="number"],
-.search-box{
-
-    width:100%;
-
-    padding:15px;
-
-    border-radius:14px;
-
-    border:1px solid rgba(255,255,255,0.2);
-
-    background:rgba(0,0,0,0.4);
-
-    color:#fff;
-
-    outline:none;
-
-    margin-bottom:15px;
-
-    transition:0.3s;
+input{
+width:100%;
+padding:15px;
+border:none;
+outline:none;
+border-radius:14px;
+margin-bottom:14px;
+background:rgba(0,0,0,.45);
+color:#fff;
+border:1px solid rgba(255,255,255,.12);
+font-size:1rem;
 }
 
 input:focus{
-
-    border-color:white;
-
-    box-shadow:
-    0 0 15px rgba(255,255,255,0.2),
-    0 0 25px rgba(0,229,255,0.15);
+border-color:var(--cyan);
 }
 
 label{
-
-    display:block;
-
-    font-size:0.72rem;
-
-    letter-spacing:0.14em;
-
-    text-transform:uppercase;
-
-    opacity:0.78;
-
-    margin-bottom:7px;
-
-    font-weight:600;
+font-size:.72rem;
+opacity:.7;
+display:block;
+margin-bottom:7px;
+letter-spacing:2px;
 }
 
-.home-features{
+/* LIST */
 
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px 12px;
-
-    justify-content:center;
-
-    list-style:none;
-
-    margin:0 0 38px;
-
-    padding:0 18px;
-
-    max-width:720px;
+.search{
+margin-bottom:10px;
 }
 
-.home-features li{
-
-    font-size:0.68rem;
-
-    letter-spacing:0.11em;
-
-    text-transform:uppercase;
-
-    opacity:0.82;
-
-    padding:7px 14px;
-
-    border-radius:999px;
-
-    border:1px solid rgba(255,255,255,0.14);
-
-    background:rgba(0,0,0,0.32);
-
-    animation:homeHeroIn 0.45s var(--ease-out) both;
+.list{
+height:260px;
+overflow-y:auto;
+padding:8px;
+background:rgba(0,0,0,.35);
+border-radius:18px;
 }
 
-.home-features li:nth-child(1){
-    animation-delay:0.14s;
+.item{
+padding:10px 12px;
+border-radius:12px;
+margin-bottom:6px;
+background:rgba(255,255,255,.03);
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+transition:.2s;
+font-size:.88rem;
 }
 
-.home-features li:nth-child(2){
-    animation-delay:0.2s;
+.item:hover{
+background:rgba(255,255,255,.09);
+transform:translateX(4px);
 }
 
-.home-features li:nth-child(3){
-    animation-delay:0.26s;
-}
-
-.home-features li:nth-child(4){
-    animation-delay:0.32s;
-}
-
-@keyframes homeHeroIn{
-
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
-}
-
-.legal-strip{
-
-    grid-column:span 2;
-
-    margin:0;
-
-    padding:14px 16px;
-
-    font-size:0.68rem;
-
-    line-height:1.45;
-
-    letter-spacing:0.04em;
-
-    opacity:0.62;
-
-    text-align:center;
-
-    border-radius:14px;
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    background:rgba(0,0,0,0.22);
-}
-
-.toast{
-
-    position:fixed;
-
-    bottom:26px;
-
-    left:50%;
-
-    z-index:100000;
-
-    padding:13px 22px;
-
-    border-radius:999px;
-
-    background:rgba(12,22,20,0.94);
-
-    border:1px solid rgba(0,255,180,0.38);
-
-    color:#c8fff0;
-
-    font-size:0.88rem;
-
-    font-weight:600;
-
-    letter-spacing:0.03em;
-
-    box-shadow:
-    0 14px 44px rgba(0,0,0,0.5),
-    0 0 24px rgba(0,255,160,0.12);
-
-    backdrop-filter:blur(8px);
-
-    -webkit-backdrop-filter:blur(8px);
-
-    transform:translate(-50%,120%);
-
-    opacity:0;
-
-    transition:
-    transform 0.35s ease-out,
-    opacity 0.3s ease;
-
-    pointer-events:none;
-
-    max-width:min(440px,92vw);
-
-    text-align:center;
-}
-
-.toast.toast--show{
-
-    transform:translate(-50%,0);
-
-    opacity:1;
-}
-
-.nav-btn:focus-visible,
-.predict-btn:focus-visible,
-.restart-btn:focus-visible,
-.back-home:focus-visible{
-
-    outline:2px solid var(--cyan);
-
-    outline-offset:3px;
-}
-
-#ballon-page .predict-btn:focus-visible{
-
-    outline-color:var(--gold);
-}
-
-/* TROPHIES — أقصر بصريًا، كل البطولات كما هي */
-
-.trophy-list{
-
-    height:300px;
-
-    overflow-y:auto;
-
-    overflow-x:hidden;
-
-    border-radius:14px;
-
-    background:rgba(0,0,0,0.3);
-
-    padding:8px 10px;
-
-    column-count:2;
-
-    column-gap:14px;
-
-    column-fill:auto;
-}
-
-@media(min-width:1100px){
-
-    .trophy-list{
-        column-count:3;
-        column-gap:12px;
-    }
-
-}
-
-.t-item{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    padding:5px 6px;
-
-    border-radius:8px;
-
-    margin-bottom:2px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    break-inside:avoid;
-
-    font-size:0.8rem;
-
-    line-height:1.2;
-}
-
-.t-item:hover{
-
-    background:rgba(255,255,255,0.1);
-
-    transform:translateX(3px);
-}
-
-.t-item input{
-
-    margin-right:8px;
-
-    margin-top:2px;
-
-    flex-shrink:0;
-
-    transform:scale(1.05);
-}
-
-.t-item span{
-
-    min-width:0;
-}
-
-.t-item--in{
-
-    animation:trophyLine 0.22s ease-out backwards;
-
-    animation-delay:calc(min(var(--ti,0),40) * 0.006s);
-}
-
-@keyframes trophyLine{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-
+.item input{
+width:auto;
+margin:0;
 }
 
 /* BUTTONS */
 
-.btn-group{
-
-    grid-column:span 2;
-
-    display:flex;
-
-    gap:15px;
+.btns{
+grid-column:span 2;
+display:flex;
+gap:15px;
 }
 
-.predict-btn,
-.restart-btn{
-
-    position:relative;
-
-    overflow:hidden;
+.btn{
+flex:1;
+padding:18px;
+border:none;
+border-radius:16px;
+font-family:'Cinzel';
+font-weight:900;
+font-size:1rem;
+cursor:pointer;
+transition:.3s;
 }
 
-.predict-btn{
-
-    flex:3;
-
-    padding:20px;
-
-    border:none;
-
-    border-radius:16px;
-
-    font-family:'Cinzel';
-
-    font-size:1.2rem;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    transition:0.3s;
+.btn:hover{
+transform:translateY(-4px);
 }
 
-.restart-btn{
-
-    flex:1;
-
-    padding:20px;
-
-    border-radius:16px;
-
-    border:2px solid rgba(255,255,255,0.3);
-
-    background:rgba(255,0,0,0.2);
-
-    color:#fff;
-
-    font-family:'Cinzel';
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.3s;
+.predict-gold{
+background:var(--gold);
+color:#000;
 }
 
-.predict-btn::before,
-.restart-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:100%;
-
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.25),
-    transparent
-    );
-
-    transition:0.7s;
+.predict-cyan{
+background:var(--cyan);
+color:#000;
 }
 
-.predict-btn:hover::before,
-.restart-btn:hover::before{
-
-    left:100%;
-}
-
-.predict-btn:hover,
-.restart-btn:hover{
-
-    transform:translateY(-4px) scale(1.02);
-}
-
-#ballon-page .predict-btn{
-
-    background:var(--gold);
-
-    color:#000;
-}
-
-#best-page .predict-btn{
-
-    background:var(--cyan);
-
-    color:#000;
+.reset{
+background:#ff2d2d;
+color:#fff;
 }
 
 /* RESULT */
 
-.score-num{
-
-    font-family:'Bebas Neue';
-
-    font-size:8rem;
-
-    line-height:1;
-
-    animation:scorePulse 3s ease-in-out infinite;
-
-    transform-origin:center center;
+.result-box{
+grid-column:span 2;
+text-align:center;
+display:none;
+padding-top:15px;
 }
 
-.score-num.is-revealing{
-
-    animation:
-    scoreKick 0.42s ease-out forwards,
-    scorePulse 3s ease-in-out 0.45s infinite;
+.percent{
+font-family:'Bebas Neue';
+font-size:8rem;
+line-height:1;
+animation:glow 1.5s infinite;
 }
 
-@keyframes scoreKick{
-
-    0%{
-        transform:scale(0.88);
-        opacity:0;
-    }
-
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
-
+.gold-per{
+color:var(--gold);
+text-shadow:0 0 25px var(--gold);
 }
 
-@keyframes scorePulse{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.03);
-    }
-
+.cyan-per{
+color:var(--cyan);
+text-shadow:0 0 25px var(--cyan);
 }
 
-#ballon-page .score-num{
-
-    color:var(--gold);
-
-    text-shadow:0 0 30px var(--gold);
+@keyframes glow{
+50%{
+transform:scale(1.05);
+}
 }
 
-#best-page .score-num{
+.small{
+opacity:.8;
+letter-spacing:2px;
+font-family:'Cinzel';
+}
 
-    color:var(--cyan);
+/* BACK */
 
-    text-shadow:0 0 30px var(--cyan);
+.back{
+position:absolute;
+top:80px;
+right:15px;
+padding:12px 18px;
+background:rgba(255,255,255,.12);
+border-radius:999px;
+cursor:pointer;
+font-weight:700;
+}
+
+/* MATCH */
+
+.match-wrap{
+grid-column:span 2;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+gap:14px;
+align-items:center;
+margin-top:10px;
+}
+
+.team-box{
+background:rgba(0,0,0,.4);
+padding:18px;
+border-radius:18px;
+}
+
+.vs{
+font-family:'Bebas Neue';
+font-size:3rem;
+}
+
+.match-result{
+grid-column:span 2;
+text-align:center;
+display:none;
+padding-top:20px;
+}
+
+.match-score{
+font-size:5rem;
+font-family:'Bebas Neue';
+color:#fff;
+text-shadow:0 0 20px #fff;
+animation:glow 1.2s infinite;
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-    .glass-card{
-        grid-template-columns:1fr;
-    }
-
-    .btn-group{
-        grid-column:span 1;
-    }
-
-    .legal-strip{
-        grid-column:span 1;
-    }
-
-    .home-title{
-        font-size:2.5rem;
-    }
-
-    .nav-btn{
-        width:90%;
-        height:300px;
-    }
-
-    .score-num{
-        font-size:5rem;
-    }
-
-    .trophy-list{
-        column-count:1;
-        height:260px;
-    }
-
-    .t-item{
-        font-size:0.78rem;
-    }
-
-    .author-badge{
-        font-size:10px;
-        padding:6px 12px;
-        left:8px;
-        max-width:calc(100vw - 128px);
-    }
-
-    .ai-status{
-        font-size:9px;
-        padding:6px 11px;
-        right:8px;
-        max-width:44vw;
-    }
-
-    .back-home{
-        top:50px;
-        right:10px;
-        padding:9px 14px;
-        font-size:0.82rem;
-    }
-
+.main-title{
+font-size:2.3rem;
+padding:0 10px;
 }
 
-@media (prefers-reduced-motion:reduce){
+.home-btn{
+width:100%;
+max-width:360px;
+height:270px;
+}
 
-    html{
-        scroll-behavior:auto;
-    }
+.card{
+grid-template-columns:1fr;
+padding:18px;
+border-radius:24px;
+}
 
-    .home-title,
-    .home-sub,
-    .home-features li,
-    .nav-btn.gold-btn,
-    .nav-btn.best-btn,
-    .tool-page.page-enter,
-    .tool-page.page-enter .back-home,
-    .tool-page.page-enter .glass-card > *,
-    .t-item--in,
-    .glass-shell,
-    .glass-shell--gold,
-    .glass-shell--cyan,
-    .score-num,
-    .score-num.is-revealing,
-    .toast,
-    .toast.toast--show{
-        animation:none !important;
-    }
+.title{
+grid-column:span 1;
+font-size:1.6rem;
+}
 
-    .nav-btn:hover{
-        animation-play-state:running !important;
-    }
+.btns{
+grid-column:span 1;
+flex-direction:column;
+}
 
-    body::before,
-    .top-bar,
-    .particles span,
-    .floating-ball,
-    .ai-status{
-        animation:none !important;
-    }
+.result-box{
+grid-column:span 1;
+}
+
+.percent{
+font-size:5.2rem;
+}
+
+.match-wrap{
+grid-template-columns:1fr;
+}
+
+.vs{
+text-align:center;
+}
+
+.match-result{
+grid-column:span 1;
+}
+
+.match-score{
+font-size:3.8rem;
+}
+
+.author{
+font-size:.62rem;
+padding:8px 12px;
+}
+
+.ai{
+font-size:.58rem;
+padding:8px 12px;
+}
+
+.back{
+top:72px;
+font-size:.8rem;
+padding:10px 14px;
+}
 
 }
 
@@ -1580,471 +577,369 @@ label{
 
 <body>
 
-<a class="skip-link" href="#main">Skip to calculator</a>
-
-<div class="top-bar"></div>
-
-<!-- AUTHOR -->
-
-<div class="author-badge">
-
-<span class="author-dot" aria-hidden="true"></span>
-
-<span>Made by mohamed aboshanab<span class="heart">❤️</span></span>
-
+<div id="loading-screen">
+<div class="loader"></div>
+<div class="loading-text">LOADING AI SYSTEM...</div>
 </div>
 
-<!-- STATUS -->
+<div class="topbar"></div>
 
-<div class="ai-status">
-
-<span class="ai-dot" aria-hidden="true"></span>
-
-<span>AI CALCULATION SYSTEM ACTIVE</span>
-
+<div class="author">
+Made by Mohamed Aboshanab ❤️
 </div>
 
-<!-- PARTICLES -->
+<div class="ai">
+AI SYSTEM ACTIVE
+</div>
 
 <div class="particles" id="particles"></div>
 
-<!-- FLOATING BALLS -->
-
-<img class="floating-ball" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="" loading="lazy" decoding="async" width="70" height="70" style="left:5%; width:70px; animation-duration:18s;">
-<img class="floating-ball" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="" loading="lazy" decoding="async" width="100" height="100" style="left:25%; width:100px; animation-duration:22s;">
-<img class="floating-ball" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="" loading="lazy" decoding="async" width="80" height="80" style="left:50%; width:80px; animation-duration:16s;">
-<img class="floating-ball" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="" loading="lazy" decoding="async" width="110" height="110" style="left:75%; width:110px; animation-duration:24s;">
-<img class="floating-ball" src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="" loading="lazy" decoding="async" width="60" height="60" style="left:90%; width:60px; animation-duration:19s;">
-
-<main id="main" class="site-main">
-
 <!-- HOME -->
 
-<div id="home-page">
+<section id="home" class="page active">
 
-<div class="home-content-wrap">
+<div class="home-wrap">
 
-<h1 class="home-title">
+<h1 class="main-title">
 FOOTBALL AWARDS AI
 </h1>
 
-<p class="home-sub">
-ADVANCED PLAYER AWARD CALCULATION ENGINE
+<p class="sub">
+ULTIMATE FOOTBALL AWARDS EXPERIENCE
 </p>
 
-<ul class="home-features" aria-label="Product highlights">
-<li>80+ weighted trophies</li>
-<li>Dual award engines</li>
-<li>Instant win-chance readout</li>
-<li>Built for big screens &amp; mobile</li>
-</ul>
+<div class="home-buttons">
 
-<div class="btn-container">
-
-<div class="nav-btn gold-btn" onclick="showPage('ballon-page')">
-
+<div class="home-btn gold" onclick="showPage('ballon')">
 <span>GOLDEN BALL AI</span>
-
 </div>
 
-<div class="nav-btn best-btn" onclick="showPage('best-page')">
-
+<div class="home-btn best" onclick="showPage('best')">
 <span>THE BEST AI</span>
+</div>
 
+<div class="home-btn result" onclick="showPage('match')">
+<span>GUESS THE RESULT</span>
 </div>
 
 </div>
 
 </div>
 
-</div>
+</section>
 
 <!-- BALLON -->
 
-<div id="ballon-page" class="tool-page">
+<section id="ballon" class="page">
 
-<div class="back-home" onclick="showPage('home-page')">
+<div class="back" onclick="showPage('home')">
 ← RETURN
 </div>
 
-<div class="glass-shell glass-shell--gold">
+<div class="card">
 
-<div class="glass-card">
-
-<h1 style="grid-column:span 2; text-align:center; font-family:'Cinzel'; color:var(--gold);">
-BALLON D'OR AI CALCULATOR
-</h1>
+<h2 class="title gold-text">
+BALLON D'OR AI
+</h2>
 
 <div>
 
-<label for="bg">GOALS</label>
-<input type="number" id="bg" name="goals" placeholder="0" min="0" step="1" inputmode="numeric" autocomplete="off">
+<label>GOALS</label>
+<input type="number" id="bg" placeholder="0">
 
-<label for="ba">ASSISTS</label>
-<input type="number" id="ba" name="assists" placeholder="0" min="0" step="1" inputmode="numeric" autocomplete="off">
+<label>ASSISTS</label>
+<input type="number" id="ba" placeholder="0">
 
-<label for="bm">INDIVIDUAL AWARDS</label>
-<input type="number" id="bm" name="individual_awards" placeholder="0" min="0" step="1" inputmode="numeric" autocomplete="off">
+<label>INDIVIDUAL AWARDS</label>
+<input type="number" id="bm" placeholder="0">
 
 </div>
 
 <div>
 
-<input type="search" class="search-box" id="bs" placeholder="FILTER TROPHIES..." autocomplete="off" enterkeyhint="search" aria-label="Filter trophy list">
+<input type="text" class="search" id="bs" placeholder="SEARCH TROPHIES...">
 
-<div class="trophy-list" id="blist"></div>
+<div class="list" id="blist"></div>
 
 </div>
 
-<div class="btn-group">
+<div class="btns">
 
-<button type="button" class="predict-btn" onclick="predict('ballon')">
-CALCULATE WIN CHANCE
+<button class="btn predict-gold" onclick="predict('b')">
+CALCULATE
 </button>
 
-<button type="button" class="restart-btn" onclick="resetAll('ballon')">
+<button class="btn reset" onclick="resetPage('b')">
 RESET
 </button>
 
 </div>
 
-<div id="br" style="grid-column:span 2; text-align:center; display:none;">
+<div class="result-box" id="br">
 
-<p class="score-num" id="bf">0%</p>
+<div class="percent gold-per" id="bf">
+0%
+</div>
 
-<p style="font-family:'Cinzel'; letter-spacing:2px;">
+<div class="small">
 BALLON D'OR POSSIBILITY
-</p>
-
-</div>
-
-<p class="legal-strip" role="note">
-Fan-built experience for entertainment — not affiliated with FIFA, France Football, or award organisers. Estimates use custom weights only; they are not predictions of real jury votes.
-</p>
-
 </div>
 
 </div>
 
 </div>
+
+</section>
 
 <!-- BEST -->
 
-<div id="best-page" class="tool-page">
+<section id="best" class="page">
 
-<div class="back-home" onclick="showPage('home-page')">
+<div class="back" onclick="showPage('home')">
 ← RETURN
 </div>
 
-<div class="glass-shell glass-shell--cyan">
+<div class="card">
 
-<div class="glass-card">
-
-<h1 style="grid-column:span 2; text-align:center; font-family:'Cinzel'; color:var(--cyan);">
-THE BEST AI CALCULATOR
-</h1>
+<h2 class="title cyan-text">
+THE BEST AI
+</h2>
 
 <div>
 
-<label for="tg">GOALS</label>
-<input type="number" id="tg" name="goals_best" placeholder="0" min="0" step="1" inputmode="numeric" autocomplete="off">
+<label>GOALS</label>
+<input type="number" id="tg" placeholder="0">
 
-<label for="ta">ASSISTS</label>
-<input type="number" id="ta" name="assists_best" placeholder="0" min="0" step="1" inputmode="numeric" autocomplete="off">
+<label>ASSISTS</label>
+<input type="number" id="ta" placeholder="0">
 
-<label for="tm">INDIVIDUAL AWARDS</label>
-<input type="number" id="tm" name="individual_awards_best" placeholder="0" min="0" step="1" inputmode="numeric" autocomplete="off">
+<label>INDIVIDUAL AWARDS</label>
+<input type="number" id="tm" placeholder="0">
 
 </div>
 
 <div>
 
-<input type="search" class="search-box" id="ts" placeholder="FILTER TROPHIES..." autocomplete="off" enterkeyhint="search" aria-label="Filter trophy list">
+<input type="text" class="search" id="ts" placeholder="SEARCH TROPHIES...">
 
-<div class="trophy-list" id="tlist"></div>
+<div class="list" id="tlist"></div>
 
 </div>
 
-<div class="btn-group">
+<div class="btns">
 
-<button type="button" class="predict-btn" onclick="predict('best')">
-CALCULATE WIN CHANCE
+<button class="btn predict-cyan" onclick="predict('t')">
+CALCULATE
 </button>
 
-<button type="button" class="restart-btn" onclick="resetAll('best')">
+<button class="btn reset" onclick="resetPage('t')">
 RESET
 </button>
 
 </div>
 
-<div id="tr" style="grid-column:span 2; text-align:center; display:none;">
+<div class="result-box" id="tr">
 
-<p class="score-num" id="tf">0%</p>
+<div class="percent cyan-per" id="tf">
+0%
+</div>
 
-<p style="font-family:'Cinzel'; letter-spacing:2px;">
+<div class="small">
 THE BEST POSSIBILITY
-</p>
-
-</div>
-
-<p class="legal-strip" role="note">
-Fan-built experience for entertainment — not affiliated with FIFA, France Football, or award organisers. Estimates use custom weights only; they are not predictions of real jury votes.
-</p>
-
 </div>
 
 </div>
 
 </div>
 
-</main>
+</section>
 
-<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<!-- MATCH -->
+
+<section id="match" class="page">
+
+<div class="back" onclick="showPage('home')">
+← RETURN
+</div>
+
+<div class="card">
+
+<h2 class="title">
+GUESS THE RESULT AI
+</h2>
+
+<div class="team-box">
+
+<input type="text" id="teamSearch1" placeholder="SEARCH TEAM...">
+
+<div class="list" id="teamList1"></div>
+
+</div>
+
+<div class="team-box">
+
+<input type="text" id="teamSearch2" placeholder="SEARCH TEAM...">
+
+<div class="list" id="teamList2"></div>
+
+</div>
+
+<div class="btns">
+
+<button class="btn predict-cyan" onclick="generateMatch()">
+GENERATE RESULT
+</button>
+
+<button class="btn reset" onclick="resetMatch()">
+RESET
+</button>
+
+</div>
+
+<div class="match-result" id="matchResult">
+
+<div class="match-score" id="score">
+0 - 0
+</div>
+
+<div class="small" id="teamsText">
+TEAM VS TEAM
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <script>
 
 /* PARTICLES */
 
-const particles = document.getElementById("particles");
+const particles=document.getElementById("particles");
 
-for(let i=0;i<42;i++){
+for(let i=0;i<50;i++){
 
-const s = document.createElement("span");
+const s=document.createElement("span");
 
-s.style.left = Math.random()*100 + "%";
+s.style.left=Math.random()*100+"%";
 
-s.style.animationDuration =
-(14 + Math.random()*18)+"s";
+s.style.animationDuration=(10+Math.random()*20)+"s";
 
-s.style.animationDelay =
-Math.random()*8+"s";
+s.style.animationDelay=Math.random()*10+"s";
 
 particles.appendChild(s);
 
 }
 
-/* SOUND */
-
-const hoverSound =
-new Audio("https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3");
-
-document.querySelectorAll(
-".nav-btn,.predict-btn,.restart-btn"
-).forEach(btn=>{
-
-btn.addEventListener("mouseenter",()=>{
-
-hoverSound.currentTime = 0;
-hoverSound.volume = 0.25;
-hoverSound.play().catch(()=>{});
-
-});
-
-});
-
-/* TROPHIES */
-
-const trophies = [
-
-{id:'wc',n:'FIFA World Cup 🏆',w:110},
-{id:'ucl',n:'UEFA Champions League',w:90},
-{id:'euro',n:'UEFA Euro',w:85},
-{id:'ca',n:'Copa América',w:80},
-{id:'afcon',n:'AFCON',w:75},
-{id:'asian',n:'AFC Asian Cup',w:70},
-{id:'goldcup',n:'CONCACAF Gold Cup',w:62},
-{id:'unl',n:'UEFA Nations League',w:45},
-{id:'finalissima',n:'CONMEBOL–UEFA Finalissima',w:55},
-{id:'cwc',n:'FIFA Intercontinental Cup (Club)',w:50},
-{id:'cwcnew',n:'FIFA Club World Cup (32 teams)',w:82},
-{id:'pl',n:'Premier League',w:65},
-{id:'ll',n:'La Liga',w:60},
-{id:'sa',n:'Serie A',w:58},
-{id:'bl',n:'Bundesliga',w:55},
-{id:'l1',n:'Ligue 1',w:50},
-{id:'brasileirao',n:'Brasileirão Série A',w:52},
-{id:'arg',n:'Argentine Primera División',w:48},
-{id:'ligamx',n:'Liga MX',w:42},
-{id:'uel',n:'UEFA Europa League',w:52},
-{id:'uecl',n:'UEFA Conference League',w:38},
-{id:'spl',n:'Saudi Pro League',w:35},
-{id:'mls',n:'MLS',w:30},
-{id:'j1',n:'J1 League (Japan)',w:33},
-{id:'kleague',n:'K League 1 (South Korea)',w:30},
-{id:'csl',n:'Chinese Super League',w:28},
-
-{id:'fac',n:'FA Cup (England)',w:25},
-{id:'cdr',n:'Copa del Rey',w:25},
-{id:'dfb',n:'DFB-Pokal',w:22},
-{id:'coppa',n:'Coppa Italia',w:22},
-{id:'cdf',n:'Coupe de France',w:22},
-{id:'taca',n:'Taça de Portugal',w:20},
-{id:'carabao',n:'EFL Cup (Carabao)',w:20},
-{id:'superc',n:'UEFA Super Cup',w:18},
-{id:'ssc',n:'Supercopa de España',w:16},
-{id:'isc',n:'Supercoppa Italiana',w:15},
-{id:'comm',n:'FA Community Shield',w:10},
-{id:'lib',n:'Copa Libertadores',w:70},
-{id:'suda',n:'Copa Sudamericana',w:45},
-{id:'recosud',n:'Recopa Sudamericana',w:40},
-{id:'conc',n:'CONCACAF Champions Cup',w:50},
-{id:'leaguescup',n:'Leagues Cup (MLS/Liga MX)',w:32},
-{id:'acl',n:'AFC Champions League Elite',w:55},
-{id:'acl2',n:'AFC Champions League Two',w:40},
-{id:'cafcl',n:'CAF Champions League',w:48},
-{id:'cafcc',n:'CAF Confederation Cup',w:32},
-{id:'ofc',n:'OFC Champions League',w:22},
-{id:'olym',n:'Olympic Football Gold',w:75},
-{id:'fwc',n:'FIFA U-20 World Cup',w:28},
-{id:'fifayouth',n:'FIFA U-17 World Cup',w:24},
-{id:'arabcup',n:'FIFA Arab Cup',w:40},
-{id:'gulf',n:'Arabian Gulf Cup',w:26},
-{id:'superliga',n:'Turkish Süper Lig',w:25},
-{id:'ered',n:'Eredivisie',w:30},
-{id:'primeira',n:'Primeira Liga',w:28},
-{id:'belg',n:'Belgian Pro League',w:22},
-{id:'scott',n:'Scottish Premiership',w:24},
-{id:'rus',n:'Russian Premier League',w:26},
-{id:'ukr',n:'Ukrainian Premier League',w:24},
-{id:'gre',n:'Greek Super League',w:22},
-{id:'swi',n:'Swiss Super League',w:22},
-{id:'aut',n:'Austrian Bundesliga',w:20},
-{id:'den',n:'Danish Superliga',w:20},
-{id:'nor',n:'Norwegian Eliteserien',w:18},
-{id:'swe',n:'Swedish Allsvenskan',w:18},
-{id:'pol',n:'Ekstraklasa (Poland)',w:18},
-{id:'rom',n:'SuperLiga (Romania)',w:16},
-{id:'cro',n:'HNL (Croatia)',w:16},
-{id:'srb',n:'Serbian SuperLiga',w:15},
-{id:'ind',n:'Indian Super League',w:14},
-{id:'caf',n:'CAF Super Cup',w:20},
-{id:'afcn',n:'African Nations Championship (CHAN)',w:28},
-{id:'osea',n:'SEA Games Football Gold',w:18},
-{id:'inter',n:'FIFA Intercontinental Cup (historical)',w:35},
-{id:'recopa',n:'UEFA Cup Winners Cup (historical)',w:28},
-{id:'clubwc',n:'FIFA Club World Cup (7 teams era)',w:55},
-{id:'copaarg',n:'Copa Argentina',w:18},
-{id:'copabrasil',n:'Copa do Brasil',w:38},
-{id:'eng2',n:'EFL Championship',w:18},
-{id:'spa2',n:'La Liga 2',w:12},
-{id:'ita2',n:'Serie B',w:12},
-{id:'ger2',n:'2. Bundesliga',w:14},
-{id:'fra2',n:'Ligue 2',w:10},
-{id:'por2',n:'Liga Portugal 2',w:8}
-
-];
-
-let bSel = new Set();
-let tSel = new Set();
-
-const PAGE_TITLES={
-'home-page':'Football Awards AI Calculator',
-'ballon-page':"Ballon d'Or AI Estimator — Football Awards",
-'best-page':'The Best AI Estimator — Football Awards'
-};
-
-let toastHideTimer;
-
-function showToast(msg){
-
-const el=document.getElementById('toast');
-
-if(!el){
-return;
-}
-
-el.textContent=msg;
-el.hidden=false;
-el.classList.add('toast--show');
-clearTimeout(toastHideTimer);
-toastHideTimer=setTimeout(()=>{
-
-el.classList.remove('toast--show');
-setTimeout(()=>{
-el.hidden=true;
-},450);
-
-},4200);
-
-}
-
-/* PAGE */
+/* PAGES */
 
 function showPage(id){
 
-document.querySelectorAll(
-'#home-page,.tool-page'
-).forEach(p=>{
-
-p.style.display='none';
-
-p.classList.remove('page-enter');
-
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
 });
 
-const pageEl=document.getElementById(id);
+document.getElementById(id).classList.add("active");
 
-pageEl.style.display='flex';
-
-document.title=PAGE_TITLES[id]||PAGE_TITLES['home-page'];
-
-if(id !== 'home-page'){
-
-void pageEl.offsetWidth;
-
-pageEl.classList.add('page-enter');
-
-render(
-id === 'ballon-page' ? 'b' : 't'
-);
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
-}
+/* TROPHIES */
 
-/* RENDER */
+const trophies=[
 
-function render(type,term=""){
+"FIFA World Cup",
+"UEFA Champions League",
+"Premier League",
+"La Liga",
+"Serie A",
+"Bundesliga",
+"Ligue 1",
+"UEFA Euro",
+"Copa América",
+"CAF Champions League",
+"Egyptian Premier League",
+"Egypt Cup",
+"Saudi Pro League",
+"MLS",
+"Club World Cup",
+"Europa League",
+"Conference League",
+"FA Cup",
+"Carabao Cup",
+"DFB Pokal",
+"Coppa Italia",
+"Supercopa de España",
+"CAF Super Cup",
+"AFC Champions League",
+"Copa Libertadores",
+"Brazil Serie A",
+"Turkish Super Lig",
+"Belgian Pro League",
+"Eredivisie",
+"Primeira Liga",
+"Scottish Premiership",
+"UAE Pro League",
+"Qatar Stars League",
+"K League",
+"J1 League",
+"Greek Super League",
+"Swiss League",
+"Danish Superliga",
+"Norwegian League",
+"Swedish League",
+"Argentine League",
+"Mexican League",
+"Algerian League",
+"Tunisian League",
+"Moroccan League",
+"Sudanese League",
+"Libyan League",
+"African Football League",
+"Arab Club Champions Cup"
 
-const list =
-document.getElementById(type+'list');
+];
 
-const sel =
-type === 'b' ? bSel : tSel;
+let bSel=new Set();
+let tSel=new Set();
 
-list.innerHTML = "";
+function render(type,search=""){
 
-let ti=0;
+const list=document.getElementById(type+"list");
+
+list.innerHTML="";
 
 trophies
-.filter(t=>
-t.n.toLowerCase().includes(term.toLowerCase())
-)
+.filter(t=>t.toLowerCase().includes(search.toLowerCase()))
 .forEach(t=>{
 
-const div =
-document.createElement("div");
+const div=document.createElement("div");
 
-div.className = "t-item t-item--in";
+div.className="item";
 
-div.style.setProperty('--ti',String(ti++));
+div.innerHTML=`
+<input type="checkbox">
+<span>${t}</span>
+`;
 
-div.innerHTML =
-`<input type="checkbox"
-onchange="toggle('${type}','${t.id}')"
-${sel.has(t.id)?'checked':''}>
-<span>${t.n}</span>`;
+div.onclick=()=>{
 
-div.onclick = (e)=>{
+const box=div.querySelector("input");
 
-if(e.target.tagName !== 'INPUT'){
+box.checked=!box.checked;
 
-const chk =
-div.querySelector('input');
+if(type==="b"){
 
-chk.checked = !chk.checked;
+box.checked ? bSel.add(t) : bSel.delete(t);
 
-toggle(type,t.id);
+}else{
+
+box.checked ? tSel.add(t) : tSel.delete(t);
 
 }
 
@@ -2056,161 +951,290 @@ list.appendChild(div);
 
 }
 
-/* TOGGLE */
+render("b");
+render("t");
 
-function toggle(type,id){
+document.getElementById("bs").oninput=e=>{
+render("b",e.target.value);
+};
 
-const sel =
-type === 'b' ? bSel : tSel;
+document.getElementById("ts").oninput=e=>{
+render("t",e.target.value);
+};
 
-sel.has(id)
-? sel.delete(id)
-: sel.add(id);
+/* PREDICT */
+
+function animate(el,end){
+
+let start=0;
+
+const interval=setInterval(()=>{
+
+start++;
+
+el.innerHTML=start+"%";
+
+el.style.transform=`scale(${1+(start/end)*0.08})`;
+
+if(start>=end){
+
+clearInterval(interval);
+
+}
+
+},20);
+
+}
+
+function predict(type){
+
+const g=parseInt(document.getElementById(type+"g").value)||0;
+
+const a=parseInt(document.getElementById(type+"a").value)||0;
+
+const m=parseInt(document.getElementById(type+"m").value)||0;
+
+const trophiesCount=type==="b"
+? bSel.size
+: tSel.size;
+
+/* goals & assists weak effect */
+
+let score=0;
+
+score += trophiesCount*2.2;
+
+score += g*0.08;
+
+score += a*0.05;
+
+score += m*1.2;
+
+if(score<3 && trophiesCount>0){
+score=3;
+}
+
+if(score>99){
+score=99;
+}
+
+const result=document.getElementById(type+"r");
+
+const num=document.getElementById(type+"f");
+
+result.style.display="block";
+
+animate(num,Math.round(score));
 
 }
 
 /* RESET */
 
-function resetAll(mode){
+function resetPage(type){
 
-const p =
-mode === 'ballon' ? 'b' : 't';
+document.getElementById(type+"g").value="";
+document.getElementById(type+"a").value="";
+document.getElementById(type+"m").value="";
 
-if(mode === 'ballon'){
+document.getElementById(type+"r").style.display="none";
+
+if(type==="b"){
 bSel.clear();
+render("b");
 }else{
 tSel.clear();
-}
-
-document.getElementById(p+'g').value="";
-document.getElementById(p+'a').value="";
-document.getElementById(p+'m').value="";
-
-document.getElementById(p+'r').style.display='none';
-
-render(p);
-
-}
-
-/* COUNTER */
-
-function animateValue(el,start,end,duration){
-
-let startTime = null;
-
-function update(currentTime){
-
-if(!startTime){
-startTime = currentTime;
-}
-
-const progress =
-Math.min(
-(currentTime-startTime)/duration,
-1
-);
-
-const value =
-Math.floor(
-progress*(end-start)+start
-);
-
-el.innerText = value + "%";
-
-if(progress < 1){
-
-requestAnimationFrame(update);
-
+render("t");
 }
 
 }
 
-requestAnimationFrame(update);
+/* TEAMS */
 
+const teams=[
+
+"Real Madrid",
+"Barcelona",
+"Atlético Madrid",
+"Manchester City",
+"Liverpool",
+"Arsenal",
+"Chelsea",
+"Manchester United",
+"Tottenham Hotspur",
+"Newcastle United",
+"Bayern Munich",
+"Borussia Dortmund",
+"RB Leipzig",
+"Bayer Leverkusen",
+"Juventus",
+"Inter Milan",
+"AC Milan",
+"Napoli",
+"Roma",
+"Lazio",
+"Paris Saint-Germain",
+"Marseille",
+"Monaco",
+"Lyon",
+"Benfica",
+"Porto",
+"Sporting CP",
+"Ajax",
+"PSV Eindhoven",
+"Feyenoord",
+"Galatasaray",
+"Fenerbahçe",
+"Al Ahly",
+"Zamalek",
+"Pyramids FC",
+"RS Berkane",
+"Wydad AC",
+"Raja Casablanca",
+"FAR Rabat",
+"Espérance de Tunis",
+"Étoile du Sahel",
+"CS Sfaxien",
+"Mamelodi Sundowns",
+"Kaizer Chiefs",
+"Orlando Pirates",
+"TP Mazembe",
+"AS Vita Club",
+"Simba SC",
+"Young Africans",
+"Gor Mahia",
+"ASEC Mimosas",
+"Enyimba",
+"Al Hilal SFC",
+"Al Nassr",
+"Al Ittihad",
+"Al Ahli",
+"Al Sadd"
+
+];
+
+let team1="";
+let team2="";
+
+function renderTeams(id,search=""){
+
+const list=document.getElementById(id);
+
+list.innerHTML="";
+
+teams
+.filter(t=>t.toLowerCase().includes(search.toLowerCase()))
+.forEach(team=>{
+
+const div=document.createElement("div");
+
+div.className="item";
+
+div.innerHTML=`<span>${team}</span>`;
+
+div.onclick=()=>{
+
+if(id==="teamList1"){
+team1=team;
+document.getElementById("teamSearch1").value=team;
+}else{
+team2=team;
+document.getElementById("teamSearch2").value=team;
 }
-
-/* PREDICT */
-
-function predict(mode){
-
-const p =
-mode === 'ballon' ? 'b' : 't';
-
-const sel =
-mode === 'ballon' ? bSel : tSel;
-
-let ts = 0;
-
-sel.forEach(id=>{
-
-ts += trophies.find(x=>x.id===id).w;
-
-});
-
-/* أوزان أوضح من النسخة الصعبة — أقرب للتوازن */
-
-const g =
-(parseInt(document.getElementById(p+'g').value)||0)*5.2;
-
-const a =
-(parseInt(document.getElementById(p+'a').value)||0)*3.3;
-
-const m =
-(parseInt(document.getElementById(p+'m').value)||0)*95;
-
-let res =
-(g+a+m+ts)/15.5;
-
-if(res > 99.9){
-
-res = 99.9;
-
-}
-
-document.getElementById(p+'r').style.display='block';
-
-document.getElementById(p+'r').scrollIntoView({
-behavior:'smooth',
-block:'center'
-});
-
-const el =
-document.getElementById(p+'f');
-
-el.classList.remove('is-revealing');
-
-void el.offsetWidth;
-
-el.classList.add('is-revealing');
-
-animateValue(
-el,
-0,
-Math.round(res),
-2000
-);
-
-setTimeout(()=>{
-
-showToast('Done — your percentage is locked in below. Scroll if you need to.');
-
-},2100);
-
-}
-
-/* SEARCH */
-
-document.getElementById('bs').oninput = e=>{
-
-render('b',e.target.value);
 
 };
 
-document.getElementById('ts').oninput = e=>{
+list.appendChild(div);
 
-render('t',e.target.value);
+});
 
+}
+
+renderTeams("teamList1");
+renderTeams("teamList2");
+
+document.getElementById("teamSearch1").oninput=e=>{
+renderTeams("teamList1",e.target.value);
 };
+
+document.getElementById("teamSearch2").oninput=e=>{
+renderTeams("teamList2",e.target.value);
+};
+
+/* MATCH RESULT */
+
+function weightedGoal(){
+
+const rand=Math.random();
+
+if(rand<0.25) return 0;
+if(rand<0.50) return 1;
+if(rand<0.68) return 2;
+if(rand<0.82) return 3;
+if(rand<0.90) return 4;
+if(rand<0.95) return 5;
+if(rand<0.975) return 6;
+if(rand<0.988) return 7;
+if(rand<0.995) return 8;
+if(rand<0.998) return 9;
+return 10;
+
+}
+
+function generateMatch(){
+
+if(!team1 || !team2){
+
+alert("SELECT TWO TEAMS");
+
+return;
+
+}
+
+const g1=weightedGoal();
+const g2=weightedGoal();
+
+document.getElementById("matchResult").style.display="block";
+
+document.getElementById("teamsText").innerHTML=`
+${team1} VS ${team2}
+`;
+
+const score=document.getElementById("score");
+
+let c1=0;
+let c2=0;
+
+const anim=setInterval(()=>{
+
+score.innerHTML=`${c1} - ${c2}`;
+
+if(c1<g1)c1++;
+if(c2<g2)c2++;
+
+if(c1>=g1 && c2>=g2){
+
+clearInterval(anim);
+
+}
+
+},120);
+
+}
+
+function resetMatch(){
+
+team1="";
+team2="";
+
+document.getElementById("teamSearch1").value="";
+document.getElementById("teamSearch2").value="";
+
+document.getElementById("matchResult").style.display="none";
+
+renderTeams("teamList1");
+renderTeams("teamList2");
+
+}
 
 </script>
 
