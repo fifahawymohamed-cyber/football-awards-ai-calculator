@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7215076454493320"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7215076454493320"
+crossorigin="anonymous"></script>
+
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <meta name="theme-color" content="#000000"/>
+
 <title>Football Awards AI Ultimate</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -15,8 +18,6 @@
 :root{
 --gold:#d4af37;
 --cyan:#00e5ff;
---dark:#050505;
---card:rgba(255,255,255,0.08);
 }
 
 *{
@@ -125,7 +126,7 @@ transform:translateY(-120vh);
 }
 }
 
-/* TOP */
+/* TOP BAR */
 
 .topbar{
 position:fixed;
@@ -280,6 +281,35 @@ linear-gradient(rgba(255,255,255,.08),rgba(0,0,0,.35)),
 url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop");
 }
 
+/* ABOUT + PRIVACY BUTTONS */
+
+.extra-buttons{
+display:flex;
+gap:15px;
+margin-top:35px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.extra-btn{
+padding:15px 28px;
+border:none;
+border-radius:999px;
+background:rgba(255,255,255,.1);
+color:#fff;
+font-family:'Cinzel';
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+}
+
+.extra-btn:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,.18);
+}
+
 /* CARD */
 
 .card{
@@ -336,8 +366,6 @@ display:block;
 margin-bottom:7px;
 letter-spacing:2px;
 }
-
-/* LIST */
 
 .search{
 margin-bottom:10px;
@@ -464,27 +492,32 @@ cursor:pointer;
 font-weight:700;
 }
 
-/* MATCH */
+/* INFO */
 
-.match-wrap{
+.info-box{
 grid-column:span 2;
-display:grid;
-grid-template-columns:1fr auto 1fr;
-gap:14px;
-align-items:center;
-margin-top:10px;
-}
-
-.team-box{
 background:rgba(0,0,0,.4);
-padding:18px;
-border-radius:18px;
+padding:25px;
+border-radius:25px;
+line-height:1.9;
 }
 
-.vs{
-font-family:'Bebas Neue';
-font-size:3rem;
+.info-box h3{
+font-family:'Cinzel';
+margin-bottom:15px;
+font-size:1.6rem;
+color:var(--gold);
 }
+
+.info-box ul{
+padding-left:20px;
+}
+
+.info-box li{
+margin-bottom:10px;
+}
+
+/* MATCH RESULT */
 
 .match-result{
 grid-column:span 2;
@@ -501,7 +534,7 @@ text-shadow:0 0 20px #fff;
 animation:glow 1.2s infinite;
 }
 
-/* FOOTER THANKS */
+/* FOOTER */
 
 .footer-thanks{
 width:fit-content;
@@ -515,10 +548,6 @@ font-family:'Cinzel';
 font-size:.8rem;
 letter-spacing:2px;
 text-align:center;
-box-shadow:
-0 0 12px rgba(212,175,55,.35),
-0 0 22px rgba(0,229,255,.25);
-animation:thanksGlow 2.5s infinite alternate;
 }
 
 .footer-thanks span{
@@ -526,17 +555,6 @@ background:linear-gradient(90deg,var(--gold),#fff,var(--cyan));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 font-weight:700;
-}
-
-@keyframes thanksGlow{
-from{
-transform:scale(1);
-opacity:.85;
-}
-to{
-transform:scale(1.03);
-opacity:1;
-}
 }
 
 /* MOBILE */
@@ -552,6 +570,24 @@ padding:0 10px;
 width:100%;
 max-width:360px;
 height:270px;
+}
+
+.home-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.extra-buttons{
+flex-direction:column;
+align-items:center;
+width:100%;
+padding:0 20px;
+}
+
+.extra-btn{
+width:100%;
+max-width:320px;
+font-size:.9rem;
 }
 
 .card{
@@ -578,22 +614,6 @@ grid-column:span 1;
 font-size:5.2rem;
 }
 
-.match-wrap{
-grid-template-columns:1fr;
-}
-
-.vs{
-text-align:center;
-}
-
-.match-result{
-grid-column:span 1;
-}
-
-.match-score{
-font-size:3.8rem;
-}
-
 .author{
 font-size:.62rem;
 padding:8px 12px;
@@ -617,6 +637,18 @@ margin:30px auto 18px;
 max-width:92%;
 }
 
+.info-box{
+grid-column:span 1;
+}
+
+.list{
+height:220px;
+}
+
+.match-score{
+font-size:3.8rem;
+}
+
 }
 
 </style>
@@ -626,7 +658,9 @@ max-width:92%;
 
 <div id="loading-screen">
 <div class="loader"></div>
-<div class="loading-text">LOADING AI SYSTEM...</div>
+<div class="loading-text">
+LOADING AI SYSTEM...
+</div>
 </div>
 
 <div class="topbar"></div>
@@ -671,6 +705,82 @@ ULTIMATE FOOTBALL AWARDS EXPERIENCE
 
 </div>
 
+<div class="extra-buttons">
+
+<button class="extra-btn" onclick="showPage('about')">
+ABOUT
+</button>
+
+<button class="extra-btn" onclick="showPage('privacy')">
+PRIVACY POLICY
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="page">
+
+<div class="back" onclick="showPage('home')">
+← RETURN
+</div>
+
+<div class="card">
+
+<h2 class="title gold-text">
+ABOUT FOOTBALL AWARDS AI
+</h2>
+
+<div class="info-box">
+
+<h3>WHAT THIS WEBSITE DOES</h3>
+
+<ul>
+<li>Predicts Ballon d'Or winning chances.</li>
+<li>Predicts The Best FIFA award possibilities.</li>
+<li>Compares football players achievements.</li>
+<li>Generates football match results.</li>
+<li>Includes famous clubs and trophies.</li>
+<li>Provides entertainment for football fans.</li>
+<li>Modern AI football experience.</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRIVACY -->
+
+<section id="privacy" class="page">
+
+<div class="back" onclick="showPage('home')">
+← RETURN
+</div>
+
+<div class="card">
+
+<h2 class="title cyan-text">
+PRIVACY POLICY
+</h2>
+
+<div class="info-box">
+
+<ul>
+<li>No passwords are required.</li>
+<li>Google AdSense may use cookies.</li>
+<li>Anonymous analytics data may be collected.</li>
+<li>Your privacy is respected.</li>
+<li>Using this website means accepting this policy.</li>
+</ul>
+
+</div>
+
 </div>
 
 </section>
@@ -697,7 +807,7 @@ BALLON D'OR AI
 <label>ASSISTS</label>
 <input type="number" id="ba" placeholder="0">
 
-<label>INDIVIDUAL AWARDS (player of match-golden shoe) </label>
+<label>INDIVIDUAL AWARDS</label>
 <input type="number" id="bm" placeholder="0">
 
 </div>
@@ -760,7 +870,7 @@ THE BEST AI
 <label>ASSISTS</label>
 <input type="number" id="ta" placeholder="0">
 
-<label>INDIVIDUAL AWARDS (player of match-golden shoe) </label>
+<label>INDIVIDUAL AWARDS</label>
 <input type="number" id="tm" placeholder="0">
 
 </div>
@@ -815,17 +925,17 @@ THE BEST POSSIBILITY
 GUESS THE RESULT AI
 </h2>
 
-<div class="team-box">
+<div>
 
-<input type="text" id="teamSearch1" placeholder="SEARCH TEAM...">
+<input type="text" id="teamSearch1" class="search" placeholder="SEARCH TEAM...">
 
 <div class="list" id="teamList1"></div>
 
 </div>
 
-<div class="team-box">
+<div>
 
-<input type="text" id="teamSearch2" placeholder="SEARCH TEAM...">
+<input type="text" id="teamSearch2" class="search" placeholder="SEARCH TEAM...">
 
 <div class="list" id="teamList2"></div>
 
@@ -859,7 +969,7 @@ TEAM VS TEAM
 
 </section>
 
-<!-- THANKS -->
+<!-- FOOTER -->
 
 <div class="footer-thanks">
 <span>THANKS B.S.S X ISCHOOL</span>
@@ -876,9 +986,7 @@ for(let i=0;i<50;i++){
 const s=document.createElement("span");
 
 s.style.left=Math.random()*100+"%";
-
 s.style.animationDuration=(10+Math.random()*20)+"s";
-
 s.style.animationDelay=Math.random()*10+"s";
 
 particles.appendChild(s);
@@ -987,13 +1095,9 @@ const box=div.querySelector("input");
 box.checked=!box.checked;
 
 if(type==="b"){
-
 box.checked ? bSel.add(t) : bSel.delete(t);
-
 }else{
-
 box.checked ? tSel.add(t) : tSel.delete(t);
-
 }
 
 };
@@ -1027,12 +1131,8 @@ start++;
 
 el.innerHTML=start+"%";
 
-el.style.transform=`scale(${1+(start/end)*0.08})`;
-
 if(start>=end){
-
 clearInterval(interval);
-
 }
 
 },20);
@@ -1042,9 +1142,7 @@ clearInterval(interval);
 function predict(type){
 
 const g=parseInt(document.getElementById(type+"g").value)||0;
-
 const a=parseInt(document.getElementById(type+"a").value)||0;
-
 const m=parseInt(document.getElementById(type+"m").value)||0;
 
 const trophiesCount=type==="b"
@@ -1054,11 +1152,8 @@ const trophiesCount=type==="b"
 let score=0;
 
 score += trophiesCount*2.2;
-
 score += g*0.08;
-
 score += a*0.05;
-
 score += m*1.2;
 
 if(score<3 && trophiesCount>0){
@@ -1070,7 +1165,6 @@ score=99;
 }
 
 const result=document.getElementById(type+"r");
-
 const num=document.getElementById(type+"f");
 
 result.style.display="block";
@@ -1078,8 +1172,6 @@ result.style.display="block";
 animate(num,Math.round(score));
 
 }
-
-/* RESET */
 
 function resetPage(type){
 
@@ -1159,7 +1251,18 @@ const teams=[
 "Al Nassr",
 "Al Ittihad",
 "Al Ahli",
-"Al Sadd"
+"Al Sadd",
+
+"Al Masry",
+"Future FC",
+"Ceramica Cleopatra",
+"Smouha",
+"ENPPI",
+"National Bank FC",
+"Pharco FC",
+"Petrojet",
+"Haras El Hodood",
+"Ismaily"
 
 ];
 
@@ -1227,6 +1330,7 @@ if(rand<0.975) return 6;
 if(rand<0.988) return 7;
 if(rand<0.995) return 8;
 if(rand<0.998) return 9;
+
 return 10;
 
 }
@@ -1263,9 +1367,7 @@ if(c1<g1)c1++;
 if(c2<g2)c2++;
 
 if(c1>=g1 && c2>=g2){
-
 clearInterval(anim);
-
 }
 
 },120);
