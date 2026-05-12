@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+<!-- GOOGLE ADSENSE -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7215076454493320"
 crossorigin="anonymous"></script>
 
@@ -175,6 +176,39 @@ font-weight:700;
 color:#9effe8;
 }
 
+/* LIVE COUNTER */
+
+.live-counter{
+position:fixed;
+bottom:15px;
+right:15px;
+background:rgba(0,0,0,.6);
+padding:12px 18px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+font-family:'Cinzel';
+font-size:.78rem;
+z-index:9999;
+}
+
+.live-dot{
+display:inline-block;
+width:10px;
+height:10px;
+background:#00ff66;
+border-radius:50%;
+margin-right:10px;
+box-shadow:0 0 12px #00ff66;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:.4;
+}
+}
+
 /* PAGE */
 
 .page{
@@ -281,35 +315,6 @@ linear-gradient(rgba(255,255,255,.08),rgba(0,0,0,.35)),
 url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop");
 }
 
-/* ABOUT + PRIVACY BUTTONS */
-
-.extra-buttons{
-display:flex;
-gap:15px;
-margin-top:35px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.extra-btn{
-padding:15px 28px;
-border:none;
-border-radius:999px;
-background:rgba(255,255,255,.1);
-color:#fff;
-font-family:'Cinzel';
-font-weight:700;
-cursor:pointer;
-transition:.3s;
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
-}
-
-.extra-btn:hover{
-transform:translateY(-4px);
-background:rgba(255,255,255,.18);
-}
-
 /* CARD */
 
 .card{
@@ -324,6 +329,7 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:25px;
 box-shadow:0 20px 70px rgba(0,0,0,.45);
+position:relative;
 }
 
 .title{
@@ -441,6 +447,11 @@ background:#ff2d2d;
 color:#fff;
 }
 
+.back{
+background:#ffffff22;
+color:#fff;
+}
+
 /* RESULT */
 
 .result-box{
@@ -479,45 +490,7 @@ letter-spacing:2px;
 font-family:'Cinzel';
 }
 
-/* BACK */
-
-.back{
-position:absolute;
-top:80px;
-right:15px;
-padding:12px 18px;
-background:rgba(255,255,255,.12);
-border-radius:999px;
-cursor:pointer;
-font-weight:700;
-}
-
-/* INFO */
-
-.info-box{
-grid-column:span 2;
-background:rgba(0,0,0,.4);
-padding:25px;
-border-radius:25px;
-line-height:1.9;
-}
-
-.info-box h3{
-font-family:'Cinzel';
-margin-bottom:15px;
-font-size:1.6rem;
-color:var(--gold);
-}
-
-.info-box ul{
-padding-left:20px;
-}
-
-.info-box li{
-margin-bottom:10px;
-}
-
-/* MATCH RESULT */
+/* MATCH */
 
 .match-result{
 grid-column:span 2;
@@ -527,11 +500,20 @@ padding-top:20px;
 }
 
 .match-score{
-font-size:5rem;
+font-size:2.3rem;
 font-family:'Bebas Neue';
-color:#fff;
-text-shadow:0 0 20px #fff;
-animation:glow 1.2s infinite;
+line-height:1.8;
+}
+
+.commentator{
+margin-top:20px;
+padding:18px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+font-family:'Cinzel';
+line-height:1.8;
+font-size:1rem;
 }
 
 /* FOOTER */
@@ -563,7 +545,6 @@ font-weight:700;
 
 .main-title{
 font-size:2.3rem;
-padding:0 10px;
 }
 
 .home-btn{
@@ -577,28 +558,12 @@ flex-direction:column;
 align-items:center;
 }
 
-.extra-buttons{
-flex-direction:column;
-align-items:center;
-width:100%;
-padding:0 20px;
-}
-
-.extra-btn{
-width:100%;
-max-width:320px;
-font-size:.9rem;
-}
-
 .card{
 grid-template-columns:1fr;
-padding:18px;
-border-radius:24px;
 }
 
 .title{
 grid-column:span 1;
-font-size:1.6rem;
 }
 
 .btns{
@@ -610,43 +575,8 @@ flex-direction:column;
 grid-column:span 1;
 }
 
-.percent{
-font-size:5.2rem;
-}
-
-.author{
-font-size:.62rem;
-padding:8px 12px;
-}
-
-.ai{
-font-size:.58rem;
-padding:8px 12px;
-}
-
-.back{
-top:72px;
-font-size:.8rem;
-padding:10px 14px;
-}
-
-.footer-thanks{
-font-size:.65rem;
-padding:10px 18px;
-margin:30px auto 18px;
-max-width:92%;
-}
-
-.info-box{
+.match-result{
 grid-column:span 1;
-}
-
-.list{
-height:220px;
-}
-
-.match-score{
-font-size:3.8rem;
 }
 
 }
@@ -671,6 +601,11 @@ Made by Mohamed Aboshanab ❤️
 
 <div class="ai">
 AI SYSTEM ACTIVE
+</div>
+
+<div class="live-counter">
+<span class="live-dot"></span>
+<span id="liveFans">127 fans online</span>
 </div>
 
 <div class="particles" id="particles"></div>
@@ -705,101 +640,23 @@ ULTIMATE FOOTBALL AWARDS EXPERIENCE
 
 </div>
 
-<div class="extra-buttons">
-
-<button class="extra-btn" onclick="showPage('about')">
-ABOUT
-</button>
-
-<button class="extra-btn" onclick="showPage('privacy')">
-PRIVACY POLICY
-</button>
-
-</div>
-
 </div>
 
 </section>
-</section>
-
+<!-- 🔥 ADSTERRA AD HERE -->
 <div style="display:flex;justify-content:center;margin:25px auto;">
-<script>
-  atOptions = {
-    'key' : '42bb06899e63d9f2518245aeff8f99b3',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
-</div>
-
-<!-- ABOUT -->
-
-<section id="about" class="page">
-
-<div class="back" onclick="showPage('home')">
-← RETURN
-</div>
-
-<div class="card">
-
-<h2 class="title gold-text">
-ABOUT FOOTBALL AWARDS AI
-</h2>
-
-<div class="info-box">
-
-<h3>WHAT THIS WEBSITE DOES</h3>
-
-<ul>
-<li>Predicts Ballon d'Or winning chances.</li>
-<li>Predicts The Best FIFA award possibilities.</li>
-<li>Compares football players achievements.</li>
-<li>Generates football match results.</li>
-<li>Includes famous clubs and trophies.</li>
-<li>Provides entertainment for football fans.</li>
-<li>Modern AI football experience.</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PRIVACY -->
-
-<section id="privacy" class="page">
-
-<div class="back" onclick="showPage('home')">
-← RETURN
-</div>
-
-<div class="card">
-
-<h2 class="title cyan-text">
-PRIVACY POLICY
-</h2>
-
-<div class="info-box">
-
-<ul>
-<li>No passwords are required.</li>
-<li>Google AdSense may use cookies.</li>
-<li>Anonymous analytics data may be collected.</li>
-<li>Your privacy is respected.</li>
-<li>Using this website means accepting this policy.</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-  <script src="https://pl29421251.profitablecpmratenetwork.com/94/b1/7d/94b17d78503956f47ba15793365534c0.js"></script>
-
+  <script>
+    atOptions = {
+      'key' : '42bb06899e63d9f2518245aeff8f99b3',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
+</div> 
+<!-- BALLON -->
 <!-- 🔥 ADSTERRA AD HERE -->
 <div style="display:flex;justify-content:center;margin:25px auto;">
   <script>
@@ -813,13 +670,7 @@ PRIVACY POLICY
   </script>
   <script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
 </div>
-<!-- BALLON -->
-
 <section id="ballon" class="page">
-
-<div class="back" onclick="showPage('home')">
-← RETURN
-</div>
 
 <div class="card">
 
@@ -858,6 +709,10 @@ CALCULATE
 RESET
 </button>
 
+<button class="btn back" onclick="showPage('home')">
+RETURN
+</button>
+
 </div>
 
 <div class="result-box" id="br">
@@ -876,13 +731,9 @@ BALLON D'OR POSSIBILITY
 
 </section>
 
-<!-- BEST -->
+<!-- THE BEST -->
 
 <section id="best" class="page">
-
-<div class="back" onclick="showPage('home')">
-← RETURN
-</div>
 
 <div class="card">
 
@@ -921,6 +772,10 @@ CALCULATE
 RESET
 </button>
 
+<button class="btn back" onclick="showPage('home')">
+RETURN
+</button>
+
 </div>
 
 <div class="result-box" id="tr">
@@ -943,29 +798,21 @@ THE BEST POSSIBILITY
 
 <section id="match" class="page">
 
-<div class="back" onclick="showPage('home')">
-← RETURN
-</div>
-
 <div class="card">
 
-<h2 class="title">
+<h2 class="title cyan-text">
 GUESS THE RESULT AI
 </h2>
 
 <div>
 
-<input type="text" id="teamSearch1" class="search" placeholder="SEARCH TEAM...">
-
-<div class="list" id="teamList1"></div>
+<input type="text" id="team1" placeholder="FIRST TEAM">
 
 </div>
 
 <div>
 
-<input type="text" id="teamSearch2" class="search" placeholder="SEARCH TEAM...">
-
-<div class="list" id="teamList2"></div>
+<input type="text" id="team2" placeholder="SECOND TEAM">
 
 </div>
 
@@ -979,16 +826,24 @@ GENERATE RESULT
 RESET
 </button>
 
+<button class="btn back" onclick="showPage('home')">
+RETURN
+</button>
+
 </div>
 
 <div class="match-result" id="matchResult">
 
 <div class="match-score" id="score">
-0 - 0
+50% - 50%
 </div>
 
 <div class="small" id="teamsText">
 TEAM VS TEAM
+</div>
+
+<div class="commentator" id="commentator">
+🔥 AI predicts an insane football match!
 </div>
 
 </div>
@@ -1010,88 +865,343 @@ TEAM VS TEAM
 const particles=document.getElementById("particles");
 
 for(let i=0;i<50;i++){
-
-const s=document.createElement("span");
-
-s.style.left=Math.random()*100+"%";
-s.style.animationDuration=(10+Math.random()*20)+"s";
-s.style.animationDelay=Math.random()*10+"s";
-
-particles.appendChild(s);
-
+    const s=document.createElement("span");
+    s.style.left=Math.random()*100+"%";
+    s.style.animationDuration=(10+Math.random()*20)+"s";
+    s.style.animationDelay=Math.random()*10+"s";
+    particles.appendChild(s);
 }
+
+/* LIVE COUNTER */
+
+let visitors=Math.floor(Math.random()*80)+120;
+
+document.getElementById("liveFans").innerHTML=
+`${visitors} fans online`;
+
+setInterval(()=>{
+
+    visitors += Math.floor(Math.random()*7)-3;
+
+    if(visitors<100) visitors=100;
+
+    document.getElementById("liveFans").innerHTML=
+    `${visitors} fans online`;
+
+},3000);
 
 /* PAGES */
 
 function showPage(id){
 
-document.querySelectorAll(".page").forEach(p=>{
-p.classList.remove("active");
-});
+    document.querySelectorAll(".page").forEach(p=>{
+        p.classList.remove("active");
+    });
 
-document.getElementById(id).classList.add("active");
+    document.getElementById(id).classList.add("active");
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
-/* TROPHIES */
+/* TROPHIES LIST */
 
 const trophies=[
-
-"FIFA World Cup",
 "UEFA Champions League",
+"UEFA Europa League",
+"UEFA Conference League",
+"UEFA Super Cup",
 "Premier League",
-"La Liga",
-"Serie A",
-"Bundesliga",
-"Ligue 1",
-"UEFA Euro",
-"Copa América",
-"CAF Champions League",
-"Egyptian Premier League",
-"Egypt Cup",
-"Saudi Pro League",
-"MLS",
-"Club World Cup",
-"Europa League",
-"Conference League",
 "FA Cup",
 "Carabao Cup",
-"DFB Pokal",
-"Coppa Italia",
+"Community Shield",
+"EFL Championship",
+"League One",
+"League Two",
+"National League",
+"La Liga",
+"Copa del Rey",
 "Supercopa de España",
-"CAF Super Cup",
-"AFC Champions League",
-"Copa Libertadores",
-"Brazil Serie A",
-"Turkish Super Lig",
-"Belgian Pro League",
+"Segunda División",
+"Serie A",
+"Coppa Italia",
+"Supercoppa Italiana",
+"Serie B",
+"Bundesliga",
+"DFB Pokal",
+"DFL Supercup",
+"2. Bundesliga",
+"Ligue 1",
+"Coupe de France",
+"Trophée des Champions",
+"Ligue 2",
 "Eredivisie",
+"KNVB Cup",
+"Johan Cruyff Shield",
+"Eerste Divisie",
 "Primeira Liga",
+"Taça de Portugal",
+"Supertaça Cândido de Oliveira",
+"Liga Portugal 2",
+"Belgian Pro League",
+"Belgian Cup",
+"Belgian Super Cup",
+"Swiss Super League",
+"Swiss Cup",
+"Austrian Bundesliga",
+"Austrian Cup",
 "Scottish Premiership",
-"UAE Pro League",
-"Qatar Stars League",
-"K League",
-"J1 League",
+"Scottish Cup",
+"Scottish League Cup",
+"Scottish Championship",
+"Turkish Super Lig",
+"Turkish Cup",
+"Turkish Super Cup",
 "Greek Super League",
-"Swiss League",
+"Greek Cup",
 "Danish Superliga",
-"Norwegian League",
-"Swedish League",
-"Argentine League",
-"Mexican League",
-"Algerian League",
-"Tunisian League",
-"Moroccan League",
-"Sudanese League",
-"Libyan League",
-"African Football League",
-"Arab Club Champions Cup"
-
+"Danish Cup",
+"Norwegian Eliteserien",
+"Norwegian Cup",
+"Swedish Allsvenskan",
+"Swedish Cup",
+"Finnish Veikkausliiga",
+"Finnish Cup",
+"Polish Ekstraklasa",
+"Polish Cup",
+"Czech First League",
+"Czech Cup",
+"Croatian First Football League",
+"Croatian Cup",
+"Serbian SuperLiga",
+"Serbian Cup",
+"Romanian Liga I",
+"Romanian Cup",
+"Hungarian NB I",
+"Hungarian Cup",
+"Slovak Super Liga",
+"Slovak Cup",
+"Slovenian PrvaLiga",
+"Slovenian Cup",
+"Bulgarian First League",
+"Bulgarian Cup",
+"Ukrainian Premier League",
+"Ukrainian Cup",
+"Russian Premier League",
+"Russian Cup",
+"Belarusian Premier League",
+"Belarusian Cup",
+"Irish Premier Division",
+"FAI Cup",
+"Northern Ireland Premiership",
+"Irish League Cup",
+"Welsh Premier League",
+"Welsh Cup",
+"Icelandic Premier Division",
+"Icelandic Cup",
+"Estonian Meistriliiga",
+"Estonian Cup",
+"Latvian Higher League",
+"Latvian Cup",
+"Lithuanian A Lyga",
+"Lithuanian Cup",
+"Luxembourg National Division",
+"Luxembourg Cup",
+"Maltese Premier League",
+"Maltese FA Trophy",
+"Cypriot First Division",
+"Cypriot Cup",
+"Bosnian Premier League",
+"Bosnian Cup",
+"Montenegrin First League",
+"Montenegrin Cup",
+"North Macedonian First League",
+"Macedonian Cup",
+"Albanian Superliga",
+"Albanian Cup",
+"Kosovo Superleague",
+"Kosovo Cup",
+"Armenian Premier League",
+"Armenian Cup",
+"Georgian Erovnuli Liga",
+"Georgian Cup",
+"Azerbaijan Premier League",
+"Azerbaijan Cup",
+"Kazakhstan Premier League",
+"Kazakhstan Cup",
+"Andorran Primera Divisió",
+"Andorran Cup",
+"San Marino Campionato",
+"San Marino Cup",
+"Gibraltar National League",
+"Gibraltar Cup",
+"Faroe Islands Premier League",
+"Faroe Cup",
+"Moldovan Super Liga",
+"Moldovan Cup",
+"UEFA Youth League",
+"Premier League 2",
+"FA Youth Cup",
+"UEFA Regions' Cup",
+"Women's Champions League",
+"Women's Super League",
+"Women's FA Cup",
+"Frauen-Bundesliga",
+"Division 1 Féminine",
+"Liga F",
+"Women's Serie A",
+"UEFA Nations League",
+"UEFA European Under-21 Championship",
+"UEFA European Under-19 Championship",
+"UEFA European Under-17 Championship",
+"UEFA Futsal Champions League",
+"UEFA Futsal Euro",
+"UEFA Women's Euro",
+"UEFA Women's Nations League",
+"Coppa della Alpi",
+"Intertoto Cup",
+"Cup Winners' Cup",
+"Anglo-Italian Cup",
+"Mitropa Cup",
+"Baltic Cup",
+"Atlantic Cup",
+"Emirates Cup",
+"Audi Cup",
+"Joan Gamper Trophy",
+"Florida Cup",
+"International Champions Cup",
+"Amsterdam Tournament",
+"Telekom Cup",
+"Dubai Super Cup",
+"Algarve Cup",
+"Cyprus Cup",
+"Friendly International Cup",
+"Premier Sports Cup",
+"EFL Trophy",
+"FA Vase",
+"FA Trophy",
+"Scottish Challenge Cup",
+"Toto Cup",
+"Russian Super Cup",
+"French League Cup",
+"Coppa delle Alpi",
+"Latvia Super Cup",
+"Estonia Super Cup",
+"Lithuania Super Cup",
+"Belgium Second Division",
+"Portugal League Cup",
+"Spain Segunda B",
+"Italy Serie C",
+"Italy Serie D",
+"Germany 3. Liga",
+"France National",
+"Netherlands Tweede Divisie",
+"Turkey First League",
+"Greece Super League 2",
+"Poland Super Cup",
+"Czech Super Cup",
+"Romanian Super Cup",
+"Hungarian Super Cup",
+"Bulgarian Super Cup",
+"Croatian Super Cup",
+"Serbian Super Cup",
+"Slovak Super Cup",
+"Slovenian Super Cup",
+"Finnish League Cup",
+"Norwegian Super Cup",
+"Swedish Super Cup",
+"Danish Super Cup",
+"Austrian Super Cup",
+"Swiss Challenge League",
+"Belgian Challenger Pro League",
+"Scottish League One",
+"Scottish League Two",
+"Irish First Division",
+"Welsh League Cup",
+"Cypriot Super Cup",
+"Maltese Super Cup",
+"Bosnian Super Cup",
+"Albanian Super Cup",
+"Kosovo Super Cup",
+"Armenian Super Cup",
+"Georgian Super Cup",
+"Kazakhstan Super Cup",
+"Russian National Football League",
+"Ukrainian First League",
+"Belarusian Super Cup",
+"Faroe Islands Super Cup",
+"Gibraltar Super Cup",
+"Andorra Super Cup",
+"San Marino Super Cup",
+"Luxembourg Super Cup",
+"Montenegro Second League",
+"North Macedonia Second League",
+"Slovenia Second League",
+"Croatia Second League",
+"Romania Liga II",
+"Hungary NB II",
+"Poland I Liga",
+"Czech National Football League",
+"Serbia First League",
+"Bosnia First League",
+"Albania First Division",
+"Kosovo First League",
+"Georgia Erovnuli Liga 2",
+"Armenia First League",
+"Azerbaijan First Division",
+"Kazakhstan First Division",
+"Latvian First League",
+"Estonian Esiliiga",
+"Lithuanian I Lyga",
+"Finnish Ykkönen",
+"Swedish Superettan",
+"Danish 1st Division",
+"Norwegian First Division",
+"Icelandic 1. Deild",
+"Faroe Islands 1. Deild",
+"Welsh Cymru North",
+"Welsh Cymru South",
+"NIFL Championship",
+"League of Ireland First Division",
+"National League North",
+"National League South",
+"English Premier Cup",
+"English Youth Alliance",
+"French Coupe de la Ligue",
+"Italian Primavera League",
+"German Regionalliga",
+"Spanish Primera Federación",
+"Portuguese Campeonato",
+"Dutch KNVB Reserve Cup",
+"Belgian Reserve League",
+"Swiss Promotion League",
+"Austrian 2. Liga",
+"Turkish TFF Second League",
+"Greek Gamma Ethniki",
+"Bulgarian Second League",
+"Romanian Liga III",
+"Serbian Prva Liga",
+"Croatian Third League",
+"Slovenian Third League",
+"Slovak Second League",
+"Polish II Liga",
+"Czech Third League",
+"Hungarian NB III",
+"UEFA Intertoto Cup",
+"UEFA Charity Shield",
+"European Champion Clubs' Cup",
+"European Rail Cup",
+"Mediterranean Cup",
+"Balkan Cup",
+"Central European Cup",
+"Danube Cup",
+"Alpine Cup",
+"European Masters Cup",
+"UEFA Elite League",
+"UEFA Friendship Cup"
 ];
 
 let bSel=new Set();
@@ -1099,331 +1209,266 @@ let tSel=new Set();
 
 function render(type,search=""){
 
-const list=document.getElementById(type+"list");
+    const list=document.getElementById(type+"list");
 
-list.innerHTML="";
+    list.innerHTML="";
 
-trophies
-.filter(t=>t.toLowerCase().includes(search.toLowerCase()))
-.forEach(t=>{
+    trophies
+    .filter(t=>t.toLowerCase().includes(search.toLowerCase()))
+    .forEach(t=>{
 
-const div=document.createElement("div");
+        const div=document.createElement("div");
 
-div.className="item";
+        div.className="item";
 
-div.innerHTML=`
-<input type="checkbox">
-<span>${t}</span>
-`;
+        div.innerHTML=`
+        <input type="checkbox">
+        <span>${t}</span>
+        `;
 
-div.onclick=()=>{
+        div.onclick=()=>{
 
-const box=div.querySelector("input");
+            const box=div.querySelector("input");
 
-box.checked=!box.checked;
+            box.checked=!box.checked;
 
-if(type==="b"){
-box.checked ? bSel.add(t) : bSel.delete(t);
-}else{
-box.checked ? tSel.add(t) : tSel.delete(t);
-}
+            if(type==="b"){
 
-};
+                box.checked ? bSel.add(t) : bSel.delete(t);
 
-list.appendChild(div);
+            }else{
 
-});
+                box.checked ? tSel.add(t) : tSel.delete(t);
+
+            }
+
+        };
+
+        list.appendChild(div);
+
+    });
 
 }
 
 render("b");
 render("t");
 
-document.getElementById("bs").oninput=e=>{
-render("b",e.target.value);
-};
+document.getElementById("bs").oninput=
+e=>render("b",e.target.value);
 
-document.getElementById("ts").oninput=e=>{
-render("t",e.target.value);
-};
+document.getElementById("ts").oninput=
+e=>render("t",e.target.value);
 
-/* PREDICT */
+/* ANIMATION */
 
 function animate(el,end){
 
-let start=0;
+    let start=0;
 
-const interval=setInterval(()=>{
+    const interval=setInterval(()=>{
 
-start++;
+        start++;
 
-el.innerHTML=start+"%";
+        el.innerHTML=start+"%";
 
-if(start>=end){
-clearInterval(interval);
+        if(start>=end){
+
+            clearInterval(interval);
+
+        }
+
+    },20);
+
 }
 
-},20);
-
-}
+/* PREDICT */
 
 function predict(type){
 
-const g=parseInt(document.getElementById(type+"g").value)||0;
-const a=parseInt(document.getElementById(type+"a").value)||0;
-const m=parseInt(document.getElementById(type+"m").value)||0;
+    const g=parseInt(
+    document.getElementById(type+"g").value
+    )||0;
 
-const trophiesCount=type==="b"
-? bSel.size
-: tSel.size;
+    const a=parseInt(
+    document.getElementById(type+"a").value
+    )||0;
 
-let score=0;
+    const m=parseInt(
+    document.getElementById(type+"m").value
+    )||0;
 
-score += trophiesCount*2.2;
-score += g*0.08;
-score += a*0.05;
-score += m*1.2;
+    const trophiesCount =
+    type==="b" ? bSel.size : tSel.size;
 
-if(score<3 && trophiesCount>0){
-score=3;
+    let score =
+    (trophiesCount*2.2) +
+    (g*0.08) +
+    (a*0.05) +
+    (m*1.2);
+
+    if(score>99) score=99;
+
+    document.getElementById(type+"r").style.display="block";
+
+    animate(
+    document.getElementById(type+"f"),
+    Math.round(score)
+    );
+
 }
 
-if(score>99){
-score=99;
-}
-
-const result=document.getElementById(type+"r");
-const num=document.getElementById(type+"f");
-
-result.style.display="block";
-
-animate(num,Math.round(score));
-
-}
+/* RESET */
 
 function resetPage(type){
 
-document.getElementById(type+"g").value="";
-document.getElementById(type+"a").value="";
-document.getElementById(type+"m").value="";
+    document.getElementById(type+"g").value="";
+    document.getElementById(type+"a").value="";
+    document.getElementById(type+"m").value="";
 
-document.getElementById(type+"r").style.display="none";
+    document.getElementById(type+"r").style.display="none";
 
-if(type==="b"){
-bSel.clear();
-render("b");
-}else{
-tSel.clear();
-render("t");
-}
+    if(type==="b"){
 
-}
+        bSel.clear();
+        render("b");
 
-/* TEAMS */
+    }else{
 
-const teams=[
+        tSel.clear();
+        render("t");
 
-"Real Madrid",
-"Barcelona",
-"Atlético Madrid",
-"Manchester City",
-"Liverpool",
-"Arsenal",
-"Chelsea",
-"Manchester United",
-"Tottenham Hotspur",
-"Newcastle United",
-"Bayern Munich",
-"Borussia Dortmund",
-"RB Leipzig",
-"Bayer Leverkusen",
-"Juventus",
-"Inter Milan",
-"AC Milan",
-"Napoli",
-"Roma",
-"Lazio",
-"Paris Saint-Germain",
-"Marseille",
-"Monaco",
-"Lyon",
-"Benfica",
-"Porto",
-"Sporting CP",
-"Ajax",
-"PSV Eindhoven",
-"Feyenoord",
-"Galatasaray",
-"Fenerbahçe",
-"Al Ahly",
-"Zamalek",
-"Pyramids FC",
-"RS Berkane",
-"Wydad AC",
-"Raja Casablanca",
-"FAR Rabat",
-"Espérance de Tunis",
-"Étoile du Sahel",
-"CS Sfaxien",
-"Mamelodi Sundowns",
-"Kaizer Chiefs",
-"Orlando Pirates",
-"TP Mazembe",
-"AS Vita Club",
-"Simba SC",
-"Young Africans",
-"Gor Mahia",
-"ASEC Mimosas",
-"Enyimba",
-"Al Hilal SFC",
-"Al Nassr",
-"Al Ittihad",
-"Al Ahli",
-"Al Sadd",
-
-"Al Masry",
-"Future FC",
-"Ceramica Cleopatra",
-"Smouha",
-"ENPPI",
-"National Bank FC",
-"Pharco FC",
-"Petrojet",
-"Haras El Hodood",
-"Ismaily"
-
-];
-
-let team1="";
-let team2="";
-
-function renderTeams(id,search=""){
-
-const list=document.getElementById(id);
-
-list.innerHTML="";
-
-teams
-.filter(t=>t.toLowerCase().includes(search.toLowerCase()))
-.forEach(team=>{
-
-const div=document.createElement("div");
-
-div.className="item";
-
-div.innerHTML=`<span>${team}</span>`;
-
-div.onclick=()=>{
-
-if(id==="teamList1"){
-team1=team;
-document.getElementById("teamSearch1").value=team;
-}else{
-team2=team;
-document.getElementById("teamSearch2").value=team;
-}
-
-};
-
-list.appendChild(div);
-
-});
+    }
 
 }
 
-renderTeams("teamList1");
-renderTeams("teamList2");
-
-document.getElementById("teamSearch1").oninput=e=>{
-renderTeams("teamList1",e.target.value);
-};
-
-document.getElementById("teamSearch2").oninput=e=>{
-renderTeams("teamList2",e.target.value);
-};
-
-/* MATCH RESULT */
-
-function weightedGoal(){
-
-const rand=Math.random();
-
-if(rand<0.25) return 0;
-if(rand<0.50) return 1;
-if(rand<0.68) return 2;
-if(rand<0.82) return 3;
-if(rand<0.90) return 4;
-if(rand<0.95) return 5;
-if(rand<0.975) return 6;
-if(rand<0.988) return 7;
-if(rand<0.995) return 8;
-if(rand<0.998) return 9;
-
-return 10;
-
-}
+/* MATCH AI */
 
 function generateMatch(){
 
-if(!team1 || !team2){
+    const team1 =
+    document.getElementById("team1").value.trim();
 
-alert("SELECT TWO TEAMS");
+    const team2 =
+    document.getElementById("team2").value.trim();
 
-return;
+    if(team1==="" || team2===""){
+
+        alert("Please enter both teams");
+
+        return;
+
+    }
+
+    document.getElementById("matchResult").style.display="block";
+
+    let team1Chance =
+    Math.floor(Math.random()*60)+20;
+
+    let drawChance =
+    Math.floor(Math.random()*25)+5;
+
+    let team2Chance =
+    100-(team1Chance+drawChance);
+
+    if(team2Chance<5){
+
+        team2Chance=5;
+
+        team1Chance=
+        100-drawChance-team2Chance;
+
+    }
+
+    let c1=0;
+    let c2=0;
+    let cd=0;
+
+    const scoreBox=
+    document.getElementById("score");
+
+    const anim=setInterval(()=>{
+
+        if(c1<team1Chance) c1++;
+        if(c2<team2Chance) c2++;
+        if(cd<drawChance) cd++;
+
+        scoreBox.innerHTML=`
+
+        ${team1}: ${c1}%<br>
+        ${team2}: ${c2}%<br>
+        Draw: ${cd}%
+
+        `;
+
+        if(
+        c1>=team1Chance &&
+        c2>=team2Chance &&
+        cd>=drawChance
+        ){
+
+            clearInterval(anim);
+
+            let msg="";
+
+            if(
+            team1Chance>team2Chance &&
+            team1Chance>drawChance
+            ){
+
+                msg=
+                `🔥 AI predicts a dramatic ${team1} victory!`;
+
+            }
+
+            else if(
+            team2Chance>team1Chance &&
+            team2Chance>drawChance
+            ){
+
+                msg=
+                `⚽ ${team2} shocked everyone with this win!`;
+
+            }
+
+            else{
+
+                msg=
+                `🤝 AI predicts a dramatic draw between ${team1} and ${team2}!`;
+
+            }
+
+            document.getElementById("commentator").innerHTML=msg;
+
+        }
+
+    },20);
+
+    document.getElementById("teamsText").innerHTML=
+    `${team1} VS ${team2}`;
 
 }
 
-const g1=weightedGoal();
-const g2=weightedGoal();
-
-document.getElementById("matchResult").style.display="block";
-
-document.getElementById("teamsText").innerHTML=`
-${team1} VS ${team2}
-`;
-
-const score=document.getElementById("score");
-
-let c1=0;
-let c2=0;
-
-const anim=setInterval(()=>{
-
-score.innerHTML=`${c1} - ${c2}`;
-
-if(c1<g1)c1++;
-if(c2<g2)c2++;
-
-if(c1>=g1 && c2>=g2){
-clearInterval(anim);
-}
-
-},120);
-
-}
+/* RESET MATCH */
 
 function resetMatch(){
 
-team1="";
-team2="";
+    document.getElementById("team1").value="";
+    document.getElementById("team2").value="";
 
-document.getElementById("teamSearch1").value="";
-document.getElementById("teamSearch2").value="";
+    document.getElementById("matchResult").style.display="none";
 
-document.getElementById("matchResult").style.display="none";
+    document.getElementById("score").innerHTML=
+    "50% - 50%";
 
-renderTeams("teamList1");
-renderTeams("teamList2");
+    document.getElementById("teamsText").innerHTML=
+    "TEAM VS TEAM";
+
+    document.getElementById("commentator").innerHTML=
+    "🔥 AI predicts an insane football match!";
 
 }
 
 </script>
-</script>
 
-<!-- SOCIAL BAR AD -->
-<script src="https://pl29421251.profitablecpmratenetwork.com/94/b1/7d/94b17d78503956f47ba15793365534c0.js"></script>
-
-</body>
-</html>
 </body>
 </html>
