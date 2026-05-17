@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<!-- saved from url=(0059)file:///C:/Users/mohammed/Downloads/football-awards-ai.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- GOOGLE ADSENSE -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7215076454493320"
-crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#000000">
+<title>Football Awards AI Ultimate</title>
 <!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L56NXTTZ66"></script>
 <script>
@@ -14,1477 +14,2054 @@ gtag('js', new Date());
 
 gtag('config', 'G-L56NXTTZ66');
 </script>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<meta name="theme-color" content="#000000"/>
-
-<title>Football Awards AI Ultimate</title>
-<title>Football Awards AI Ultimate</title>
-
-<meta name="description" content="Football Awards AI Ultimate Football Awards Experience. Guess the winner and explore football trophies.">
-
-<link rel="icon" type="image/png" href="logo.png">
-
-<meta property="og:title" content="Football Awards AI Ultimate">
-<meta property="og:description" content="Ultimate football awards experience">
-<meta property="og:image" content="https://fifahawymohamed-cyber.github.io/football-awards-ai-calculator/logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-
+<link href="./Football Awards AI Ultimate_files/css2" rel="stylesheet">
 <style>
-
-:root{
---gold:#d4af37;
---cyan:#00e5ff;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html,body{
-width:100%;
-overflow-x:hidden;
-font-family:'Inter',sans-serif;
-background:#000;
-color:#fff;
-scroll-behavior:smooth;
-}
-
-body{
-background:
-linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.82)),
-url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1600&auto=format&fit=crop");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-min-height:100vh;
-}
+:root{--gold:#d4af37;--cyan:#00e5ff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;overflow-x:hidden;font-family:'Inter',sans-serif;background:#000;color:#fff;scroll-behavior:smooth;}
+body{background:linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.82)),url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1600&auto=format&fit=crop");background-size:cover;background-position:center;background-attachment:fixed;min-height:100vh;}
 
 /* LOADING */
+#loading-screen{position:fixed;inset:0;background:#000;display:flex;justify-content:center;align-items:center;flex-direction:column;z-index:999999;}
+.loader{width:85px;height:85px;border-radius:50%;border:6px solid rgba(255,255,255,.15);border-top:6px solid var(--gold);border-right:6px solid var(--cyan);animation:spin .8s linear infinite;margin-bottom:25px;}
+.loading-text{font-family:'Cinzel';font-size:1rem;letter-spacing:3px;animation:pulse 1s infinite;text-align:center;padding:0 20px;}
+@keyframes spin{100%{transform:rotate(360deg);}}
+@keyframes pulse{50%{opacity:.4;}}
 
-#loading-screen{
-position:fixed;
-inset:0;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:999999;
-animation:hideLoading .8s ease 2s forwards;
-}
-
-.loader{
-width:85px;
-height:85px;
-border-radius:50%;
-border:6px solid rgba(255,255,255,.15);
-border-top:6px solid var(--gold);
-border-right:6px solid var(--cyan);
-animation:spin .8s linear infinite;
-margin-bottom:25px;
-}
-
-.loading-text{
-font-family:'Cinzel';
-font-size:1rem;
-letter-spacing:3px;
-animation:pulse 1s infinite;
-text-align:center;
-padding:0 20px;
-}
-
-@keyframes spin{
-100%{
-transform:rotate(360deg);
-}
-}
-
-@keyframes pulse{
-50%{
-opacity:.4;
-}
-}
-
-@keyframes hideLoading{
-to{
-opacity:0;
-visibility:hidden;
-}
-}
+/* NAME SCREEN */
+#name-screen{position:fixed;inset:0;background:rgba(0,0,0,.97);display:none;justify-content:center;align-items:center;flex-direction:column;z-index:99999;backdrop-filter:blur(20px);}
+.name-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:50px 40px;text-align:center;max-width:460px;width:90%;}
+.name-title{font-family:'Cinzel';font-size:1.8rem;background:linear-gradient(90deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;}
+.name-sub{opacity:.6;font-size:.9rem;letter-spacing:2px;margin-bottom:35px;}
+.name-input{width:100%;padding:18px 20px;border:2px solid rgba(255,255,255,.15);outline:none;border-radius:16px;background:rgba(0,0,0,.5);color:#fff;font-size:1.1rem;font-family:'Cinzel';text-align:center;letter-spacing:2px;margin-bottom:20px;transition:.3s;}
+.name-input:focus{border-color:var(--cyan);}
+.name-btn{width:100%;padding:18px;border:none;border-radius:16px;font-family:'Cinzel';font-weight:900;font-size:1.1rem;cursor:pointer;background:linear-gradient(90deg,var(--gold),var(--cyan));color:#000;transition:.3s;}
+.name-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,229,255,.3);}
+.ball-icon{font-size:4rem;margin-bottom:20px;}
 
 /* PARTICLES */
-
-.particles{
-position:fixed;
-inset:0;
-z-index:-1;
-overflow:hidden;
-}
-
-.particles span{
-position:absolute;
-width:3px;
-height:3px;
-background:#fff;
-border-radius:50%;
-opacity:.18;
-animation:move linear infinite;
-}
-
-@keyframes move{
-from{
-transform:translateY(100vh);
-}
-to{
-transform:translateY(-120vh);
-}
-}
+.particles{position:fixed;inset:0;z-index:-1;overflow:hidden;}
+.particles span{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.18;animation:move linear infinite;}
+@keyframes move{from{transform:translateY(100vh);}to{transform:translateY(-120vh);}}
 
 /* TOP BAR */
+.topbar{position:fixed;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold),var(--cyan),var(--gold));background-size:300%;animation:bar 8s linear infinite;z-index:9999;}
+@keyframes bar{100%{background-position:300%;}}
 
-.topbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:linear-gradient(90deg,var(--gold),var(--cyan),var(--gold));
-background-size:300%;
-animation:bar 8s linear infinite;
-z-index:9999;
-}
+.author{position:fixed;top:12px;left:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.1);font-size:.78rem;z-index:999;font-weight:700;}
+.ai{position:fixed;top:12px;right:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.1);font-size:.72rem;z-index:999;font-weight:700;color:#9effe8;}
 
-@keyframes bar{
-100%{
-background-position:300%;
-}
-}
-
-.author{
-position:fixed;
-top:12px;
-left:12px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(10px);
-padding:10px 18px;
-border-radius:999px;
-border:1px solid rgba(255,255,255,.1);
-font-size:.78rem;
-z-index:999;
-font-weight:700;
-}
-
-.ai{
-position:fixed;
-top:12px;
-right:12px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(10px);
-padding:10px 18px;
-border-radius:999px;
-border:1px solid rgba(255,255,255,.1);
-font-size:.72rem;
-z-index:999;
-font-weight:700;
-color:#9effe8;
-}
+/* PLAYER TAG */
+.player-tag{position:fixed;top:55px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);backdrop-filter:blur(10px);padding:8px 22px;border-radius:999px;border:1px solid rgba(212,175,55,.4);font-family:'Cinzel';font-size:.8rem;z-index:999;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;}
+.player-tag .nickname{color:var(--gold);}
 
 /* LIVE COUNTER */
+.live-counter{position:fixed;bottom:15px;right:15px;background:rgba(0,0,0,.6);padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);font-family:'Cinzel';font-size:.78rem;z-index:9999;}
+.live-dot{display:inline-block;width:10px;height:10px;background:#00ff66;border-radius:50%;margin-right:10px;box-shadow:0 0 12px #00ff66;animation:blink 1s infinite;}
+@keyframes blink{50%{opacity:.4;}}
 
-.live-counter{
-position:fixed;
-bottom:15px;
-right:15px;
-background:rgba(0,0,0,.6);
-padding:12px 18px;
-border-radius:999px;
-border:1px solid rgba(255,255,255,.12);
-backdrop-filter:blur(10px);
-font-family:'Cinzel';
-font-size:.78rem;
-z-index:9999;
-}
-
-.live-dot{
-display:inline-block;
-width:10px;
-height:10px;
-background:#00ff66;
-border-radius:50%;
-margin-right:10px;
-box-shadow:0 0 12px #00ff66;
-animation:blink 1s infinite;
-}
-
-@keyframes blink{
-50%{
-opacity:.4;
-}
-}
+/* ACHIEVEMENT NOTIFICATION */
+.ach-notif{position:fixed;bottom:70px;left:50%;transform:translateX(-50%) translateY(200px);background:linear-gradient(135deg,rgba(212,175,55,.95),rgba(0,229,255,.95));color:#000;padding:16px 30px;border-radius:20px;font-family:'Cinzel';font-size:.85rem;font-weight:700;z-index:99999;transition:.5s;text-align:center;min-width:280px;}
+.ach-notif.show{transform:translateX(-50%) translateY(0);}
 
 /* PAGE */
-
-.page{
-display:none;
-min-height:100vh;
-padding:100px 14px 40px;
-justify-content:center;
-align-items:center;
-}
-
-.active{
-display:flex;
-}
+.page{display:none;min-height:100vh;padding:120px 14px 40px;justify-content:center;align-items:flex-start;}
+.active{display:flex;}
 
 /* HOME */
-
-.home-wrap{
-width:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-}
-
-.main-title{
-font-family:'Cinzel';
-font-size:4rem;
-text-align:center;
-background:linear-gradient(90deg,#fff,var(--gold),var(--cyan));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:18px;
-}
-
-.sub{
-opacity:.8;
-letter-spacing:3px;
-margin-bottom:35px;
-text-align:center;
-padding:0 10px;
-}
-
-.home-buttons{
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-justify-content:center;
-width:100%;
-}
-
-.home-btn{
-width:300px;
-height:390px;
-border-radius:28px;
-overflow:hidden;
-position:relative;
-display:flex;
-align-items:flex-end;
-justify-content:center;
-padding:25px;
-cursor:pointer;
-transition:.4s;
-border:2px solid rgba(255,255,255,.15);
-background-size:cover;
-background-position:center;
-box-shadow:0 10px 45px rgba(0,0,0,.45);
-}
-
-.home-btn::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to top,rgba(0,0,0,.95),transparent);
-}
-
-.home-btn span{
-position:relative;
-z-index:2;
-font-family:'Cinzel';
-font-size:1.7rem;
-font-weight:900;
-text-align:center;
-}
-
-.home-btn:hover{
-transform:translateY(-10px) scale(1.03);
-}
-
-.gold{
-background-image:
-linear-gradient(rgba(212,175,55,.15),rgba(0,0,0,.3)),
-url("https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1200&auto=format&fit=crop");
-}
-
-.best{
-background-image:
-linear-gradient(rgba(0,229,255,.12),rgba(0,0,0,.3)),
-url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop");
-}
-
-.result{
-background-image:
-linear-gradient(rgba(255,255,255,.08),rgba(0,0,0,.35)),
-url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop");
-}
+.home-wrap{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.main-title{font-family:'Cinzel';font-size:4rem;text-align:center;background:linear-gradient(90deg,#fff,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px;}
+.sub{opacity:.8;letter-spacing:3px;margin-bottom:35px;text-align:center;padding:0 10px;}
+.home-buttons{display:flex;gap:25px;flex-wrap:wrap;justify-content:center;width:100%;}
+.home-btn{width:280px;height:350px;border-radius:28px;overflow:hidden;position:relative;display:flex;align-items:flex-end;justify-content:center;padding:25px;cursor:pointer;transition:.4s;border:2px solid rgba(255,255,255,.15);background-size:cover;background-position:center;box-shadow:0 10px 45px rgba(0,0,0,.45);}
+.home-btn::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.95),transparent);}
+.home-btn span{position:relative;z-index:2;font-family:'Cinzel';font-size:1.5rem;font-weight:900;text-align:center;}
+.home-btn:hover{transform:translateY(-10px) scale(1.03);}
+.gold{background-image:linear-gradient(rgba(212,175,55,.15),rgba(0,0,0,.3)),url("https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1200&auto=format&fit=crop");}
+.best{background-image:linear-gradient(rgba(0,229,255,.12),rgba(0,0,0,.3)),url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop");}
+.result{background-image:linear-gradient(rgba(255,255,255,.08),rgba(0,0,0,.35)),url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop");}
+.ach-btn-home{background-image:linear-gradient(rgba(212,175,55,.3),rgba(0,0,0,.5)),url("https://images.unsplash.com/photo-1551958219-acbc55a03d5e?q=80&w=1200&auto=format&fit=crop");}
 
 /* CARD */
+.card{width:100%;max-width:1100px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:25px;box-shadow:0 20px 70px rgba(0,0,0,.45);position:relative;}
+.title{grid-column:span 2;text-align:center;font-family:'Cinzel';font-size:2.2rem;margin-bottom:5px;}
+.gold-text{color:var(--gold);}
+.cyan-text{color:var(--cyan);}
+input[type="number"],input[type="text"]{width:100%;padding:15px;border:none;outline:none;border-radius:14px;margin-bottom:14px;background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.12);font-size:1rem;}
+input:focus{border-color:var(--cyan);}
+label{font-size:.72rem;opacity:.7;display:block;margin-bottom:7px;letter-spacing:2px;}
+.search{margin-bottom:10px;}
+.list{height:260px;overflow-y:auto;padding:8px;background:rgba(0,0,0,.35);border-radius:18px;}
+.item{padding:10px 12px;border-radius:12px;margin-bottom:6px;background:rgba(255,255,255,.03);display:flex;align-items:center;gap:10px;cursor:pointer;transition:.2s;font-size:.88rem;}
+.item:hover{background:rgba(255,255,255,.09);transform:translateX(4px);}
+.item input{width:auto;margin:0;}
+.btns{grid-column:span 2;display:flex;gap:15px;}
+.btn{flex:1;padding:18px;border:none;border-radius:16px;font-family:'Cinzel';font-weight:900;font-size:1rem;cursor:pointer;transition:.3s;}
+.btn:hover{transform:translateY(-4px);}
+.predict-gold{background:var(--gold);color:#000;}
+.predict-cyan{background:var(--cyan);color:#000;}
+.reset{background:#ff2d2d;color:#fff;}
+.back{background:#ffffff22;color:#fff;}
+.result-box{grid-column:span 2;text-align:center;display:none;padding-top:15px;}
+.percent{font-family:'Bebas Neue';font-size:8rem;line-height:1;animation:glow 1.5s infinite;}
+.gold-per{color:var(--gold);text-shadow:0 0 25px var(--gold);}
+.cyan-per{color:var(--cyan);text-shadow:0 0 25px var(--cyan);}
+@keyframes glow{50%{transform:scale(1.05);}}
+.small{opacity:.8;letter-spacing:2px;font-family:'Cinzel';}
+.match-result{grid-column:span 2;text-align:center;display:none;padding-top:20px;}
+.match-score{font-size:2.3rem;font-family:'Bebas Neue';line-height:1.8;}
+.commentator{margin-top:20px;padding:18px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-family:'Cinzel';line-height:1.8;font-size:1rem;}
 
-.card{
-width:100%;
-max-width:1100px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,.12);
-border-radius:30px;
-padding:25px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-box-shadow:0 20px 70px rgba(0,0,0,.45);
-position:relative;
-}
-
-.title{
-grid-column:span 2;
-text-align:center;
-font-family:'Cinzel';
-font-size:2.2rem;
-margin-bottom:5px;
-}
-
-.gold-text{
-color:var(--gold);
-}
-
-.cyan-text{
-color:var(--cyan);
-}
-
-input{
-width:100%;
-padding:15px;
-border:none;
-outline:none;
-border-radius:14px;
-margin-bottom:14px;
-background:rgba(0,0,0,.45);
-color:#fff;
-border:1px solid rgba(255,255,255,.12);
-font-size:1rem;
-}
-
-input:focus{
-border-color:var(--cyan);
-}
-
-label{
-font-size:.72rem;
-opacity:.7;
-display:block;
-margin-bottom:7px;
-letter-spacing:2px;
-}
-
-.search{
-margin-bottom:10px;
-}
-
-.list{
-height:260px;
-overflow-y:auto;
-padding:8px;
-background:rgba(0,0,0,.35);
-border-radius:18px;
-}
-
-.item{
-padding:10px 12px;
-border-radius:12px;
-margin-bottom:6px;
-background:rgba(255,255,255,.03);
-display:flex;
-align-items:center;
-gap:10px;
-cursor:pointer;
-transition:.2s;
-font-size:.88rem;
-}
-
-.item:hover{
-background:rgba(255,255,255,.09);
-transform:translateX(4px);
-}
-
-.item input{
-width:auto;
-margin:0;
-}
-
-/* BUTTONS */
-
-.btns{
-grid-column:span 2;
-display:flex;
-gap:15px;
-}
-
-.btn{
-flex:1;
-padding:18px;
-border:none;
-border-radius:16px;
-font-family:'Cinzel';
-font-weight:900;
-font-size:1rem;
-cursor:pointer;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-.predict-gold{
-background:var(--gold);
-color:#000;
-}
-
-.predict-cyan{
-background:var(--cyan);
-color:#000;
-}
-
-.reset{
-background:#ff2d2d;
-color:#fff;
-}
-
-.back{
-background:#ffffff22;
-color:#fff;
-}
-
-/* RESULT */
-
-.result-box{
-grid-column:span 2;
-text-align:center;
-display:none;
-padding-top:15px;
-}
-
-.percent{
-font-family:'Bebas Neue';
-font-size:8rem;
-line-height:1;
-animation:glow 1.5s infinite;
-}
-
-.gold-per{
-color:var(--gold);
-text-shadow:0 0 25px var(--gold);
-}
-
-.cyan-per{
-color:var(--cyan);
-text-shadow:0 0 25px var(--cyan);
-}
-
-@keyframes glow{
-50%{
-transform:scale(1.05);
-}
-}
-
-.small{
-opacity:.8;
-letter-spacing:2px;
-font-family:'Cinzel';
-}
-
-/* MATCH */
-
-.match-result{
-grid-column:span 2;
-text-align:center;
-display:none;
-padding-top:20px;
-}
-
-.match-score{
-font-size:2.3rem;
-font-family:'Bebas Neue';
-line-height:1.8;
-}
-
-.commentator{
-margin-top:20px;
-padding:18px;
-border-radius:20px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.12);
-font-family:'Cinzel';
-line-height:1.8;
-font-size:1rem;
-}
+/* ACHIEVEMENTS PAGE */
+#achievements.page{padding:100px 14px 60px;align-items:flex-start;}
+.ach-wrap{width:100%;max-width:1100px;}
+.ach-header{text-align:center;margin-bottom:30px;}
+.ach-header h2{font-family:'Cinzel';font-size:2.5rem;background:linear-gradient(90deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ach-header p{opacity:.6;letter-spacing:2px;margin-top:8px;}
+.ach-stats{display:flex;gap:15px;justify-content:center;margin-bottom:30px;flex-wrap:wrap;}
+.ach-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:15px 30px;text-align:center;font-family:'Cinzel';}
+.ach-stat-num{font-size:2rem;font-weight:900;}
+.ach-stat-label{font-size:.7rem;opacity:.6;letter-spacing:2px;}
+.tier-label{font-family:'Cinzel';font-size:1rem;letter-spacing:3px;margin:25px 0 12px;opacity:.5;}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:10px;}
+.ach-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px;display:flex;align-items:flex-start;gap:14px;transition:.3s;position:relative;overflow:hidden;}
+.ach-card.unlocked{border-color:rgba(212,175,55,.5);background:rgba(212,175,55,.08);}
+.ach-card.unlocked::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--cyan));}
+.ach-card.goat-card{border-color:rgba(0,229,255,.6);background:rgba(0,229,255,.08);}
+.ach-card.goat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--gold),var(--cyan));animation:bar 3s linear infinite;background-size:300%;}
+.ach-icon{font-size:2rem;min-width:42px;text-align:center;filter:grayscale(1);opacity:.5;transition:.3s;}
+.ach-card.unlocked .ach-icon{filter:none;opacity:1;}
+.ach-info{flex:1;}
+.ach-name{font-family:'Cinzel';font-size:.9rem;margin-bottom:4px;}
+.ach-desc{font-size:.75rem;opacity:.55;line-height:1.5;}
+.ach-nick{font-size:.72rem;color:var(--gold);margin-top:6px;font-family:'Cinzel';letter-spacing:1px;}
+.ach-nick span{opacity:.5;color:#fff;}
+.ach-badge{position:absolute;top:12px;right:12px;font-size:.65rem;padding:4px 10px;border-radius:999px;font-family:'Cinzel';font-weight:700;}
+.badge-easy{background:rgba(0,255,102,.15);color:#00ff66;border:1px solid rgba(0,255,102,.3);}
+.badge-medium{background:rgba(0,229,255,.15);color:var(--cyan);border:1px solid rgba(0,229,255,.3);}
+.badge-hard{background:rgba(212,175,55,.15);color:var(--gold);border:1px solid rgba(212,175,55,.3);}
+.badge-extreme{background:rgba(255,45,45,.15);color:#ff2d2d;border:1px solid rgba(255,45,45,.3);}
+.badge-goat{background:linear-gradient(90deg,rgba(212,175,55,.3),rgba(0,229,255,.3));color:#fff;border:1px solid rgba(255,255,255,.3);}
+.apply-btn{margin-top:10px;padding:6px 14px;border:1px solid rgba(212,175,55,.5);border-radius:999px;background:transparent;color:var(--gold);font-family:'Cinzel';font-size:.65rem;cursor:pointer;transition:.2s;display:inline-block;}
+.apply-btn:hover{background:rgba(212,175,55,.2);}
+.apply-btn.active-nick{background:rgba(212,175,55,.3);border-color:var(--gold);}
+.ach-back-btn{margin:30px auto 0;display:block;padding:16px 40px;border:none;border-radius:16px;font-family:'Cinzel';font-weight:900;font-size:1rem;cursor:pointer;background:#ffffff22;color:#fff;transition:.3s;}
+.ach-back-btn:hover{transform:translateY(-4px);}
 
 /* FOOTER */
-
-.footer-thanks{
-width:fit-content;
-margin:40px auto 20px;
-padding:12px 22px;
-border-radius:999px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(12px);
-font-family:'Cinzel';
-font-size:.8rem;
-letter-spacing:2px;
-text-align:center;
-}
-
-.footer-thanks span{
-background:linear-gradient(90deg,var(--gold),#fff,var(--cyan));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-font-weight:700;
-}
-
-/* MOBILE */
+.footer-thanks{width:fit-content;margin:40px auto 20px;padding:12px 22px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(12px);font-family:'Cinzel';font-size:.8rem;letter-spacing:2px;text-align:center;}
+.footer-thanks span{background:linear-gradient(90deg,var(--gold),#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;}
 
 @media(max-width:900px){
-
-.main-title{
-font-size:2.3rem;
+  .main-title{font-size:2.3rem;}
+  .home-btn{width:100%;max-width:360px;height:270px;}
+  .home-buttons{flex-direction:column;align-items:center;}
+  .card{grid-template-columns:1fr;}
+  .title{grid-column:span 1;}
+  .btns{grid-column:span 1;flex-direction:column;}
+  .result-box,.match-result{grid-column:span 1;}
+  .ach-grid{grid-template-columns:1fr;}
 }
-
-.home-btn{
-width:100%;
-max-width:360px;
-height:270px;
-}
-
-.home-buttons{
-flex-direction:column;
-align-items:center;
-}
-
-.card{
-grid-template-columns:1fr;
-}
-
-.title{
-grid-column:span 1;
-}
-
-.btns{
-grid-column:span 1;
-flex-direction:column;
-}
-
-.result-box{
-grid-column:span 1;
-}
-
-.match-result{
-grid-column:span 1;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<div id="loading-screen">
-<div class="loader"></div>
-<div class="loading-text">
-LOADING AI SYSTEM...
+<div id="loading-screen" style="display: none;">
+  <div class="loader"></div>
+  <div class="loading-text">LOADING AI SYSTEM...</div>
 </div>
+
+<div id="name-screen">
+  <div class="name-card">
+    <div class="ball-icon">⚽</div>
+    <div class="name-title">WELCOME, CHAMPION</div>
+    <div class="name-sub">ENTER YOUR NAME TO BEGIN</div>
+    <input class="name-input" id="nameInput" type="text" placeholder="YOUR NAME..." maxlength="20" autocomplete="off">
+    <button class="name-btn" onclick="saveName()">ENTER THE ARENA</button>
+  </div>
 </div>
 
 <div class="topbar"></div>
-
-<div class="author">
-Made by Mohamed Aboshanab ❤️
-</div>
-
-<div class="ai">
-AI SYSTEM ACTIVE
-</div>
-
-<div class="live-counter">
-<span class="live-dot"></span>
-<span id="liveFans">127 fans online</span>
-</div>
-
-<div class="particles" id="particles"></div>
-
+<div class="author">Made by Mohamed Aboshanab ❤️</div>
+<div class="ai">AI SYSTEM ACTIVE</div>
+<div class="player-tag" id="playerTag" style="display: block;">⚽ mohamed<span class="nickname"> [Dreamer]</span></div>
+<div class="live-counter"><span class="live-dot"></span><span id="liveFans">140 fans online</span></div>
+<div class="ach-notif" id="achNotif">⚽ Achievement Unlocked!<br><strong>First Kick</strong><br>Nickname earned: [Rookie]</div>
+<div class="particles" id="particles"><span style="left: 74.6695%; animation-duration: 23.1576s; animation-delay: 7.31187s;"></span><span style="left: 66.7294%; animation-duration: 28.5687s; animation-delay: 0.584446s;"></span><span style="left: 47.5764%; animation-duration: 21.1253s; animation-delay: 3.72816s;"></span><span style="left: 77.1674%; animation-duration: 19.9789s; animation-delay: 6.29637s;"></span><span style="left: 76.6852%; animation-duration: 27.5476s; animation-delay: 4.35957s;"></span><span style="left: 13.393%; animation-duration: 20.9711s; animation-delay: 9.34074s;"></span><span style="left: 29.7552%; animation-duration: 21.1305s; animation-delay: 2.21773s;"></span><span style="left: 57.8746%; animation-duration: 15.859s; animation-delay: 7.80743s;"></span><span style="left: 23.6455%; animation-duration: 24.2785s; animation-delay: 9.28049s;"></span><span style="left: 89.3132%; animation-duration: 10.7164s; animation-delay: 0.418673s;"></span><span style="left: 6.704%; animation-duration: 22.4646s; animation-delay: 4.83018s;"></span><span style="left: 68.3585%; animation-duration: 23.561s; animation-delay: 5.68148s;"></span><span style="left: 46.6992%; animation-duration: 28.1783s; animation-delay: 7.2175s;"></span><span style="left: 59.7131%; animation-duration: 12.1469s; animation-delay: 8.77251s;"></span><span style="left: 28.5237%; animation-duration: 22.9593s; animation-delay: 0.863974s;"></span><span style="left: 42.9355%; animation-duration: 19.8891s; animation-delay: 7.75873s;"></span><span style="left: 53.5397%; animation-duration: 21.059s; animation-delay: 8.88881s;"></span><span style="left: 89.9921%; animation-duration: 21.6005s; animation-delay: 3.89507s;"></span><span style="left: 24.6699%; animation-duration: 26.7502s; animation-delay: 0.735366s;"></span><span style="left: 78.9614%; animation-duration: 26.5045s; animation-delay: 7.93274s;"></span><span style="left: 53.4184%; animation-duration: 26.3986s; animation-delay: 4.20625s;"></span><span style="left: 35.6859%; animation-duration: 27.8258s; animation-delay: 2.55175s;"></span><span style="left: 77.4804%; animation-duration: 29.6645s; animation-delay: 8.50722s;"></span><span style="left: 39.0861%; animation-duration: 16.5051s; animation-delay: 7.8514s;"></span><span style="left: 69.9943%; animation-duration: 15.4831s; animation-delay: 7.61766s;"></span><span style="left: 32.0199%; animation-duration: 24.5073s; animation-delay: 4.44169s;"></span><span style="left: 40.4133%; animation-duration: 27.0026s; animation-delay: 4.6874s;"></span><span style="left: 13.0813%; animation-duration: 15.082s; animation-delay: 3.61918s;"></span><span style="left: 22.3214%; animation-duration: 11.3615s; animation-delay: 3.67812s;"></span><span style="left: 68.8967%; animation-duration: 23.9077s; animation-delay: 0.1468s;"></span><span style="left: 0.437656%; animation-duration: 14.6098s; animation-delay: 6.55274s;"></span><span style="left: 85.2871%; animation-duration: 22.9692s; animation-delay: 2.34053s;"></span><span style="left: 22.3168%; animation-duration: 18.011s; animation-delay: 3.00836s;"></span><span style="left: 58.2088%; animation-duration: 26.8016s; animation-delay: 8.70398s;"></span><span style="left: 24.8279%; animation-duration: 25.7696s; animation-delay: 2.78131s;"></span><span style="left: 42.0632%; animation-duration: 17.2966s; animation-delay: 8.36243s;"></span><span style="left: 94.1031%; animation-duration: 10.8989s; animation-delay: 6.75159s;"></span><span style="left: 16.9381%; animation-duration: 11.2631s; animation-delay: 1.0221s;"></span><span style="left: 20.689%; animation-duration: 14.4605s; animation-delay: 4.95701s;"></span><span style="left: 50.5477%; animation-duration: 24.2684s; animation-delay: 7.15247s;"></span><span style="left: 55.1076%; animation-duration: 16.4215s; animation-delay: 7.47099s;"></span><span style="left: 45.1503%; animation-duration: 18.0113s; animation-delay: 5.47869s;"></span><span style="left: 20.9442%; animation-duration: 10.1349s; animation-delay: 8.06357s;"></span><span style="left: 97.9572%; animation-duration: 20.7204s; animation-delay: 2.8268s;"></span><span style="left: 21.7125%; animation-duration: 27.1021s; animation-delay: 3.28041s;"></span><span style="left: 1.98065%; animation-duration: 14.0393s; animation-delay: 7.60625s;"></span><span style="left: 32.1024%; animation-duration: 27.1715s; animation-delay: 8.35419s;"></span><span style="left: 3.85953%; animation-duration: 12.9977s; animation-delay: 7.21717s;"></span><span style="left: 55.4628%; animation-duration: 16.685s; animation-delay: 4.70239s;"></span><span style="left: 1.25011%; animation-duration: 11.0471s; animation-delay: 9.9412s;"></span></div>
+<script>
+  atOptions = {
+    'key' : '42bb06899e63d9f2518245aeff8f99b3',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
 <!-- HOME -->
-
 <section id="home" class="page active">
-
-<div class="home-wrap">
-
-<h1 class="main-title">
-FOOTBALL AWARDS AI
-</h1>
-
-<p class="sub">
-ULTIMATE FOOTBALL AWARDS EXPERIENCE
-</p>
-
-<div class="home-buttons">
-
-<div class="home-btn gold" onclick="showPage('ballon')">
-<span>GOLDEN BALL AI</span>
-</div>
-
-<div class="home-btn best" onclick="showPage('best')">
-<span>THE BEST AI</span>
-</div>
-
-<div class="home-btn result" onclick="showPage('match')">
-<span>GUESS THE RESULT</span>
-</div>
-
-</div>
-
-</div>
-
+  <div class="home-wrap">
+    <h1 class="main-title">FOOTBALL AWARDS AI</h1>
+    <p class="sub">ULTIMATE FOOTBALL AWARDS EXPERIENCE</p>
+    <div class="home-buttons">
+      <div class="home-btn gold" onclick="showPage(&#39;ballon&#39;)"><span>GOLDEN BALL AI</span></div>
+      <div class="home-btn best" onclick="showPage(&#39;best&#39;)"><span>THE BEST AI</span></div>
+      <div class="home-btn result" onclick="showPage(&#39;match&#39;)"><span>GUESS THE RESULT</span></div>
+      <div class="home-btn ach-btn-home" onclick="showPage(&#39;achievements&#39;)"><span>🏆 ACHIEVEMENTS</span></div>
+    </div>
+  </div>
 </section>
-<!-- 🔥 ADSTERRA AD HERE -->
-<div style="display:flex;justify-content:center;margin:25px auto;">
-  <script>
-    atOptions = {
-      'key' : '42bb06899e63d9f2518245aeff8f99b3',
-      'format' : 'iframe',
-      'height' : 90,
-      'width' : 728,
-      'params' : {}
-    };
-  </script>
-  <script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
-</div> 
+<script>
+  atOptions = {
+    'key' : '42bb06899e63d9f2518245aeff8f99b3',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
+
+
 <!-- BALLON -->
-<!-- 🔥 ADSTERRA AD HERE -->
-<div style="display:flex;justify-content:center;margin:25px auto;">
-  <script>
-    atOptions = {
-      'key' : '42bb06899e63d9f2518245aeff8f99b3',
-      'format' : 'iframe',
-      'height' : 90,
-      'width' : 728,
-      'params' : {}
-    };
-  </script>
-  <script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
-</div>
+ 
+<script src="https://www.highperformanceformat.com/42bb06899e63d9f2518245aeff8f99b3/invoke.js"></script>
+
 <section id="ballon" class="page">
-
-<div class="card">
-
-<h2 class="title gold-text">
-BALLON D'OR AI
-</h2>
-
-<div>
-
-<label>GOALS</label>
-<input type="number" id="bg" placeholder="0">
-
-<label>ASSISTS</label>
-<input type="number" id="ba" placeholder="0">
-
-<label>INDIVIDUAL AWARDS</label>
-<input type="number" id="bm" placeholder="0">
-
-</div>
-
-<div>
-
-<input type="text" class="search" id="bs" placeholder="SEARCH TROPHIES...">
-
-<div class="list" id="blist"></div>
-
-</div>
-
-<div class="btns">
-
-<button class="btn predict-gold" onclick="predict('b')">
-CALCULATE
-</button>
-
-<button class="btn reset" onclick="resetPage('b')">
-RESET
-</button>
-
-<button class="btn back" onclick="showPage('home')">
-RETURN
-</button>
-
-</div>
-
-<div class="result-box" id="br">
-
-<div class="percent gold-per" id="bf">
-0%
-</div>
-
-<div class="small">
-BALLON D'OR POSSIBILITY
-</div>
-
-</div>
-
-</div>
-
+  <div class="card">
+    <h2 class="title gold-text">BALLON D'OR AI</h2>
+    <div>
+      <label>GOALS</label><input type="number" id="bg" placeholder="0">
+      <label>ASSISTS</label><input type="number" id="ba" placeholder="0">
+      <label>INDIVIDUAL AWARDS</label><input type="number" id="bm" placeholder="0">
+    </div>
+    <div>
+      <input type="text" class="search" id="bs" placeholder="SEARCH TROPHIES...">
+      <div class="list" id="blist"><div class="item"><input type="checkbox"><span>UEFA Champions League</span></div><div class="item"><input type="checkbox"><span>UEFA Europa League</span></div><div class="item"><input type="checkbox"><span>UEFA Conference League</span></div><div class="item"><input type="checkbox"><span>UEFA Super Cup</span></div><div class="item"><input type="checkbox"><span>Premier League</span></div><div class="item"><input type="checkbox"><span>FA Cup</span></div><div class="item"><input type="checkbox"><span>Carabao Cup</span></div><div class="item"><input type="checkbox"><span>Community Shield</span></div><div class="item"><input type="checkbox"><span>EFL Championship</span></div><div class="item"><input type="checkbox"><span>League One</span></div><div class="item"><input type="checkbox"><span>League Two</span></div><div class="item"><input type="checkbox"><span>National League</span></div><div class="item"><input type="checkbox"><span>La Liga</span></div><div class="item"><input type="checkbox"><span>Copa del Rey</span></div><div class="item"><input type="checkbox"><span>Supercopa de España</span></div><div class="item"><input type="checkbox"><span>Segunda División</span></div><div class="item"><input type="checkbox"><span>Serie A</span></div><div class="item"><input type="checkbox"><span>Coppa Italia</span></div><div class="item"><input type="checkbox"><span>Supercoppa Italiana</span></div><div class="item"><input type="checkbox"><span>Serie B</span></div><div class="item"><input type="checkbox"><span>Bundesliga</span></div><div class="item"><input type="checkbox"><span>DFB Pokal</span></div><div class="item"><input type="checkbox"><span>DFL Supercup</span></div><div class="item"><input type="checkbox"><span>2. Bundesliga</span></div><div class="item"><input type="checkbox"><span>Ligue 1</span></div><div class="item"><input type="checkbox"><span>Coupe de France</span></div><div class="item"><input type="checkbox"><span>Trophée des Champions</span></div><div class="item"><input type="checkbox"><span>Ligue 2</span></div><div class="item"><input type="checkbox"><span>Eredivisie</span></div><div class="item"><input type="checkbox"><span>KNVB Cup</span></div><div class="item"><input type="checkbox"><span>Johan Cruyff Shield</span></div><div class="item"><input type="checkbox"><span>Eerste Divisie</span></div><div class="item"><input type="checkbox"><span>Primeira Liga</span></div><div class="item"><input type="checkbox"><span>Taça de Portugal</span></div><div class="item"><input type="checkbox"><span>Supertaça Cândido de Oliveira</span></div><div class="item"><input type="checkbox"><span>Liga Portugal 2</span></div><div class="item"><input type="checkbox"><span>Belgian Pro League</span></div><div class="item"><input type="checkbox"><span>Belgian Cup</span></div><div class="item"><input type="checkbox"><span>Belgian Super Cup</span></div><div class="item"><input type="checkbox"><span>Swiss Super League</span></div><div class="item"><input type="checkbox"><span>Swiss Cup</span></div><div class="item"><input type="checkbox"><span>Austrian Bundesliga</span></div><div class="item"><input type="checkbox"><span>Austrian Cup</span></div><div class="item"><input type="checkbox"><span>Scottish Premiership</span></div><div class="item"><input type="checkbox"><span>Scottish Cup</span></div><div class="item"><input type="checkbox"><span>Scottish League Cup</span></div><div class="item"><input type="checkbox"><span>Scottish Championship</span></div><div class="item"><input type="checkbox"><span>Turkish Super Lig</span></div><div class="item"><input type="checkbox"><span>Turkish Cup</span></div><div class="item"><input type="checkbox"><span>Turkish Super Cup</span></div><div class="item"><input type="checkbox"><span>Greek Super League</span></div><div class="item"><input type="checkbox"><span>Greek Cup</span></div><div class="item"><input type="checkbox"><span>Danish Superliga</span></div><div class="item"><input type="checkbox"><span>Danish Cup</span></div><div class="item"><input type="checkbox"><span>Norwegian Eliteserien</span></div><div class="item"><input type="checkbox"><span>Norwegian Cup</span></div><div class="item"><input type="checkbox"><span>Swedish Allsvenskan</span></div><div class="item"><input type="checkbox"><span>Swedish Cup</span></div><div class="item"><input type="checkbox"><span>Finnish Veikkausliiga</span></div><div class="item"><input type="checkbox"><span>Finnish Cup</span></div><div class="item"><input type="checkbox"><span>Polish Ekstraklasa</span></div><div class="item"><input type="checkbox"><span>Polish Cup</span></div><div class="item"><input type="checkbox"><span>Czech First League</span></div><div class="item"><input type="checkbox"><span>Czech Cup</span></div><div class="item"><input type="checkbox"><span>Croatian First Football League</span></div><div class="item"><input type="checkbox"><span>Croatian Cup</span></div><div class="item"><input type="checkbox"><span>Serbian SuperLiga</span></div><div class="item"><input type="checkbox"><span>Serbian Cup</span></div><div class="item"><input type="checkbox"><span>Romanian Liga I</span></div><div class="item"><input type="checkbox"><span>Romanian Cup</span></div><div class="item"><input type="checkbox"><span>Hungarian NB I</span></div><div class="item"><input type="checkbox"><span>Hungarian Cup</span></div><div class="item"><input type="checkbox"><span>Slovak Super Liga</span></div><div class="item"><input type="checkbox"><span>Slovak Cup</span></div><div class="item"><input type="checkbox"><span>Slovenian PrvaLiga</span></div><div class="item"><input type="checkbox"><span>Slovenian Cup</span></div><div class="item"><input type="checkbox"><span>Bulgarian First League</span></div><div class="item"><input type="checkbox"><span>Bulgarian Cup</span></div><div class="item"><input type="checkbox"><span>Ukrainian Premier League</span></div><div class="item"><input type="checkbox"><span>Ukrainian Cup</span></div><div class="item"><input type="checkbox"><span>Russian Premier League</span></div><div class="item"><input type="checkbox"><span>Russian Cup</span></div><div class="item"><input type="checkbox"><span>Irish Premier Division</span></div><div class="item"><input type="checkbox"><span>FAI Cup</span></div><div class="item"><input type="checkbox"><span>Northern Ireland Premiership</span></div><div class="item"><input type="checkbox"><span>Welsh Premier League</span></div><div class="item"><input type="checkbox"><span>Welsh Cup</span></div><div class="item"><input type="checkbox"><span>UEFA Nations League</span></div><div class="item"><input type="checkbox"><span>UEFA European Under-21 Championship</span></div><div class="item"><input type="checkbox"><span>UEFA Youth League</span></div><div class="item"><input type="checkbox"><span>Women's Champions League</span></div><div class="item"><input type="checkbox"><span>Women's Super League</span></div><div class="item"><input type="checkbox"><span>Frauen-Bundesliga</span></div><div class="item"><input type="checkbox"><span>Division 1 Féminine</span></div><div class="item"><input type="checkbox"><span>Liga F</span></div><div class="item"><input type="checkbox"><span>Women's Serie A</span></div><div class="item"><input type="checkbox"><span>UEFA Women's Euro</span></div><div class="item"><input type="checkbox"><span>International Champions Cup</span></div><div class="item"><input type="checkbox"><span>EFL Trophy</span></div><div class="item"><input type="checkbox"><span>FA Trophy</span></div><div class="item"><input type="checkbox"><span>Scottish Challenge Cup</span></div><div class="item"><input type="checkbox"><span>Spanish Primera Federación</span></div><div class="item"><input type="checkbox"><span>Italian Primavera League</span></div><div class="item"><input type="checkbox"><span>German Regionalliga</span></div></div>
+    </div>
+    <div class="btns">
+      <button class="btn predict-gold" onclick="predict(&#39;b&#39;)">CALCULATE</button>
+      <button class="btn reset" onclick="resetPage(&#39;b&#39;)">RESET</button>
+      <button class="btn back" onclick="showPage(&#39;home&#39;)">RETURN</button>
+    </div>
+    <div class="result-box" id="br">
+      <div class="percent gold-per" id="bf">0%</div>
+      <div class="small">BALLON D'OR POSSIBILITY</div>
+    </div>
+  </div>
 </section>
 
 <!-- THE BEST -->
-
 <section id="best" class="page">
-
-<div class="card">
-
-<h2 class="title cyan-text">
-THE BEST AI
-</h2>
-
-<div>
-
-<label>GOALS</label>
-<input type="number" id="tg" placeholder="0">
-
-<label>ASSISTS</label>
-<input type="number" id="ta" placeholder="0">
-
-<label>INDIVIDUAL AWARDS</label>
-<input type="number" id="tm" placeholder="0">
-
-</div>
-
-<div>
-
-<input type="text" class="search" id="ts" placeholder="SEARCH TROPHIES...">
-
-<div class="list" id="tlist"></div>
-
-</div>
-
-<div class="btns">
-
-<button class="btn predict-cyan" onclick="predict('t')">
-CALCULATE
-</button>
-
-<button class="btn reset" onclick="resetPage('t')">
-RESET
-</button>
-
-<button class="btn back" onclick="showPage('home')">
-RETURN
-</button>
-
-</div>
-
-<div class="result-box" id="tr">
-
-<div class="percent cyan-per" id="tf">
-0%
-</div>
-
-<div class="small">
-THE BEST POSSIBILITY
-</div>
-
-</div>
-
-</div>
-
+  <div class="card">
+    <h2 class="title cyan-text">THE BEST AI</h2>
+    <div>
+      <label>GOALS</label><input type="number" id="tg" placeholder="0">
+      <label>ASSISTS</label><input type="number" id="ta" placeholder="0">
+      <label>INDIVIDUAL AWARDS</label><input type="number" id="tm" placeholder="0">
+    </div>
+    <div>
+      <input type="text" class="search" id="ts" placeholder="SEARCH TROPHIES...">
+      <div class="list" id="tlist"><div class="item"><input type="checkbox"><span>UEFA Champions League</span></div><div class="item"><input type="checkbox"><span>UEFA Europa League</span></div><div class="item"><input type="checkbox"><span>UEFA Conference League</span></div><div class="item"><input type="checkbox"><span>UEFA Super Cup</span></div><div class="item"><input type="checkbox"><span>Premier League</span></div><div class="item"><input type="checkbox"><span>FA Cup</span></div><div class="item"><input type="checkbox"><span>Carabao Cup</span></div><div class="item"><input type="checkbox"><span>Community Shield</span></div><div class="item"><input type="checkbox"><span>EFL Championship</span></div><div class="item"><input type="checkbox"><span>League One</span></div><div class="item"><input type="checkbox"><span>League Two</span></div><div class="item"><input type="checkbox"><span>National League</span></div><div class="item"><input type="checkbox"><span>La Liga</span></div><div class="item"><input type="checkbox"><span>Copa del Rey</span></div><div class="item"><input type="checkbox"><span>Supercopa de España</span></div><div class="item"><input type="checkbox"><span>Segunda División</span></div><div class="item"><input type="checkbox"><span>Serie A</span></div><div class="item"><input type="checkbox"><span>Coppa Italia</span></div><div class="item"><input type="checkbox"><span>Supercoppa Italiana</span></div><div class="item"><input type="checkbox"><span>Serie B</span></div><div class="item"><input type="checkbox"><span>Bundesliga</span></div><div class="item"><input type="checkbox"><span>DFB Pokal</span></div><div class="item"><input type="checkbox"><span>DFL Supercup</span></div><div class="item"><input type="checkbox"><span>2. Bundesliga</span></div><div class="item"><input type="checkbox"><span>Ligue 1</span></div><div class="item"><input type="checkbox"><span>Coupe de France</span></div><div class="item"><input type="checkbox"><span>Trophée des Champions</span></div><div class="item"><input type="checkbox"><span>Ligue 2</span></div><div class="item"><input type="checkbox"><span>Eredivisie</span></div><div class="item"><input type="checkbox"><span>KNVB Cup</span></div><div class="item"><input type="checkbox"><span>Johan Cruyff Shield</span></div><div class="item"><input type="checkbox"><span>Eerste Divisie</span></div><div class="item"><input type="checkbox"><span>Primeira Liga</span></div><div class="item"><input type="checkbox"><span>Taça de Portugal</span></div><div class="item"><input type="checkbox"><span>Supertaça Cândido de Oliveira</span></div><div class="item"><input type="checkbox"><span>Liga Portugal 2</span></div><div class="item"><input type="checkbox"><span>Belgian Pro League</span></div><div class="item"><input type="checkbox"><span>Belgian Cup</span></div><div class="item"><input type="checkbox"><span>Belgian Super Cup</span></div><div class="item"><input type="checkbox"><span>Swiss Super League</span></div><div class="item"><input type="checkbox"><span>Swiss Cup</span></div><div class="item"><input type="checkbox"><span>Austrian Bundesliga</span></div><div class="item"><input type="checkbox"><span>Austrian Cup</span></div><div class="item"><input type="checkbox"><span>Scottish Premiership</span></div><div class="item"><input type="checkbox"><span>Scottish Cup</span></div><div class="item"><input type="checkbox"><span>Scottish League Cup</span></div><div class="item"><input type="checkbox"><span>Scottish Championship</span></div><div class="item"><input type="checkbox"><span>Turkish Super Lig</span></div><div class="item"><input type="checkbox"><span>Turkish Cup</span></div><div class="item"><input type="checkbox"><span>Turkish Super Cup</span></div><div class="item"><input type="checkbox"><span>Greek Super League</span></div><div class="item"><input type="checkbox"><span>Greek Cup</span></div><div class="item"><input type="checkbox"><span>Danish Superliga</span></div><div class="item"><input type="checkbox"><span>Danish Cup</span></div><div class="item"><input type="checkbox"><span>Norwegian Eliteserien</span></div><div class="item"><input type="checkbox"><span>Norwegian Cup</span></div><div class="item"><input type="checkbox"><span>Swedish Allsvenskan</span></div><div class="item"><input type="checkbox"><span>Swedish Cup</span></div><div class="item"><input type="checkbox"><span>Finnish Veikkausliiga</span></div><div class="item"><input type="checkbox"><span>Finnish Cup</span></div><div class="item"><input type="checkbox"><span>Polish Ekstraklasa</span></div><div class="item"><input type="checkbox"><span>Polish Cup</span></div><div class="item"><input type="checkbox"><span>Czech First League</span></div><div class="item"><input type="checkbox"><span>Czech Cup</span></div><div class="item"><input type="checkbox"><span>Croatian First Football League</span></div><div class="item"><input type="checkbox"><span>Croatian Cup</span></div><div class="item"><input type="checkbox"><span>Serbian SuperLiga</span></div><div class="item"><input type="checkbox"><span>Serbian Cup</span></div><div class="item"><input type="checkbox"><span>Romanian Liga I</span></div><div class="item"><input type="checkbox"><span>Romanian Cup</span></div><div class="item"><input type="checkbox"><span>Hungarian NB I</span></div><div class="item"><input type="checkbox"><span>Hungarian Cup</span></div><div class="item"><input type="checkbox"><span>Slovak Super Liga</span></div><div class="item"><input type="checkbox"><span>Slovak Cup</span></div><div class="item"><input type="checkbox"><span>Slovenian PrvaLiga</span></div><div class="item"><input type="checkbox"><span>Slovenian Cup</span></div><div class="item"><input type="checkbox"><span>Bulgarian First League</span></div><div class="item"><input type="checkbox"><span>Bulgarian Cup</span></div><div class="item"><input type="checkbox"><span>Ukrainian Premier League</span></div><div class="item"><input type="checkbox"><span>Ukrainian Cup</span></div><div class="item"><input type="checkbox"><span>Russian Premier League</span></div><div class="item"><input type="checkbox"><span>Russian Cup</span></div><div class="item"><input type="checkbox"><span>Irish Premier Division</span></div><div class="item"><input type="checkbox"><span>FAI Cup</span></div><div class="item"><input type="checkbox"><span>Northern Ireland Premiership</span></div><div class="item"><input type="checkbox"><span>Welsh Premier League</span></div><div class="item"><input type="checkbox"><span>Welsh Cup</span></div><div class="item"><input type="checkbox"><span>UEFA Nations League</span></div><div class="item"><input type="checkbox"><span>UEFA European Under-21 Championship</span></div><div class="item"><input type="checkbox"><span>UEFA Youth League</span></div><div class="item"><input type="checkbox"><span>Women's Champions League</span></div><div class="item"><input type="checkbox"><span>Women's Super League</span></div><div class="item"><input type="checkbox"><span>Frauen-Bundesliga</span></div><div class="item"><input type="checkbox"><span>Division 1 Féminine</span></div><div class="item"><input type="checkbox"><span>Liga F</span></div><div class="item"><input type="checkbox"><span>Women's Serie A</span></div><div class="item"><input type="checkbox"><span>UEFA Women's Euro</span></div><div class="item"><input type="checkbox"><span>International Champions Cup</span></div><div class="item"><input type="checkbox"><span>EFL Trophy</span></div><div class="item"><input type="checkbox"><span>FA Trophy</span></div><div class="item"><input type="checkbox"><span>Scottish Challenge Cup</span></div><div class="item"><input type="checkbox"><span>Spanish Primera Federación</span></div><div class="item"><input type="checkbox"><span>Italian Primavera League</span></div><div class="item"><input type="checkbox"><span>German Regionalliga</span></div></div>
+    </div>
+    <div class="btns">
+      <button class="btn predict-cyan" onclick="predict(&#39;t&#39;)">CALCULATE</button>
+      <button class="btn reset" onclick="resetPage(&#39;t&#39;)">RESET</button>
+      <button class="btn back" onclick="showPage(&#39;home&#39;)">RETURN</button>
+    </div>
+    <div class="result-box" id="tr">
+      <div class="percent cyan-per" id="tf">0%</div>
+      <div class="small">THE BEST POSSIBILITY</div>
+    </div>
+  </div>
 </section>
 
 <!-- MATCH -->
-
 <section id="match" class="page">
-
-<div class="card">
-
-<h2 class="title cyan-text">
-GUESS THE RESULT AI
-</h2>
-
-<div>
-
-<input type="text" id="team1" placeholder="FIRST TEAM">
-
-</div>
-
-<div>
-
-<input type="text" id="team2" placeholder="SECOND TEAM">
-
-</div>
-
-<div class="btns">
-
-<button class="btn predict-cyan" onclick="generateMatch()">
-GENERATE RESULT
-</button>
-
-<button class="btn reset" onclick="resetMatch()">
-RESET
-</button>
-
-<button class="btn back" onclick="showPage('home')">
-RETURN
-</button>
-
-</div>
-
-<div class="match-result" id="matchResult">
-
-<div class="match-score" id="score">
-50% - 50%
-</div>
-
-<div class="small" id="teamsText">
-TEAM VS TEAM
-</div>
-
-<div class="commentator" id="commentator">
-🔥 AI predicts an insane football match!
-</div>
-
-</div>
-
-</div>
-
+  <div class="card">
+    <h2 class="title cyan-text">GUESS THE RESULT AI</h2>
+    <div><input type="text" id="team1" placeholder="FIRST TEAM"></div>
+    <div><input type="text" id="team2" placeholder="SECOND TEAM"></div>
+    <div class="btns">
+      <button class="btn predict-cyan" onclick="generateMatch()">GENERATE RESULT</button>
+      <button class="btn reset" onclick="resetMatch()">RESET</button>
+      <button class="btn back" onclick="showPage(&#39;home&#39;)">RETURN</button>
+    </div>
+    <div class="match-result" id="matchResult">
+      <div class="match-score" id="score">50% - 50%</div>
+      <div class="small" id="teamsText">TEAM VS TEAM</div>
+      <div class="commentator" id="commentator">🔥 AI predicts an insane football match!</div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="page">
+  <div class="ach-wrap">
+    <div class="ach-header">
+      <h2>🏆 ACHIEVEMENTS</h2>
+      <p id="achSubtitle">mohamed'S LEGACY</p>
+    </div>
+    <div class="ach-stats">
+      <div class="ach-stat"><div class="ach-stat-num gold-text" id="statUnlocked">14</div><div class="ach-stat-label">UNLOCKED</div></div>
+      <div class="ach-stat"><div class="ach-stat-num" id="statTotal">120</div><div class="ach-stat-label">TOTAL</div></div>
+      <div class="ach-stat"><div class="ach-stat-num cyan-text" id="statPct">12%</div><div class="ach-stat-label">COMPLETE</div></div>
+    </div>
+    <div id="achContainer"><div class="tier-label">🟢 EASY (12/30)</div><div class="ach-grid"><div class="ach-card unlocked">
+        <div class="ach-icon">⚽</div>
+        <div class="ach-info">
+          <div class="ach-name">First Kick</div>
+          <div class="ach-desc">Open the app for the first time</div>
+          <div class="ach-nick"><span>Nickname: </span>Rookie</div>
+          <button class="apply-btn" id="apply_e1" onclick="applyNick(&#39;Rookie&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🏠</div>
+        <div class="ach-info">
+          <div class="ach-name">Home Sweet Home</div>
+          <div class="ach-desc">Visit the home screen</div>
+          <div class="ach-nick"><span>Nickname: </span>Familiar</div>
+          <button class="apply-btn" id="apply_e2" onclick="applyNick(&#39;Familiar&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔍</div>
+        <div class="ach-info">
+          <div class="ach-name">Explorer</div>
+          <div class="ach-desc">Search for a trophy</div>
+          <div class="ach-nick"><span>Nickname: </span>Scout</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">✅</div>
+        <div class="ach-info">
+          <div class="ach-name">First Selection</div>
+          <div class="ach-desc">Select your first trophy</div>
+          <div class="ach-nick"><span>Nickname: </span>Picker</div>
+          <button class="apply-btn" id="apply_e4" onclick="applyNick(&#39;Picker&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🥇</div>
+        <div class="ach-info">
+          <div class="ach-name">Golden Touch</div>
+          <div class="ach-desc">Use the Ballon d'Or calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Contender</div>
+          <button class="apply-btn" id="apply_e5" onclick="applyNick(&#39;Contender&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🌟</div>
+        <div class="ach-info">
+          <div class="ach-name">Best of the Best</div>
+          <div class="ach-desc">Use The Best calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Aspirant</div>
+          <button class="apply-btn" id="apply_e6" onclick="applyNick(&#39;Aspirant&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🎯</div>
+        <div class="ach-info">
+          <div class="ach-name">Match Prophet</div>
+          <div class="ach-desc">Use the Match predictor</div>
+          <div class="ach-nick"><span>Nickname: </span>Oracle</div>
+          <button class="apply-btn" id="apply_e7" onclick="applyNick(&#39;Oracle&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">📊</div>
+        <div class="ach-info">
+          <div class="ach-name">First Calculation</div>
+          <div class="ach-desc">Calculate your first prediction</div>
+          <div class="ach-nick"><span>Nickname: </span>Analyst</div>
+          <button class="apply-btn" id="apply_e8" onclick="applyNick(&#39;Analyst&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔄</div>
+        <div class="ach-info">
+          <div class="ach-name">Reset King</div>
+          <div class="ach-desc">Reset a calculation</div>
+          <div class="ach-nick"><span>Nickname: </span>Clean Slate</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏟️</div>
+        <div class="ach-info">
+          <div class="ach-name">Stadium Arrival</div>
+          <div class="ach-desc">Enter a team name in Match predictor</div>
+          <div class="ach-nick"><span>Nickname: </span>Team Player</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">📱</div>
+        <div class="ach-info">
+          <div class="ach-name">Dedicated Fan</div>
+          <div class="ach-desc">Use the app 3 times</div>
+          <div class="ach-nick"><span>Nickname: </span>Loyalist</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🥅</div>
+        <div class="ach-info">
+          <div class="ach-name">Goal Scorer</div>
+          <div class="ach-desc">Enter goals in a calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Finisher</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎖️</div>
+        <div class="ach-info">
+          <div class="ach-name">Trophy Hunter</div>
+          <div class="ach-desc">Select 5 trophies</div>
+          <div class="ach-nick"><span>Nickname: </span>Collector</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌍</div>
+        <div class="ach-info">
+          <div class="ach-name">World Stage</div>
+          <div class="ach-desc">Predict 3 matches</div>
+          <div class="ach-nick"><span>Nickname: </span>Globetrotter</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">💛</div>
+        <div class="ach-info">
+          <div class="ach-name">Golden Starter</div>
+          <div class="ach-desc">Get any percentage result</div>
+          <div class="ach-nick"><span>Nickname: </span>Hopeful</div>
+          <button class="apply-btn" id="apply_e15" onclick="applyNick(&#39;Hopeful&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🗓️</div>
+        <div class="ach-info">
+          <div class="ach-name">Day One</div>
+          <div class="ach-desc">Come back on your second visit</div>
+          <div class="ach-nick"><span>Nickname: </span>Returner</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">⭐</div>
+        <div class="ach-info">
+          <div class="ach-name">Star Gazer</div>
+          <div class="ach-desc">Open achievements page</div>
+          <div class="ach-nick"><span>Nickname: </span>Dreamer</div>
+          <button class="apply-btn active-nick" id="apply_e17" onclick="applyNick(&#39;Dreamer&#39;, this)">✓ ACTIVE</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎽</div>
+        <div class="ach-info">
+          <div class="ach-name">Jersey Number</div>
+          <div class="ach-desc">Enter assists in a calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Playmaker</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔢</div>
+        <div class="ach-info">
+          <div class="ach-name">Number Cruncher</div>
+          <div class="ach-desc">Use individual awards field</div>
+          <div class="ach-nick"><span>Nickname: </span>Statistician</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-info">
+          <div class="ach-name">Trophy Room</div>
+          <div class="ach-desc">Select 10 trophies</div>
+          <div class="ach-nick"><span>Nickname: </span>Museum</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🎮</div>
+        <div class="ach-info">
+          <div class="ach-name">Player One</div>
+          <div class="ach-desc">Save your name</div>
+          <div class="ach-nick"><span>Nickname: </span>Champion</div>
+          <button class="apply-btn" id="apply_e21" onclick="applyNick(&#39;Champion&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🔁</div>
+        <div class="ach-info">
+          <div class="ach-name">Back to Basics</div>
+          <div class="ach-desc">Navigate between pages 5 times</div>
+          <div class="ach-nick"><span>Nickname: </span>Explorer</div>
+          <button class="apply-btn" id="apply_e22" onclick="applyNick(&#39;Explorer&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">📣</div>
+        <div class="ach-info">
+          <div class="ach-name">Match Analyst</div>
+          <div class="ach-desc">Get a match result</div>
+          <div class="ach-nick"><span>Nickname: </span>Commentator</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🥈</div>
+        <div class="ach-info">
+          <div class="ach-name">Silver Standard</div>
+          <div class="ach-desc">Get a result between 20-40%</div>
+          <div class="ach-nick"><span>Nickname: </span>Challenger</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌙</div>
+        <div class="ach-info">
+          <div class="ach-name">Night Owl</div>
+          <div class="ach-desc">Use the app at night (after 8 PM)</div>
+          <div class="ach-nick"><span>Nickname: </span>Midnight Striker</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎊</div>
+        <div class="ach-info">
+          <div class="ach-name">Celebration</div>
+          <div class="ach-desc">Get a result over 50%</div>
+          <div class="ach-nick"><span>Nickname: </span>Winner</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔟</div>
+        <div class="ach-info">
+          <div class="ach-name">Ten Goals</div>
+          <div class="ach-desc">Enter 10+ goals</div>
+          <div class="ach-nick"><span>Nickname: </span>Top Scorer</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🅰️</div>
+        <div class="ach-info">
+          <div class="ach-name">Assist Master</div>
+          <div class="ach-desc">Enter 10+ assists</div>
+          <div class="ach-nick"><span>Nickname: </span>Provider</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">📍</div>
+        <div class="ach-info">
+          <div class="ach-name">Pinned</div>
+          <div class="ach-desc">Apply a nickname</div>
+          <div class="ach-nick"><span>Nickname: </span>Branded</div>
+          <button class="apply-btn" id="apply_e29" onclick="applyNick(&#39;Branded&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌈</div>
+        <div class="ach-info">
+          <div class="ach-name">Full House</div>
+          <div class="ach-desc">Complete all easy achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Easy Rider</div>
+          
+        </div>
+        <div class="ach-badge badge-easy">EASY</div>
+      </div></div><div class="tier-label">🔵 MEDIUM (2/35)</div><div class="ach-grid"><div class="ach-card">
+        <div class="ach-icon">🏅</div>
+        <div class="ach-info">
+          <div class="ach-name">Medal Collector</div>
+          <div class="ach-desc">Select 15 trophies at once</div>
+          <div class="ach-nick"><span>Nickname: </span>Decorated</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎯</div>
+        <div class="ach-info">
+          <div class="ach-name">Sharp Shooter</div>
+          <div class="ach-desc">Get a result of exactly 77%</div>
+          <div class="ach-nick"><span>Nickname: </span>Lucky 7</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔥</div>
+        <div class="ach-info">
+          <div class="ach-name">On Fire</div>
+          <div class="ach-desc">Predict 10 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Hot Shot</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">💎</div>
+        <div class="ach-info">
+          <div class="ach-name">Diamond Standard</div>
+          <div class="ach-desc">Get a result of 85%+</div>
+          <div class="ach-nick"><span>Nickname: </span>Elite</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌍</div>
+        <div class="ach-info">
+          <div class="ach-name">World Traveler</div>
+          <div class="ach-desc">Type 5 different team names</div>
+          <div class="ach-nick"><span>Nickname: </span>Diplomat</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">📈</div>
+        <div class="ach-info">
+          <div class="ach-name">Rising Star</div>
+          <div class="ach-desc">Use both calculators in one session</div>
+          <div class="ach-nick"><span>Nickname: </span>Dual Threat</div>
+          <button class="apply-btn" id="apply_m6" onclick="applyNick(&#39;Dual Threat&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-info">
+          <div class="ach-name">Trophy Addict</div>
+          <div class="ach-desc">Select 20 trophies at once</div>
+          <div class="ach-nick"><span>Nickname: </span>Hoarder</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">⚡</div>
+        <div class="ach-info">
+          <div class="ach-name">Lightning Fast</div>
+          <div class="ach-desc">Calculate 5 times in a session</div>
+          <div class="ach-nick"><span>Nickname: </span>Speed Demon</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎪</div>
+        <div class="ach-info">
+          <div class="ach-name">Showman</div>
+          <div class="ach-desc">Get 3 results over 70%</div>
+          <div class="ach-nick"><span>Nickname: </span>Entertainer</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🦅</div>
+        <div class="ach-info">
+          <div class="ach-name">Eagle Eye</div>
+          <div class="ach-desc">Enter both goals and assists over 15</div>
+          <div class="ach-nick"><span>Nickname: </span>Complete Player</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎓</div>
+        <div class="ach-info">
+          <div class="ach-name">Student of the Game</div>
+          <div class="ach-desc">Use the app 10 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Scholar</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌟</div>
+        <div class="ach-info">
+          <div class="ach-name">All Star</div>
+          <div class="ach-desc">Get 90%+ in The Best calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Superstar</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">👑</div>
+        <div class="ach-info">
+          <div class="ach-name">Royal Treatment</div>
+          <div class="ach-desc">Enter 5+ individual awards</div>
+          <div class="ach-nick"><span>Nickname: </span>Royalty</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔮</div>
+        <div class="ach-info">
+          <div class="ach-name">Crystal Ball</div>
+          <div class="ach-desc">Predict 15 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Psychic</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">⚽</div>
+        <div class="ach-info">
+          <div class="ach-name">Hat Trick</div>
+          <div class="ach-desc">Get results from 3 different sections</div>
+          <div class="ach-nick"><span>Nickname: </span>Treble</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎭</div>
+        <div class="ach-info">
+          <div class="ach-name">Drama King</div>
+          <div class="ach-desc">Get a draw prediction 3 times</div>
+          <div class="ach-nick"><span>Nickname: </span>Peacemaker</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏋️</div>
+        <div class="ach-info">
+          <div class="ach-name">Iron Will</div>
+          <div class="ach-desc">Calculate 10 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Grinder</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌊</div>
+        <div class="ach-info">
+          <div class="ach-name">Wave Maker</div>
+          <div class="ach-desc">Select 25 trophies at once</div>
+          <div class="ach-nick"><span>Nickname: </span>Dominant</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎵</div>
+        <div class="ach-info">
+          <div class="ach-name">In Rhythm</div>
+          <div class="ach-desc">Use the app 5 days in a row</div>
+          <div class="ach-nick"><span>Nickname: </span>Consistent</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🦁</div>
+        <div class="ach-info">
+          <div class="ach-name">Lion Heart</div>
+          <div class="ach-desc">Get 80%+ in Ballon d'Or</div>
+          <div class="ach-nick"><span>Nickname: </span>Brave</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌺</div>
+        <div class="ach-info">
+          <div class="ach-name">Blooming</div>
+          <div class="ach-desc">Unlock 20 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Flourishing</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card unlocked">
+        <div class="ach-icon">🎬</div>
+        <div class="ach-info">
+          <div class="ach-name">Director</div>
+          <div class="ach-desc">Use all 3 main features in one session</div>
+          <div class="ach-nick"><span>Nickname: </span>Producer</div>
+          <button class="apply-btn" id="apply_m22" onclick="applyNick(&#39;Producer&#39;, this)">APPLY NICKNAME</button>
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔑</div>
+        <div class="ach-info">
+          <div class="ach-name">Key Player</div>
+          <div class="ach-desc">Enter 20+ goals</div>
+          <div class="ach-nick"><span>Nickname: </span>Goalgetterr</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🛡️</div>
+        <div class="ach-info">
+          <div class="ach-name">Defensive Master</div>
+          <div class="ach-desc">Enter 15+ assists without any goals</div>
+          <div class="ach-nick"><span>Nickname: </span>Servant</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🚀</div>
+        <div class="ach-info">
+          <div class="ach-name">Launch Pad</div>
+          <div class="ach-desc">Get 90%+ in Ballon d'Or</div>
+          <div class="ach-nick"><span>Nickname: </span>Rocket</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏖️</div>
+        <div class="ach-info">
+          <div class="ach-name">Summer Champion</div>
+          <div class="ach-desc">Predict a match between famous rivals</div>
+          <div class="ach-nick"><span>Nickname: </span>El Clasico</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎃</div>
+        <div class="ach-info">
+          <div class="ach-name">Spooky Stats</div>
+          <div class="ach-desc">Get a result of exactly 13%</div>
+          <div class="ach-nick"><span>Nickname: </span>Unlucky 13</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌙</div>
+        <div class="ach-info">
+          <div class="ach-name">Midnight Marathon</div>
+          <div class="ach-desc">Use the app after midnight</div>
+          <div class="ach-nick"><span>Nickname: </span>Insomniac</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎁</div>
+        <div class="ach-info">
+          <div class="ach-name">Gift Wrapped</div>
+          <div class="ach-desc">Unlock 30 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Present</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏇</div>
+        <div class="ach-info">
+          <div class="ach-name">Race to the Top</div>
+          <div class="ach-desc">Get 95%+ in any calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Frontrunner</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌐</div>
+        <div class="ach-info">
+          <div class="ach-name">Global Network</div>
+          <div class="ach-desc">Predict 20 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Networker</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎯</div>
+        <div class="ach-info">
+          <div class="ach-name">Bullseye</div>
+          <div class="ach-desc">Get exactly 50% in a match</div>
+          <div class="ach-nick"><span>Nickname: </span>Dead Center</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">📊</div>
+        <div class="ach-info">
+          <div class="ach-name">Data Driven</div>
+          <div class="ach-desc">Calculate 20 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Nerd</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🥊</div>
+        <div class="ach-info">
+          <div class="ach-name">Knockout</div>
+          <div class="ach-desc">Get 3 wins in match predictions</div>
+          <div class="ach-nick"><span>Nickname: </span>Fighter</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏄</div>
+        <div class="ach-info">
+          <div class="ach-name">Riding Waves</div>
+          <div class="ach-desc">Unlock 40 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Surfer</div>
+          
+        </div>
+        <div class="ach-badge badge-medium">MEDIUM</div>
+      </div></div><div class="tier-label">🟡 HARD (0/35)</div><div class="ach-grid"><div class="ach-card">
+        <div class="ach-icon">💫</div>
+        <div class="ach-info">
+          <div class="ach-name">Unstoppable</div>
+          <div class="ach-desc">Get 95%+ in Ballon d'Or</div>
+          <div class="ach-nick"><span>Nickname: </span>Force of Nature</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔥</div>
+        <div class="ach-info">
+          <div class="ach-name">Inferno</div>
+          <div class="ach-desc">Predict 30 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Pyro</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌌</div>
+        <div class="ach-info">
+          <div class="ach-name">Galaxy Brain</div>
+          <div class="ach-desc">Calculate 30 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Einstein</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">💪</div>
+        <div class="ach-info">
+          <div class="ach-name">Iron Man</div>
+          <div class="ach-desc">Use the app 20 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Machine</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏅</div>
+        <div class="ach-info">
+          <div class="ach-name">Olympic Gold</div>
+          <div class="ach-desc">Get 90%+ in both calculators same session</div>
+          <div class="ach-nick"><span>Nickname: </span>Double Gold</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🧊</div>
+        <div class="ach-info">
+          <div class="ach-name">Ice Cold</div>
+          <div class="ach-desc">Get exactly 0% in a calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Rock Bottom</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎯</div>
+        <div class="ach-info">
+          <div class="ach-name">Precision</div>
+          <div class="ach-desc">Get results over 80% five times</div>
+          <div class="ach-nick"><span>Nickname: </span>Marksman</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌟</div>
+        <div class="ach-info">
+          <div class="ach-name">Superstar</div>
+          <div class="ach-desc">Unlock 50 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Icon</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">⚽</div>
+        <div class="ach-info">
+          <div class="ach-name">Century Club</div>
+          <div class="ach-desc">Enter 100+ goals total across all sessions</div>
+          <div class="ach-nick"><span>Nickname: </span>Centurion</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-info">
+          <div class="ach-name">Trophy Cabinet</div>
+          <div class="ach-desc">Select 30 trophies at once</div>
+          <div class="ach-nick"><span>Nickname: </span>Curator</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎪</div>
+        <div class="ach-info">
+          <div class="ach-name">Grand Show</div>
+          <div class="ach-desc">Use all features 5 times each</div>
+          <div class="ach-nick"><span>Nickname: </span>Showstopper</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌍</div>
+        <div class="ach-info">
+          <div class="ach-name">World Domination</div>
+          <div class="ach-desc">Predict 40 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Conqueror</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🦸</div>
+        <div class="ach-info">
+          <div class="ach-name">Superhero</div>
+          <div class="ach-desc">Get 99% in any calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Invincible</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎖️</div>
+        <div class="ach-info">
+          <div class="ach-name">Medal of Honor</div>
+          <div class="ach-desc">Calculate 50 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Veteran</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌙</div>
+        <div class="ach-info">
+          <div class="ach-name">Midnight Champion</div>
+          <div class="ach-desc">Use the app 7 days in a row</div>
+          <div class="ach-nick"><span>Nickname: </span>Devoted</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔮</div>
+        <div class="ach-info">
+          <div class="ach-name">Future Sight</div>
+          <div class="ach-desc">Get 3 correct predicted winners in a row</div>
+          <div class="ach-nick"><span>Nickname: </span>Prophet</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">💡</div>
+        <div class="ach-info">
+          <div class="ach-name">Genius</div>
+          <div class="ach-desc">Unlock 60 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Mastermind</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏋️</div>
+        <div class="ach-info">
+          <div class="ach-name">Heavyweight</div>
+          <div class="ach-desc">Enter 50+ goals in one session</div>
+          <div class="ach-nick"><span>Nickname: </span>Powerhouse</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌊</div>
+        <div class="ach-info">
+          <div class="ach-name">Tsunami</div>
+          <div class="ach-desc">Select all trophies in a category</div>
+          <div class="ach-nick"><span>Nickname: </span>Sweeper</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎭</div>
+        <div class="ach-info">
+          <div class="ach-name">Master of Disguise</div>
+          <div class="ach-desc">Change nickname 5 times</div>
+          <div class="ach-nick"><span>Nickname: </span>Chameleon</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🦁</div>
+        <div class="ach-info">
+          <div class="ach-name">King of the Jungle</div>
+          <div class="ach-desc">Get the highest possible score in a calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>King</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🚀</div>
+        <div class="ach-info">
+          <div class="ach-name">To the Moon</div>
+          <div class="ach-desc">Predict 50 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Astronaut</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔑</div>
+        <div class="ach-info">
+          <div class="ach-name">Master Key</div>
+          <div class="ach-desc">Use the app 30 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Grandmaster</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌺</div>
+        <div class="ach-info">
+          <div class="ach-name">Legend Bloom</div>
+          <div class="ach-desc">Unlock 70 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Living Legend</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎵</div>
+        <div class="ach-info">
+          <div class="ach-name">Symphony</div>
+          <div class="ach-desc">Use all features 10 times each</div>
+          <div class="ach-nick"><span>Nickname: </span>Conductor</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏅</div>
+        <div class="ach-info">
+          <div class="ach-name">Diamond League</div>
+          <div class="ach-desc">Get 95%+ three times in a row</div>
+          <div class="ach-nick"><span>Nickname: </span>Diamond</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎯</div>
+        <div class="ach-info">
+          <div class="ach-name">Laser Focus</div>
+          <div class="ach-desc">Calculate 75 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Specialist</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌟</div>
+        <div class="ach-info">
+          <div class="ach-name">Hall of Fame</div>
+          <div class="ach-desc">Unlock 80 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Immortal</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔥</div>
+        <div class="ach-info">
+          <div class="ach-name">Phoenix</div>
+          <div class="ach-desc">After getting 0%, immediately get 90%+</div>
+          <div class="ach-nick"><span>Nickname: </span>Reborn</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌐</div>
+        <div class="ach-info">
+          <div class="ach-name">World Record</div>
+          <div class="ach-desc">Predict 60 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Record Breaker</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">💎</div>
+        <div class="ach-info">
+          <div class="ach-name">Flawless</div>
+          <div class="ach-desc">Get 99% three times</div>
+          <div class="ach-nick"><span>Nickname: </span>Perfect</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🦅</div>
+        <div class="ach-info">
+          <div class="ach-name">Eagle Scout</div>
+          <div class="ach-desc">Use app 50 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Ranger</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-info">
+          <div class="ach-name">Dynasty</div>
+          <div class="ach-desc">Unlock 90 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Dynasty</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">⚡</div>
+        <div class="ach-info">
+          <div class="ach-name">Thunder God</div>
+          <div class="ach-desc">Calculate 100 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Thunder</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">👑</div>
+        <div class="ach-info">
+          <div class="ach-name">The One</div>
+          <div class="ach-desc">Unlock 100 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>The Chosen One</div>
+          
+        </div>
+        <div class="ach-badge badge-hard">HARD</div>
+      </div></div><div class="tier-label">🔴 EXTREME (0/19)</div><div class="ach-grid"><div class="ach-card">
+        <div class="ach-icon">🌋</div>
+        <div class="ach-info">
+          <div class="ach-name">Volcanic</div>
+          <div class="ach-desc">Get 99% in both calculators same session</div>
+          <div class="ach-nick"><span>Nickname: </span>Eruption</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🧬</div>
+        <div class="ach-info">
+          <div class="ach-name">DNA of a Winner</div>
+          <div class="ach-desc">Calculate 150 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Genetic</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌌</div>
+        <div class="ach-info">
+          <div class="ach-name">Universal Force</div>
+          <div class="ach-desc">Predict 100 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Cosmic</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔱</div>
+        <div class="ach-info">
+          <div class="ach-name">Poseidon</div>
+          <div class="ach-desc">Unlock 105 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>God of the Sea</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌙</div>
+        <div class="ach-info">
+          <div class="ach-name">Dark Side of the Moon</div>
+          <div class="ach-desc">Use the app for 30 days total</div>
+          <div class="ach-nick"><span>Nickname: </span>Lunar</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">⚡</div>
+        <div class="ach-info">
+          <div class="ach-name">Zeus</div>
+          <div class="ach-desc">Calculate 200 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>God of Thunder</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌟</div>
+        <div class="ach-info">
+          <div class="ach-name">Supernova</div>
+          <div class="ach-desc">Get 99% exactly 10 times</div>
+          <div class="ach-nick"><span>Nickname: </span>Stellar</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏅</div>
+        <div class="ach-info">
+          <div class="ach-name">Triple Crown</div>
+          <div class="ach-desc">Get highest score 3 times in each calculator</div>
+          <div class="ach-nick"><span>Nickname: </span>Triple King</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎯</div>
+        <div class="ach-info">
+          <div class="ach-name">God Mode</div>
+          <div class="ach-desc">Calculate 300 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Deity</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-info">
+          <div class="ach-name">Olympus</div>
+          <div class="ach-desc">Predict 150 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>Olympian</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌍</div>
+        <div class="ach-info">
+          <div class="ach-name">Titan</div>
+          <div class="ach-desc">Use the app 100 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Colossus</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🔮</div>
+        <div class="ach-info">
+          <div class="ach-name">Omniscient</div>
+          <div class="ach-desc">Predict 200 matches total</div>
+          <div class="ach-nick"><span>Nickname: </span>All-Knowing</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">💫</div>
+        <div class="ach-info">
+          <div class="ach-name">Singularity</div>
+          <div class="ach-desc">Unlock 115 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Singularity</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌊</div>
+        <div class="ach-info">
+          <div class="ach-name">Leviathan</div>
+          <div class="ach-desc">Select trophies over 1000 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Sea Monster</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🦅</div>
+        <div class="ach-info">
+          <div class="ach-name">Seraph</div>
+          <div class="ach-desc">Use the app 200 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Angel</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🎭</div>
+        <div class="ach-info">
+          <div class="ach-name">Ascendant</div>
+          <div class="ach-desc">Change nickname 20 times</div>
+          <div class="ach-nick"><span>Nickname: </span>Transformer</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">💀</div>
+        <div class="ach-info">
+          <div class="ach-name">Eternal</div>
+          <div class="ach-desc">Use the app 365 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Undying</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">🌋</div>
+        <div class="ach-info">
+          <div class="ach-name">Armageddon</div>
+          <div class="ach-desc">Calculate 500 times total</div>
+          <div class="ach-nick"><span>Nickname: </span>Destroyer</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div><div class="ach-card">
+        <div class="ach-icon">✨</div>
+        <div class="ach-info">
+          <div class="ach-name">Transcendent</div>
+          <div class="ach-desc">Unlock 119 achievements</div>
+          <div class="ach-nick"><span>Nickname: </span>Beyond Human</div>
+          
+        </div>
+        <div class="ach-badge badge-extreme">EXTREME</div>
+      </div></div><div class="tier-label">🐐 GOAT (0/1)</div><div class="ach-grid"><div class="ach-card goat-card">
+        <div class="ach-icon">🐐</div>
+        <div class="ach-info">
+          <div class="ach-name">THE GOAT</div>
+          <div class="ach-desc">Unlock every single achievement in the game. You are the Greatest of All Time.</div>
+          <div class="ach-nick"><span>Nickname: </span>GOAT</div>
+          
+        </div>
+        <div class="ach-badge badge-goat">GOAT</div>
+      </div></div></div>
+    <button class="ach-back-btn" onclick="showPage(&#39;home&#39;)">← RETURN HOME</button>
+  </div>
+</section>
 
-<div class="footer-thanks">
-<span>THANKS B.S.S X ISCHOOL</span>
-</div>
+<div class="footer-thanks"><span>THANKS B.S.S X ISCHOOL</span></div>
 
 <script>
+/* ===================== DATA ===================== */
+const ACHIEVEMENTS = [
+  // EASY (30)
+  {id:'e1',tier:'easy',icon:'⚽',name:'First Kick',desc:'Open the app for the first time',nick:'Rookie',trigger:'onLoad'},
+  {id:'e2',tier:'easy',icon:'🏠',name:'Home Sweet Home',desc:'Visit the home screen',nick:'Familiar',trigger:'onHome'},
+  {id:'e3',tier:'easy',icon:'🔍',name:'Explorer',desc:'Search for a trophy',nick:'Scout',trigger:'onSearch'},
+  {id:'e4',tier:'easy',icon:'✅',name:'First Selection',desc:'Select your first trophy',nick:'Picker',trigger:'onTrophySelect'},
+  {id:'e5',tier:'easy',icon:'🥇',name:'Golden Touch',desc:'Use the Ballon d\'Or calculator',nick:'Contender',trigger:'onBallonOpen'},
+  {id:'e6',tier:'easy',icon:'🌟',name:'Best of the Best',desc:'Use The Best calculator',nick:'Aspirant',trigger:'onBestOpen'},
+  {id:'e7',tier:'easy',icon:'🎯',name:'Match Prophet',desc:'Use the Match predictor',nick:'Oracle',trigger:'onMatchOpen'},
+  {id:'e8',tier:'easy',icon:'📊',name:'First Calculation',desc:'Calculate your first prediction',nick:'Analyst',trigger:'onFirstCalc'},
+  {id:'e9',tier:'easy',icon:'🔄',name:'Reset King',desc:'Reset a calculation',nick:'Clean Slate',trigger:'onReset'},
+  {id:'e10',tier:'easy',icon:'🏟️',name:'Stadium Arrival',desc:'Enter a team name in Match predictor',nick:'Team Player',trigger:'onTeamEnter'},
+  {id:'e11',tier:'easy',icon:'📱',name:'Dedicated Fan',desc:'Use the app 3 times',nick:'Loyalist',trigger:'onUse3'},
+  {id:'e12',tier:'easy',icon:'🥅',name:'Goal Scorer',desc:'Enter goals in a calculator',nick:'Finisher',trigger:'onGoalEnter'},
+  {id:'e13',tier:'easy',icon:'🎖️',name:'Trophy Hunter',desc:'Select 5 trophies',nick:'Collector',trigger:'onSelect5'},
+  {id:'e14',tier:'easy',icon:'🌍',name:'World Stage',desc:'Predict 3 matches',nick:'Globetrotter',trigger:'onMatch3'},
+  {id:'e15',tier:'easy',icon:'💛',name:'Golden Starter',desc:'Get any percentage result',nick:'Hopeful',trigger:'onAnyResult'},
+  {id:'e16',tier:'easy',icon:'🗓️',name:'Day One',desc:'Come back on your second visit',nick:'Returner',trigger:'onSecondVisit'},
+  {id:'e17',tier:'easy',icon:'⭐',name:'Star Gazer',desc:'Open achievements page',nick:'Dreamer',trigger:'onAchOpen'},
+  {id:'e18',tier:'easy',icon:'🎽',name:'Jersey Number',desc:'Enter assists in a calculator',nick:'Playmaker',trigger:'onAssistEnter'},
+  {id:'e19',tier:'easy',icon:'🔢',name:'Number Cruncher',desc:'Use individual awards field',nick:'Statistician',trigger:'onAwardEnter'},
+  {id:'e20',tier:'easy',icon:'🏆',name:'Trophy Room',desc:'Select 10 trophies',nick:'Museum',trigger:'onSelect10'},
+  {id:'e21',tier:'easy',icon:'🎮',name:'Player One',desc:'Save your name',nick:'Champion',trigger:'onNameSaved'},
+  {id:'e22',tier:'easy',icon:'🔁',name:'Back to Basics',desc:'Navigate between pages 5 times',nick:'Explorer',trigger:'onNav5'},
+  {id:'e23',tier:'easy',icon:'📣',name:'Match Analyst',desc:'Get a match result',nick:'Commentator',trigger:'onMatchResult'},
+  {id:'e24',tier:'easy',icon:'🥈',name:'Silver Standard',desc:'Get a result between 20-40%',nick:'Challenger',trigger:'onSilver'},
+  {id:'e25',tier:'easy',icon:'🌙',name:'Night Owl',desc:'Use the app at night (after 8 PM)',nick:'Midnight Striker',trigger:'onNight'},
+  {id:'e26',tier:'easy',icon:'🎊',name:'Celebration',desc:'Get a result over 50%',nick:'Winner',trigger:'onOver50'},
+  {id:'e27',tier:'easy',icon:'🔟',name:'Ten Goals',desc:'Enter 10+ goals',nick:'Top Scorer',trigger:'onGoal10'},
+  {id:'e28',tier:'easy',icon:'🅰️',name:'Assist Master',desc:'Enter 10+ assists',nick:'Provider',trigger:'onAssist10'},
+  {id:'e29',tier:'easy',icon:'📍',name:'Pinned',desc:'Apply a nickname',nick:'Branded',trigger:'onApplyNick'},
+  {id:'e30',tier:'easy',icon:'🌈',name:'Full House',desc:'Complete all easy achievements',nick:'Easy Rider',trigger:'onAllEasy'},
 
-/* PARTICLES */
+  // MEDIUM (35)
+  {id:'m1',tier:'medium',icon:'🏅',name:'Medal Collector',desc:'Select 15 trophies at once',nick:'Decorated',trigger:'onSelect15'},
+  {id:'m2',tier:'medium',icon:'🎯',name:'Sharp Shooter',desc:'Get a result of exactly 77%',nick:'Lucky 7',trigger:'on77'},
+  {id:'m3',tier:'medium',icon:'🔥',name:'On Fire',desc:'Predict 10 matches total',nick:'Hot Shot',trigger:'onMatch10'},
+  {id:'m4',tier:'medium',icon:'💎',name:'Diamond Standard',desc:'Get a result of 85%+',nick:'Elite',trigger:'on85'},
+  {id:'m5',tier:'medium',icon:'🌍',name:'World Traveler',desc:'Type 5 different team names',nick:'Diplomat',trigger:'onTeam5'},
+  {id:'m6',tier:'medium',icon:'📈',name:'Rising Star',desc:'Use both calculators in one session',nick:'Dual Threat',trigger:'onBothCalc'},
+  {id:'m7',tier:'medium',icon:'🏆',name:'Trophy Addict',desc:'Select 20 trophies at once',nick:'Hoarder',trigger:'onSelect20'},
+  {id:'m8',tier:'medium',icon:'⚡',name:'Lightning Fast',desc:'Calculate 5 times in a session',nick:'Speed Demon',trigger:'onCalc5'},
+  {id:'m9',tier:'medium',icon:'🎪',name:'Showman',desc:'Get 3 results over 70%',nick:'Entertainer',trigger:'onOver703'},
+  {id:'m10',tier:'medium',icon:'🦅',name:'Eagle Eye',desc:'Enter both goals and assists over 15',nick:'Complete Player',trigger:'onGoalAssist15'},
+  {id:'m11',tier:'medium',icon:'🎓',name:'Student of the Game',desc:'Use the app 10 times total',nick:'Scholar',trigger:'onUse10'},
+  {id:'m12',tier:'medium',icon:'🌟',name:'All Star',desc:'Get 90%+ in The Best calculator',nick:'Superstar',trigger:'onBest90'},
+  {id:'m13',tier:'medium',icon:'👑',name:'Royal Treatment',desc:'Enter 5+ individual awards',nick:'Royalty',trigger:'onAward5'},
+  {id:'m14',tier:'medium',icon:'🔮',name:'Crystal Ball',desc:'Predict 15 matches total',nick:'Psychic',trigger:'onMatch15'},
+  {id:'m15',tier:'medium',icon:'⚽',name:'Hat Trick',desc:'Get results from 3 different sections',nick:'Treble',trigger:'onHatTrick'},
+  {id:'m16',tier:'medium',icon:'🎭',name:'Drama King',desc:'Get a draw prediction 3 times',nick:'Peacemaker',trigger:'onDraw3'},
+  {id:'m17',tier:'medium',icon:'🏋️',name:'Iron Will',desc:'Calculate 10 times total',nick:'Grinder',trigger:'onCalc10'},
+  {id:'m18',tier:'medium',icon:'🌊',name:'Wave Maker',desc:'Select 25 trophies at once',nick:'Dominant',trigger:'onSelect25'},
+  {id:'m19',tier:'medium',icon:'🎵',name:'In Rhythm',desc:'Use the app 5 days in a row',nick:'Consistent',trigger:'onStreak5'},
+  {id:'m20',tier:'medium',icon:'🦁',name:'Lion Heart',desc:'Get 80%+ in Ballon d\'Or',nick:'Brave',trigger:'onBallon80'},
+  {id:'m21',tier:'medium',icon:'🌺',name:'Blooming',desc:'Unlock 20 achievements',nick:'Flourishing',trigger:'onUnlock20'},
+  {id:'m22',tier:'medium',icon:'🎬',name:'Director',desc:'Use all 3 main features in one session',nick:'Producer',trigger:'onAllFeatures'},
+  {id:'m23',tier:'medium',icon:'🔑',name:'Key Player',desc:'Enter 20+ goals',nick:'Goalgetterr',trigger:'onGoal20'},
+  {id:'m24',tier:'medium',icon:'🛡️',name:'Defensive Master',desc:'Enter 15+ assists without any goals',nick:'Servant',trigger:'onAssistOnly15'},
+  {id:'m25',tier:'medium',icon:'🚀',name:'Launch Pad',desc:'Get 90%+ in Ballon d\'Or',nick:'Rocket',trigger:'onBallon90'},
+  {id:'m26',tier:'medium',icon:'🏖️',name:'Summer Champion',desc:'Predict a match between famous rivals',nick:'El Clasico',trigger:'onRivals'},
+  {id:'m27',tier:'medium',icon:'🎃',name:'Spooky Stats',desc:'Get a result of exactly 13%',nick:'Unlucky 13',trigger:'on13'},
+  {id:'m28',tier:'medium',icon:'🌙',name:'Midnight Marathon',desc:'Use the app after midnight',nick:'Insomniac',trigger:'onMidnight'},
+  {id:'m29',tier:'medium',icon:'🎁',name:'Gift Wrapped',desc:'Unlock 30 achievements',nick:'Present',trigger:'onUnlock30'},
+  {id:'m30',tier:'medium',icon:'🏇',name:'Race to the Top',desc:'Get 95%+ in any calculator',nick:'Frontrunner',trigger:'on95'},
+  {id:'m31',tier:'medium',icon:'🌐',name:'Global Network',desc:'Predict 20 matches total',nick:'Networker',trigger:'onMatch20'},
+  {id:'m32',tier:'medium',icon:'🎯',name:'Bullseye',desc:'Get exactly 50% in a match',nick:'Dead Center',trigger:'on50match'},
+  {id:'m33',tier:'medium',icon:'📊',name:'Data Driven',desc:'Calculate 20 times total',nick:'Nerd',trigger:'onCalc20'},
+  {id:'m34',tier:'medium',icon:'🥊',name:'Knockout',desc:'Get 3 wins in match predictions',nick:'Fighter',trigger:'onWin3'},
+  {id:'m35',tier:'medium',icon:'🏄',name:'Riding Waves',desc:'Unlock 40 achievements',nick:'Surfer',trigger:'onUnlock40'},
 
-const particles=document.getElementById("particles");
+  // HARD (35)
+  {id:'h1',tier:'hard',icon:'💫',name:'Unstoppable',desc:'Get 95%+ in Ballon d\'Or',nick:'Force of Nature',trigger:'onBallon95'},
+  {id:'h2',tier:'hard',icon:'🔥',name:'Inferno',desc:'Predict 30 matches total',nick:'Pyro',trigger:'onMatch30'},
+  {id:'h3',tier:'hard',icon:'🌌',name:'Galaxy Brain',desc:'Calculate 30 times total',nick:'Einstein',trigger:'onCalc30'},
+  {id:'h4',tier:'hard',icon:'💪',name:'Iron Man',desc:'Use the app 20 times total',nick:'Machine',trigger:'onUse20'},
+  {id:'h5',tier:'hard',icon:'🏅',name:'Olympic Gold',desc:'Get 90%+ in both calculators same session',nick:'Double Gold',trigger:'onBothGold'},
+  {id:'h6',tier:'hard',icon:'🧊',name:'Ice Cold',desc:'Get exactly 0% in a calculator',nick:'Rock Bottom',trigger:'on0pct'},
+  {id:'h7',tier:'hard',icon:'🎯',name:'Precision',desc:'Get results over 80% five times',nick:'Marksman',trigger:'onOver805'},
+  {id:'h8',tier:'hard',icon:'🌟',name:'Superstar',desc:'Unlock 50 achievements',nick:'Icon',trigger:'onUnlock50'},
+  {id:'h9',tier:'hard',icon:'⚽',name:'Century Club',desc:'Enter 100+ goals total across all sessions',nick:'Centurion',trigger:'onGoal100'},
+  {id:'h10',tier:'hard',icon:'🏆',name:'Trophy Cabinet',desc:'Select 30 trophies at once',nick:'Curator',trigger:'onSelect30'},
+  {id:'h11',tier:'hard',icon:'🎪',name:'Grand Show',desc:'Use all features 5 times each',nick:'Showstopper',trigger:'onAll5each'},
+  {id:'h12',tier:'hard',icon:'🌍',name:'World Domination',desc:'Predict 40 matches total',nick:'Conqueror',trigger:'onMatch40'},
+  {id:'h13',tier:'hard',icon:'🦸',name:'Superhero',desc:'Get 99% in any calculator',nick:'Invincible',trigger:'on99'},
+  {id:'h14',tier:'hard',icon:'🎖️',name:'Medal of Honor',desc:'Calculate 50 times total',nick:'Veteran',trigger:'onCalc50'},
+  {id:'h15',tier:'hard',icon:'🌙',name:'Midnight Champion',desc:'Use the app 7 days in a row',nick:'Devoted',trigger:'onStreak7'},
+  {id:'h16',tier:'hard',icon:'🔮',name:'Future Sight',desc:'Get 3 correct predicted winners in a row',nick:'Prophet',trigger:'onPredict3Row'},
+  {id:'h17',tier:'hard',icon:'💡',name:'Genius',desc:'Unlock 60 achievements',nick:'Mastermind',trigger:'onUnlock60'},
+  {id:'h18',tier:'hard',icon:'🏋️',name:'Heavyweight',desc:'Enter 50+ goals in one session',nick:'Powerhouse',trigger:'onGoal50session'},
+  {id:'h19',tier:'hard',icon:'🌊',name:'Tsunami',desc:'Select all trophies in a category',nick:'Sweeper',trigger:'onAllCategory'},
+  {id:'h20',tier:'hard',icon:'🎭',name:'Master of Disguise',desc:'Change nickname 5 times',nick:'Chameleon',trigger:'onNickChange5'},
+  {id:'h21',tier:'hard',icon:'🦁',name:'King of the Jungle',desc:'Get the highest possible score in a calculator',nick:'King',trigger:'onMax'},
+  {id:'h22',tier:'hard',icon:'🚀',name:'To the Moon',desc:'Predict 50 matches total',nick:'Astronaut',trigger:'onMatch50'},
+  {id:'h23',tier:'hard',icon:'🔑',name:'Master Key',desc:'Use the app 30 times total',nick:'Grandmaster',trigger:'onUse30'},
+  {id:'h24',tier:'hard',icon:'🌺',name:'Legend Bloom',desc:'Unlock 70 achievements',nick:'Living Legend',trigger:'onUnlock70'},
+  {id:'h25',tier:'hard',icon:'🎵',name:'Symphony',desc:'Use all features 10 times each',nick:'Conductor',trigger:'onAll10each'},
+  {id:'h26',tier:'hard',icon:'🏅',name:'Diamond League',desc:'Get 95%+ three times in a row',nick:'Diamond',trigger:'on95x3'},
+  {id:'h27',tier:'hard',icon:'🎯',name:'Laser Focus',desc:'Calculate 75 times total',nick:'Specialist',trigger:'onCalc75'},
+  {id:'h28',tier:'hard',icon:'🌟',name:'Hall of Fame',desc:'Unlock 80 achievements',nick:'Immortal',trigger:'onUnlock80'},
+  {id:'h29',tier:'hard',icon:'🔥',name:'Phoenix',desc:'After getting 0%, immediately get 90%+',nick:'Reborn',trigger:'onPhoenix'},
+  {id:'h30',tier:'hard',icon:'🌐',name:'World Record',desc:'Predict 60 matches total',nick:'Record Breaker',trigger:'onMatch60'},
+  {id:'h31',tier:'hard',icon:'💎',name:'Flawless',desc:'Get 99% three times',nick:'Perfect',trigger:'on99x3'},
+  {id:'h32',tier:'hard',icon:'🦅',name:'Eagle Scout',desc:'Use app 50 times total',nick:'Ranger',trigger:'onUse50'},
+  {id:'h33',tier:'hard',icon:'🏆',name:'Dynasty',desc:'Unlock 90 achievements',nick:'Dynasty',trigger:'onUnlock90'},
+  {id:'h34',tier:'hard',icon:'⚡',name:'Thunder God',desc:'Calculate 100 times total',nick:'Thunder',trigger:'onCalc100'},
+  {id:'h35',tier:'hard',icon:'👑',name:'The One',desc:'Unlock 100 achievements',nick:'The Chosen One',trigger:'onUnlock100'},
 
-for(let i=0;i<50;i++){
-    const s=document.createElement("span");
-    s.style.left=Math.random()*100+"%";
-    s.style.animationDuration=(10+Math.random()*20)+"s";
-    s.style.animationDelay=Math.random()*10+"s";
-    particles.appendChild(s);
+  // EXTREME (19)
+  {id:'x1',tier:'extreme',icon:'🌋',name:'Volcanic',desc:'Get 99% in both calculators same session',nick:'Eruption',trigger:'onBoth99'},
+  {id:'x2',tier:'extreme',icon:'🧬',name:'DNA of a Winner',desc:'Calculate 150 times total',nick:'Genetic',trigger:'onCalc150'},
+  {id:'x3',tier:'extreme',icon:'🌌',name:'Universal Force',desc:'Predict 100 matches total',nick:'Cosmic',trigger:'onMatch100'},
+  {id:'x4',tier:'extreme',icon:'🔱',name:'Poseidon',desc:'Unlock 105 achievements',nick:'God of the Sea',trigger:'onUnlock105'},
+  {id:'x5',tier:'extreme',icon:'🌙',name:'Dark Side of the Moon',desc:'Use the app for 30 days total',nick:'Lunar',trigger:'onDays30'},
+  {id:'x6',tier:'extreme',icon:'⚡',name:'Zeus',desc:'Calculate 200 times total',nick:'God of Thunder',trigger:'onCalc200'},
+  {id:'x7',tier:'extreme',icon:'🌟',name:'Supernova',desc:'Get 99% exactly 10 times',nick:'Stellar',trigger:'on99x10'},
+  {id:'x8',tier:'extreme',icon:'🏅',name:'Triple Crown',desc:'Get highest score 3 times in each calculator',nick:'Triple King',trigger:'onTripleCrown'},
+  {id:'x9',tier:'extreme',icon:'🎯',name:'God Mode',desc:'Calculate 300 times total',nick:'Deity',trigger:'onCalc300'},
+  {id:'x10',tier:'extreme',icon:'🏆',name:'Olympus',desc:'Predict 150 matches total',nick:'Olympian',trigger:'onMatch150'},
+  {id:'x11',tier:'extreme',icon:'🌍',name:'Titan',desc:'Use the app 100 times total',nick:'Colossus',trigger:'onUse100'},
+  {id:'x12',tier:'extreme',icon:'🔮',name:'Omniscient',desc:'Predict 200 matches total',nick:'All-Knowing',trigger:'onMatch200'},
+  {id:'x13',tier:'extreme',icon:'💫',name:'Singularity',desc:'Unlock 115 achievements',nick:'Singularity',trigger:'onUnlock115'},
+  {id:'x14',tier:'extreme',icon:'🌊',name:'Leviathan',desc:'Select trophies over 1000 times total',nick:'Sea Monster',trigger:'onTrophySelect1000'},
+  {id:'x15',tier:'extreme',icon:'🦅',name:'Seraph',desc:'Use the app 200 times total',nick:'Angel',trigger:'onUse200'},
+  {id:'x16',tier:'extreme',icon:'🎭',name:'Ascendant',desc:'Change nickname 20 times',nick:'Transformer',trigger:'onNickChange20'},
+  {id:'x17',tier:'extreme',icon:'💀',name:'Eternal',desc:'Use the app 365 times total',nick:'Undying',trigger:'onUse365'},
+  {id:'x18',tier:'extreme',icon:'🌋',name:'Armageddon',desc:'Calculate 500 times total',nick:'Destroyer',trigger:'onCalc500'},
+  {id:'x19',tier:'extreme',icon:'✨',name:'Transcendent',desc:'Unlock 119 achievements',nick:'Beyond Human',trigger:'onUnlock119'},
+
+  // GOAT
+  {id:'goat',tier:'goat',icon:'🐐',name:'THE GOAT',desc:'Unlock every single achievement in the game. You are the Greatest of All Time.',nick:'GOAT',trigger:'onAllAch'},
+];
+
+/* ===================== STATE ===================== */
+const KEY = 'footAI_data';
+
+function loadData(){
+  try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }
+  catch(e){ return {}; }
 }
 
-/* LIVE COUNTER */
+function saveData(d){
+  localStorage.setItem(KEY, JSON.stringify(d));
+}
 
-let visitors=Math.floor(Math.random()*80)+120;
+let data = loadData();
 
-document.getElementById("liveFans").innerHTML=
-`${visitors} fans online`;
+// defaults
+if(!data.name) data.name = null;
+if(!data.unlocked) data.unlocked = [];
+if(!data.activeNick) data.activeNick = null;
+if(!data.visits) data.visits = 0;
+if(!data.calcCount) data.calcCount = 0;
+if(!data.matchCount) data.matchCount = 0;
+if(!data.useCount) data.useCount = 0;
+if(!data.trophySelectCount) data.trophySelectCount = 0;
+if(!data.navCount) data.navCount = 0;
+if(!data.totalGoals) data.totalGoals = 0;
+if(!data.nickChangeCount) data.nickChangeCount = 0;
+if(!data.lastVisitDay) data.lastVisitDay = null;
+if(!data.streakDays) data.streakDays = 0;
+if(!data.totalDays) data.totalDays = 0;
+if(!data.over80count) data.over80count = 0;
+if(!data.ninetyNineCount) data.ninetyNineCount = 0;
+if(!data.ninetyFiveRow) data.ninetyFiveRow = 0;
+if(!data.winCount) data.winCount = 0;
+if(!data.drawCount) data.drawCount = 0;
+if(!data.teamNames) data.teamNames = [];
+if(!data.sessionCalc) data.sessionCalc = 0;
+if(!data.sessionBallonUsed) data.sessionBallonUsed = false;
+if(!data.sessionBestUsed) data.sessionBestUsed = false;
+if(!data.sessionMatchUsed) data.sessionMatchUsed = false;
+if(!data.sessionBallonMax) data.sessionBallonMax = 0;
+if(!data.sessionBestMax) data.sessionBestMax = 0;
+if(!data.over50count) data.over50count = 0;
+if(!data.over703count) data.over703count = 0;
+if(!data.lastWasZero) data.lastWasZero = false;
+if(!data.ninety9x3) data.ninety9x3 = 0;
 
+saveData(data);
+
+/* ===================== PARTICLES ===================== */
+const particles = document.getElementById("particles");
+for(let i=0;i<50;i++){
+  const s = document.createElement("span");
+  s.style.left = Math.random()*100+"%";
+  s.style.animationDuration = (10+Math.random()*20)+"s";
+  s.style.animationDelay = Math.random()*10+"s";
+  particles.appendChild(s);
+}
+
+/* ===================== LIVE COUNTER ===================== */
+let visitors = Math.floor(Math.random()*80)+120;
+document.getElementById("liveFans").innerHTML = `${visitors} fans online`;
 setInterval(()=>{
-
-    visitors += Math.floor(Math.random()*7)-3;
-
-    if(visitors<100) visitors=100;
-
-    document.getElementById("liveFans").innerHTML=
-    `${visitors} fans online`;
-
+  visitors += Math.floor(Math.random()*7)-3;
+  if(visitors<100) visitors=100;
+  document.getElementById("liveFans").innerHTML = `${visitors} fans online`;
 },3000);
 
-/* PAGES */
-
-function showPage(id){
-
-    document.querySelectorAll(".page").forEach(p=>{
-        p.classList.remove("active");
-    });
-
-    document.getElementById(id).classList.add("active");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
+/* ===================== NAME SCREEN ===================== */
+function updatePlayerTag(){
+  if(!data.name) return;
+  const tag = document.getElementById('playerTag');
+  let nick = data.activeNick ? `<span class="nickname"> [${data.activeNick}]</span>` : '';
+  tag.innerHTML = `⚽ ${data.name}${nick}`;
+  tag.style.display = 'block';
 }
 
-/* TROPHIES LIST */
+function saveName(){
+  const val = document.getElementById('nameInput').value.trim();
+  if(!val){ alert('Please enter your name!'); return; }
+  data.name = val;
+  data.visits = (data.visits||0)+1;
+  saveData(data);
+  document.getElementById('name-screen').style.display='none';
+  updatePlayerTag();
+  unlock('e21');
+  unlock('onLoad');
+  checkDayStreak();
+  renderAchievements();
+}
 
-const trophies=[
-"UEFA Champions League",
-"UEFA Europa League",
-"UEFA Conference League",
-"UEFA Super Cup",
-"Premier League",
-"FA Cup",
-"Carabao Cup",
-"Community Shield",
-"EFL Championship",
-"League One",
-"League Two",
-"National League",
-"La Liga",
-"Copa del Rey",
-"Supercopa de España",
-"Segunda División",
-"Serie A",
-"Coppa Italia",
-"Supercoppa Italiana",
-"Serie B",
-"Bundesliga",
-"DFB Pokal",
-"DFL Supercup",
-"2. Bundesliga",
-"Ligue 1",
-"Coupe de France",
-"Trophée des Champions",
-"Ligue 2",
-"Eredivisie",
-"KNVB Cup",
-"Johan Cruyff Shield",
-"Eerste Divisie",
-"Primeira Liga",
-"Taça de Portugal",
-"Supertaça Cândido de Oliveira",
-"Liga Portugal 2",
-"Belgian Pro League",
-"Belgian Cup",
-"Belgian Super Cup",
-"Swiss Super League",
-"Swiss Cup",
-"Austrian Bundesliga",
-"Austrian Cup",
-"Scottish Premiership",
-"Scottish Cup",
-"Scottish League Cup",
-"Scottish Championship",
-"Turkish Super Lig",
-"Turkish Cup",
-"Turkish Super Cup",
-"Greek Super League",
-"Greek Cup",
-"Danish Superliga",
-"Danish Cup",
-"Norwegian Eliteserien",
-"Norwegian Cup",
-"Swedish Allsvenskan",
-"Swedish Cup",
-"Finnish Veikkausliiga",
-"Finnish Cup",
-"Polish Ekstraklasa",
-"Polish Cup",
-"Czech First League",
-"Czech Cup",
-"Croatian First Football League",
-"Croatian Cup",
-"Serbian SuperLiga",
-"Serbian Cup",
-"Romanian Liga I",
-"Romanian Cup",
-"Hungarian NB I",
-"Hungarian Cup",
-"Slovak Super Liga",
-"Slovak Cup",
-"Slovenian PrvaLiga",
-"Slovenian Cup",
-"Bulgarian First League",
-"Bulgarian Cup",
-"Ukrainian Premier League",
-"Ukrainian Cup",
-"Russian Premier League",
-"Russian Cup",
-"Belarusian Premier League",
-"Belarusian Cup",
-"Irish Premier Division",
-"FAI Cup",
-"Northern Ireland Premiership",
-"Irish League Cup",
-"Welsh Premier League",
-"Welsh Cup",
-"Icelandic Premier Division",
-"Icelandic Cup",
-"Estonian Meistriliiga",
-"Estonian Cup",
-"Latvian Higher League",
-"Latvian Cup",
-"Lithuanian A Lyga",
-"Lithuanian Cup",
-"Luxembourg National Division",
-"Luxembourg Cup",
-"Maltese Premier League",
-"Maltese FA Trophy",
-"Cypriot First Division",
-"Cypriot Cup",
-"Bosnian Premier League",
-"Bosnian Cup",
-"Montenegrin First League",
-"Montenegrin Cup",
-"North Macedonian First League",
-"Macedonian Cup",
-"Albanian Superliga",
-"Albanian Cup",
-"Kosovo Superleague",
-"Kosovo Cup",
-"Armenian Premier League",
-"Armenian Cup",
-"Georgian Erovnuli Liga",
-"Georgian Cup",
-"Azerbaijan Premier League",
-"Azerbaijan Cup",
-"Kazakhstan Premier League",
-"Kazakhstan Cup",
-"Andorran Primera Divisió",
-"Andorran Cup",
-"San Marino Campionato",
-"San Marino Cup",
-"Gibraltar National League",
-"Gibraltar Cup",
-"Faroe Islands Premier League",
-"Faroe Cup",
-"Moldovan Super Liga",
-"Moldovan Cup",
-"UEFA Youth League",
-"Premier League 2",
-"FA Youth Cup",
-"UEFA Regions' Cup",
-"Women's Champions League",
-"Women's Super League",
-"Women's FA Cup",
-"Frauen-Bundesliga",
-"Division 1 Féminine",
-"Liga F",
-"Women's Serie A",
-"UEFA Nations League",
-"UEFA European Under-21 Championship",
-"UEFA European Under-19 Championship",
-"UEFA European Under-17 Championship",
-"UEFA Futsal Champions League",
-"UEFA Futsal Euro",
-"UEFA Women's Euro",
-"UEFA Women's Nations League",
-"Coppa della Alpi",
-"Intertoto Cup",
-"Cup Winners' Cup",
-"Anglo-Italian Cup",
-"Mitropa Cup",
-"Baltic Cup",
-"Atlantic Cup",
-"Emirates Cup",
-"Audi Cup",
-"Joan Gamper Trophy",
-"Florida Cup",
-"International Champions Cup",
-"Amsterdam Tournament",
-"Telekom Cup",
-"Dubai Super Cup",
-"Algarve Cup",
-"Cyprus Cup",
-"Friendly International Cup",
-"Premier Sports Cup",
-"EFL Trophy",
-"FA Vase",
-"FA Trophy",
-"Scottish Challenge Cup",
-"Toto Cup",
-"Russian Super Cup",
-"French League Cup",
-"Coppa delle Alpi",
-"Latvia Super Cup",
-"Estonia Super Cup",
-"Lithuania Super Cup",
-"Belgium Second Division",
-"Portugal League Cup",
-"Spain Segunda B",
-"Italy Serie C",
-"Italy Serie D",
-"Germany 3. Liga",
-"France National",
-"Netherlands Tweede Divisie",
-"Turkey First League",
-"Greece Super League 2",
-"Poland Super Cup",
-"Czech Super Cup",
-"Romanian Super Cup",
-"Hungarian Super Cup",
-"Bulgarian Super Cup",
-"Croatian Super Cup",
-"Serbian Super Cup",
-"Slovak Super Cup",
-"Slovenian Super Cup",
-"Finnish League Cup",
-"Norwegian Super Cup",
-"Swedish Super Cup",
-"Danish Super Cup",
-"Austrian Super Cup",
-"Swiss Challenge League",
-"Belgian Challenger Pro League",
-"Scottish League One",
-"Scottish League Two",
-"Irish First Division",
-"Welsh League Cup",
-"Cypriot Super Cup",
-"Maltese Super Cup",
-"Bosnian Super Cup",
-"Albanian Super Cup",
-"Kosovo Super Cup",
-"Armenian Super Cup",
-"Georgian Super Cup",
-"Kazakhstan Super Cup",
-"Russian National Football League",
-"Ukrainian First League",
-"Belarusian Super Cup",
-"Faroe Islands Super Cup",
-"Gibraltar Super Cup",
-"Andorra Super Cup",
-"San Marino Super Cup",
-"Luxembourg Super Cup",
-"Montenegro Second League",
-"North Macedonia Second League",
-"Slovenia Second League",
-"Croatia Second League",
-"Romania Liga II",
-"Hungary NB II",
-"Poland I Liga",
-"Czech National Football League",
-"Serbia First League",
-"Bosnia First League",
-"Albania First Division",
-"Kosovo First League",
-"Georgia Erovnuli Liga 2",
-"Armenia First League",
-"Azerbaijan First Division",
-"Kazakhstan First Division",
-"Latvian First League",
-"Estonian Esiliiga",
-"Lithuanian I Lyga",
-"Finnish Ykkönen",
-"Swedish Superettan",
-"Danish 1st Division",
-"Norwegian First Division",
-"Icelandic 1. Deild",
-"Faroe Islands 1. Deild",
-"Welsh Cymru North",
-"Welsh Cymru South",
-"NIFL Championship",
-"League of Ireland First Division",
-"National League North",
-"National League South",
-"English Premier Cup",
-"English Youth Alliance",
-"French Coupe de la Ligue",
-"Italian Primavera League",
-"German Regionalliga",
-"Spanish Primera Federación",
-"Portuguese Campeonato",
-"Dutch KNVB Reserve Cup",
-"Belgian Reserve League",
-"Swiss Promotion League",
-"Austrian 2. Liga",
-"Turkish TFF Second League",
-"Greek Gamma Ethniki",
-"Bulgarian Second League",
-"Romanian Liga III",
-"Serbian Prva Liga",
-"Croatian Third League",
-"Slovenian Third League",
-"Slovak Second League",
-"Polish II Liga",
-"Czech Third League",
-"Hungarian NB III",
-"UEFA Intertoto Cup",
-"UEFA Charity Shield",
-"European Champion Clubs' Cup",
-"European Rail Cup",
-"Mediterranean Cup",
-"Balkan Cup",
-"Central European Cup",
-"Danube Cup",
-"Alpine Cup",
-"European Masters Cup",
-"UEFA Elite League",
-"UEFA Friendship Cup"
-];
+function showNameScreen(){
+  const ns = document.getElementById('name-screen');
+  ns.style.display='flex';
+  document.getElementById('nameInput').value = data.name||'';
+}
+
+/* ===================== LOADING ===================== */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loading-screen').style.display='none';
+    // update use count
+    data.useCount = (data.useCount||0)+1;
+    saveData(data);
+    if(!data.name){
+      showNameScreen();
+    } else {
+      updatePlayerTag();
+      unlock('e1'); // onLoad
+      checkDayStreak();
+      checkUseCount();
+    }
+    renderAchievements();
+  },2200);
+});
+
+/* ===================== DAY STREAK ===================== */
+function checkDayStreak(){
+  const today = new Date().toDateString();
+  if(data.lastVisitDay !== today){
+    data.totalDays = (data.totalDays||0)+1;
+    const yesterday = new Date(Date.now()-86400000).toDateString();
+    if(data.lastVisitDay === yesterday){
+      data.streakDays = (data.streakDays||0)+1;
+    } else {
+      data.streakDays = 1;
+    }
+    data.lastVisitDay = today;
+    if(data.visits > 1) unlock('e16');
+    if(data.streakDays>=5) unlock('m19');
+    if(data.streakDays>=7) unlock('h15');
+    if(data.totalDays>=30) unlock('x5');
+    saveData(data);
+  }
+  if(data.visits>=2) unlock('e16');
+}
+
+function checkUseCount(){
+  const u = data.useCount||0;
+  if(u>=3) unlock('e11');
+  if(u>=10) unlock('m11');
+  if(u>=20) unlock('h4');
+  if(u>=30) unlock('h23');
+  if(u>=50) unlock('h32');
+  if(u>=100) unlock('x11');
+  if(u>=200) unlock('x15');
+  if(u>=365) unlock('x17');
+}
+
+/* ===================== PAGES ===================== */
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  data.navCount = (data.navCount||0)+1;
+  if(data.navCount>=5) unlock('e22');
+  saveData(data);
+  if(id==='home'){
+    unlock('e2');
+  } else if(id==='ballon'){
+    unlock('e5');
+    data.sessionBallonUsed=true;
+  } else if(id==='best'){
+    unlock('e6');
+    data.sessionBestUsed=true;
+  } else if(id==='match'){
+    unlock('e7');
+    data.sessionMatchUsed=true;
+  } else if(id==='achievements'){
+    unlock('e17');
+    renderAchievements();
+    return;
+  }
+  if(data.sessionBallonUsed&&data.sessionBestUsed) unlock('m6');
+  if(data.sessionBallonUsed&&data.sessionBestUsed&&data.sessionMatchUsed) unlock('m22');
+  saveData(data);
+}
+
+/* ===================== TROPHIES ===================== */
+const trophies=["UEFA Champions League","UEFA Europa League","UEFA Conference League","UEFA Super Cup","Premier League","FA Cup","Carabao Cup","Community Shield","EFL Championship","League One","League Two","National League","La Liga","Copa del Rey","Supercopa de España","Segunda División","Serie A","Coppa Italia","Supercoppa Italiana","Serie B","Bundesliga","DFB Pokal","DFL Supercup","2. Bundesliga","Ligue 1","Coupe de France","Trophée des Champions","Ligue 2","Eredivisie","KNVB Cup","Johan Cruyff Shield","Eerste Divisie","Primeira Liga","Taça de Portugal","Supertaça Cândido de Oliveira","Liga Portugal 2","Belgian Pro League","Belgian Cup","Belgian Super Cup","Swiss Super League","Swiss Cup","Austrian Bundesliga","Austrian Cup","Scottish Premiership","Scottish Cup","Scottish League Cup","Scottish Championship","Turkish Super Lig","Turkish Cup","Turkish Super Cup","Greek Super League","Greek Cup","Danish Superliga","Danish Cup","Norwegian Eliteserien","Norwegian Cup","Swedish Allsvenskan","Swedish Cup","Finnish Veikkausliiga","Finnish Cup","Polish Ekstraklasa","Polish Cup","Czech First League","Czech Cup","Croatian First Football League","Croatian Cup","Serbian SuperLiga","Serbian Cup","Romanian Liga I","Romanian Cup","Hungarian NB I","Hungarian Cup","Slovak Super Liga","Slovak Cup","Slovenian PrvaLiga","Slovenian Cup","Bulgarian First League","Bulgarian Cup","Ukrainian Premier League","Ukrainian Cup","Russian Premier League","Russian Cup","Irish Premier Division","FAI Cup","Northern Ireland Premiership","Welsh Premier League","Welsh Cup","UEFA Nations League","UEFA European Under-21 Championship","UEFA Youth League","Women's Champions League","Women's Super League","Frauen-Bundesliga","Division 1 Féminine","Liga F","Women's Serie A","UEFA Women's Euro","International Champions Cup","EFL Trophy","FA Trophy","Scottish Challenge Cup","Spanish Primera Federación","Italian Primavera League","German Regionalliga"];
 
 let bSel=new Set();
 let tSel=new Set();
 
 function render(type,search=""){
-
-    const list=document.getElementById(type+"list");
-
-    list.innerHTML="";
-
-    trophies
-    .filter(t=>t.toLowerCase().includes(search.toLowerCase()))
-    .forEach(t=>{
-
-        const div=document.createElement("div");
-
-        div.className="item";
-
-        div.innerHTML=`
-        <input type="checkbox">
-        <span>${t}</span>
-        `;
-
-        div.onclick=()=>{
-
-            const box=div.querySelector("input");
-
-            box.checked=!box.checked;
-
-            if(type==="b"){
-
-                box.checked ? bSel.add(t) : bSel.delete(t);
-
-            }else{
-
-                box.checked ? tSel.add(t) : tSel.delete(t);
-
-            }
-
-        };
-
-        list.appendChild(div);
-
-    });
-
+  const list=document.getElementById(type+"list");
+  list.innerHTML="";
+  trophies.filter(t=>t.toLowerCase().includes(search.toLowerCase())).forEach(t=>{
+    const div=document.createElement("div");
+    div.className="item";
+    div.innerHTML=`<input type="checkbox"><span>${t}</span>`;
+    div.onclick=()=>{
+      const box=div.querySelector("input");
+      box.checked=!box.checked;
+      const sel = type==="b" ? bSel : tSel;
+      box.checked ? sel.add(t) : sel.delete(t);
+      unlock('e4');
+      data.trophySelectCount=(data.trophySelectCount||0)+1;
+      if(data.trophySelectCount>=1000) unlock('x14');
+      saveData(data);
+      const sz=sel.size;
+      if(sz>=5) unlock('e13');
+      if(sz>=10) unlock('e20');
+      if(sz>=15) unlock('m1');
+      if(sz>=20) unlock('m7');
+      if(sz>=25) unlock('m18');
+      if(sz>=30) unlock('h10');
+    };
+    list.appendChild(div);
+  });
 }
+render("b"); render("t");
+document.getElementById("bs").oninput=e=>{unlock('e3');render("b",e.target.value);};
+document.getElementById("ts").oninput=e=>{unlock('e3');render("t",e.target.value);};
 
-render("b");
-render("t");
-
-document.getElementById("bs").oninput=
-e=>render("b",e.target.value);
-
-document.getElementById("ts").oninput=
-e=>render("t",e.target.value);
-
-/* ANIMATION */
-
+/* ===================== ANIMATE ===================== */
 function animate(el,end){
-
-    let start=0;
-
-    const interval=setInterval(()=>{
-
-        start++;
-
-        el.innerHTML=start+"%";
-
-        if(start>=end){
-
-            clearInterval(interval);
-
-        }
-
-    },20);
-
+  let start=0;
+  const interval=setInterval(()=>{
+    start++;
+    el.innerHTML=start+"%";
+    if(start>=end) clearInterval(interval);
+  },20);
 }
 
-/* PREDICT */
+/* ===================== PREDICT ===================== */
+let ballonResultCount=0, bestResultCount=0;
 
 function predict(type){
+  const g=parseInt(document.getElementById(type+"g").value)||0;
+  const a=parseInt(document.getElementById(type+"a").value)||0;
+  const m=parseInt(document.getElementById(type+"m").value)||0;
+  const sel=type==="b"?bSel:tSel;
+  let score=(sel.size*2.2)+(g*0.08)+(a*0.05)+(m*1.2);
+  if(score>99) score=99;
+  const pct=Math.round(score);
 
-    const g=parseInt(
-    document.getElementById(type+"g").value
-    )||0;
+  document.getElementById(type+"r").style.display="block";
+  animate(document.getElementById(type+"f"),pct);
 
-    const a=parseInt(
-    document.getElementById(type+"a").value
-    )||0;
+  // counts
+  data.calcCount=(data.calcCount||0)+1;
+  data.sessionCalc=(data.sessionCalc||0)+1;
+  data.totalGoals=(data.totalGoals||0)+g;
+  unlock('e8');
+  if(g>0) unlock('e12');
+  if(a>0) unlock('e18');
+  if(m>0) unlock('e19');
+  if(g>=10) unlock('e27');
+  if(a>=10) unlock('e28');
+  if(g>=20) unlock('m23');
+  if(g>=50) unlock('h18');
+  if(m>=5) unlock('m13');
+  if(g>=15&&a>=15) unlock('m10');
+  if(a>=15&&g===0) unlock('m24');
+  if(data.totalGoals>=100) unlock('h9');
 
-    const m=parseInt(
-    document.getElementById(type+"m").value
-    )||0;
+  if(pct>=50) unlock('e26');
+  if(pct>=50) data.over50count=(data.over50count||0)+1;
+  if(pct>=70) data.over703count=(data.over703count||0)+1;
+  if(data.over703count>=3) unlock('m9');
+  if(pct>=80){
+    data.over80count=(data.over80count||0)+1;
+    if(data.over80count>=5) unlock('h7');
+  }
+  if(pct>=85) unlock('m4');
+  if(pct>=90){
+    if(type==='t') unlock('m12');
+    if(type==='b') unlock('m20');
+    if(data.sessionBallonMax>=90&&data.sessionBestMax>=90) unlock('h5');
+  }
+  if(pct>=95){
+    unlock('m30');
+    if(type==='b') unlock('h1');
+    data.ninetyFiveRow=(data.ninetyFiveRow||0)+1;
+    if(data.ninetyFiveRow>=3) unlock('h26');
+  } else {
+    data.ninetyFiveRow=0;
+  }
+  if(pct>=99){
+    unlock('h13');
+    data.ninetyNineCount=(data.ninetyNineCount||0)+1;
+    data.ninety9x3=(data.ninety9x3||0)+1;
+    if(data.ninetyNineCount>=10) unlock('x7');
+    if(data.ninety9x3>=3) unlock('h31');
+    const ballonPct=type==='b'?pct:data.sessionBallonMax;
+    const bestPct=type==='t'?pct:data.sessionBestMax;
+    if(ballonPct>=99&&bestPct>=99) unlock('x1');
+  } else {
+    data.ninety9x3=0;
+  }
+  if(pct===0) { data.lastWasZero=true; unlock('h6'); }
+  else if(data.lastWasZero&&pct>=90){ unlock('h29'); data.lastWasZero=false; }
+  else { data.lastWasZero=false; }
+  if(pct===77) unlock('m2');
+  if(pct===13) unlock('m27');
+  if(pct>=80&&type==='b') unlock('m20');
+  if(pct>=90&&type==='b') unlock('m25');
+  if(pct>=95&&type==='b') unlock('h1');
 
-    const trophiesCount =
-    type==="b" ? bSel.size : tSel.size;
+  if(type==='b'){ ballonResultCount++; data.sessionBallonMax=Math.max(data.sessionBallonMax,pct); }
+  else { bestResultCount++; data.sessionBestMax=Math.max(data.sessionBestMax,pct); }
 
-    let score =
-    (trophiesCount*2.2) +
-    (g*0.08) +
-    (a*0.05) +
-    (m*1.2);
+  const hasBoth=ballonResultCount>0&&bestResultCount>0;
+  const hasMatch=data.sessionMatchUsed;
+  if(hasBoth||(ballonResultCount>0&&hasMatch)||(bestResultCount>0&&hasMatch)){
+    if(hasBoth||hasMatch) {
+      const hatCount = (ballonResultCount>0?1:0)+(bestResultCount>0?1:0)+(data.matchCount>0?1:0);
+      if(hatCount>=3) unlock('m15');
+    }
+  }
 
-    if(score>99) score=99;
+  // calc milestones
+  if(data.calcCount>=5) unlock('m8');
+  if(data.calcCount>=10) unlock('m17');
+  if(data.calcCount>=20) unlock('m33');
+  if(data.calcCount>=30) unlock('h3');
+  if(data.calcCount>=50) unlock('h14');
+  if(data.calcCount>=75) unlock('h27');
+  if(data.calcCount>=100) unlock('h34');
+  if(data.calcCount>=150) unlock('x2');
+  if(data.calcCount>=200) unlock('x6');
+  if(data.calcCount>=300) unlock('x9');
+  if(data.calcCount>=500) unlock('x18');
 
-    document.getElementById(type+"r").style.display="block";
+  // time
+  const h=new Date().getHours();
+  if(h>=20) unlock('e25');
+  if(h===0||h<5) unlock('m28');
 
-    animate(
-    document.getElementById(type+"f"),
-    Math.round(score)
-    );
-
+  unlock('e15');
+  saveData(data);
+  checkUnlockMilestones();
 }
 
-/* RESET */
-
+/* ===================== RESET ===================== */
 function resetPage(type){
-
-    document.getElementById(type+"g").value="";
-    document.getElementById(type+"a").value="";
-    document.getElementById(type+"m").value="";
-
-    document.getElementById(type+"r").style.display="none";
-
-    if(type==="b"){
-
-        bSel.clear();
-        render("b");
-
-    }else{
-
-        tSel.clear();
-        render("t");
-
-    }
-
+  document.getElementById(type+"g").value="";
+  document.getElementById(type+"a").value="";
+  document.getElementById(type+"m").value="";
+  document.getElementById(type+"r").style.display="none";
+  if(type==="b"){bSel.clear();render("b");}
+  else{tSel.clear();render("t");}
+  unlock('e9');
 }
 
-/* MATCH AI */
-
+/* ===================== MATCH ===================== */
 function generateMatch(){
+  const team1=document.getElementById("team1").value.trim();
+  const team2=document.getElementById("team2").value.trim();
+  if(!team1||!team2){alert("Please enter both teams");return;}
 
-    const team1 =
-    document.getElementById("team1").value.trim();
+  document.getElementById("matchResult").style.display="block";
+  unlock('e10');
+  data.matchCount=(data.matchCount||0)+1;
 
-    const team2 =
-    document.getElementById("team2").value.trim();
+  // track team names
+  [team1,team2].forEach(t=>{
+    if(!data.teamNames.includes(t.toLowerCase())) data.teamNames.push(t.toLowerCase());
+  });
+  if(data.teamNames.length>=5) unlock('m5');
 
-    if(team1==="" || team2===""){
+  // rival detection
+  const rivals=[['barcelona','real madrid'],['manchester united','manchester city'],['arsenal','tottenham'],['liverpool','everton'],['milan','inter'],['juventus','milan'],['psg','marseille'],['celtic','rangers'],['boca','river']];
+  const t1l=team1.toLowerCase(), t2l=team2.toLowerCase();
+  if(rivals.some(r=>(r[0]===t1l&&r[1]===t2l)||(r[1]===t1l&&r[0]===t2l))) unlock('m26');
 
-        alert("Please enter both teams");
+  let t1c=Math.floor(Math.random()*60)+20;
+  let dc=Math.floor(Math.random()*25)+5;
+  let t2c=100-(t1c+dc);
+  if(t2c<5){t2c=5;t1c=100-dc-t2c;}
 
-        return;
-
+  let c1=0,c2=0,cd=0;
+  const scoreBox=document.getElementById("score");
+  const anim=setInterval(()=>{
+    if(c1<t1c)c1++;if(c2<t2c)c2++;if(cd<dc)cd++;
+    scoreBox.innerHTML=`${team1}: ${c1}%<br>${team2}: ${c2}%<br>Draw: ${cd}%`;
+    if(c1>=t1c&&c2>=t2c&&cd>=dc){
+      clearInterval(anim);
+      let msg="";
+      if(t1c>t2c&&t1c>dc){msg=`🔥 AI predicts a dramatic ${team1} victory!`;data.winCount++;}
+      else if(t2c>t1c&&t2c>dc){msg=`⚽ ${team2} shocked everyone with this win!`;data.winCount++;}
+      else{msg=`🤝 AI predicts a dramatic draw between ${team1} and ${team2}!`;data.drawCount++;}
+      document.getElementById("commentator").innerHTML=msg;
+      if(t1c===t2c) unlock('m32');
+      if(data.drawCount>=3) unlock('m16');
+      if(data.winCount>=3) unlock('m34');
+      unlock('e23');
+      saveData(data);
     }
+  },20);
 
-    document.getElementById("matchResult").style.display="block";
+  document.getElementById("teamsText").innerHTML=`${team1} VS ${team2}`;
 
-    let team1Chance =
-    Math.floor(Math.random()*60)+20;
+  if(data.matchCount>=3) unlock('e14');
+  if(data.matchCount>=10) unlock('m3');
+  if(data.matchCount>=15) unlock('m14');
+  if(data.matchCount>=20) unlock('m31');
+  if(data.matchCount>=30) unlock('h2');
+  if(data.matchCount>=40) unlock('h12');
+  if(data.matchCount>=50) unlock('h22');
+  if(data.matchCount>=60) unlock('h30');
+  if(data.matchCount>=100) unlock('x3');
+  if(data.matchCount>=150) unlock('x10');
+  if(data.matchCount>=200) unlock('x12');
 
-    let drawChance =
-    Math.floor(Math.random()*25)+5;
-
-    let team2Chance =
-    100-(team1Chance+drawChance);
-
-    if(team2Chance<5){
-
-        team2Chance=5;
-
-        team1Chance=
-        100-drawChance-team2Chance;
-
-    }
-
-    let c1=0;
-    let c2=0;
-    let cd=0;
-
-    const scoreBox=
-    document.getElementById("score");
-
-    const anim=setInterval(()=>{
-
-        if(c1<team1Chance) c1++;
-        if(c2<team2Chance) c2++;
-        if(cd<drawChance) cd++;
-
-        scoreBox.innerHTML=`
-
-        ${team1}: ${c1}%<br>
-        ${team2}: ${c2}%<br>
-        Draw: ${cd}%
-
-        `;
-
-        if(
-        c1>=team1Chance &&
-        c2>=team2Chance &&
-        cd>=drawChance
-        ){
-
-            clearInterval(anim);
-
-            let msg="";
-
-            if(
-            team1Chance>team2Chance &&
-            team1Chance>drawChance
-            ){
-
-                msg=
-                `🔥 AI predicts a dramatic ${team1} victory!`;
-
-            }
-
-            else if(
-            team2Chance>team1Chance &&
-            team2Chance>drawChance
-            ){
-
-                msg=
-                `⚽ ${team2} shocked everyone with this win!`;
-
-            }
-
-            else{
-
-                msg=
-                `🤝 AI predicts a dramatic draw between ${team1} and ${team2}!`;
-
-            }
-
-            document.getElementById("commentator").innerHTML=msg;
-
-        }
-
-    },20);
-
-    document.getElementById("teamsText").innerHTML=
-    `${team1} VS ${team2}`;
-
+  saveData(data);
+  checkUnlockMilestones();
 }
-
-/* RESET MATCH */
 
 function resetMatch(){
-
-    document.getElementById("team1").value="";
-    document.getElementById("team2").value="";
-
-    document.getElementById("matchResult").style.display="none";
-
-    document.getElementById("score").innerHTML=
-    "50% - 50%";
-
-    document.getElementById("teamsText").innerHTML=
-    "TEAM VS TEAM";
-
-    document.getElementById("commentator").innerHTML=
-    "🔥 AI predicts an insane football match!";
-
+  document.getElementById("team1").value="";
+  document.getElementById("team2").value="";
+  document.getElementById("matchResult").style.display="none";
+  document.getElementById("score").innerHTML="50% - 50%";
+  document.getElementById("teamsText").innerHTML="TEAM VS TEAM";
+  document.getElementById("commentator").innerHTML="🔥 AI predicts an insane football match!";
 }
+
+/* ===================== ACHIEVEMENTS ===================== */
+function unlock(id){
+  if(data.unlocked.includes(id)) return;
+  const ach=ACHIEVEMENTS.find(a=>a.id===id);
+  if(!ach) return;
+  data.unlocked.push(id);
+  saveData(data);
+  showNotif(ach);
+  checkUnlockMilestones();
+  if(document.getElementById('achievements').classList.contains('active')) renderAchievements();
+}
+
+function checkUnlockMilestones(){
+  const u=data.unlocked.length;
+  if(u>=20) unlock('m21');
+  if(u>=30) unlock('m29');
+  if(u>=40) unlock('m35');
+  if(u>=50) unlock('h8');
+  if(u>=60) unlock('h17');
+  if(u>=70) unlock('h24');
+  if(u>=80) unlock('h28');
+  if(u>=90) unlock('h33');
+  if(u>=100) unlock('h35');
+  if(u>=105) unlock('x4');
+  if(u>=115) unlock('x13');
+  if(u>=119) unlock('x19');
+
+  // check all easy
+  const easyIds=ACHIEVEMENTS.filter(a=>a.tier==='easy').map(a=>a.id);
+  if(easyIds.every(id=>data.unlocked.includes(id))) unlock('e30');
+
+  // check all
+  const allIds=ACHIEVEMENTS.filter(a=>a.id!=='goat').map(a=>a.id);
+  if(allIds.every(id=>data.unlocked.includes(id))) unlock('goat');
+}
+
+let notifTimeout;
+function showNotif(ach){
+  const n=document.getElementById('achNotif');
+  n.innerHTML=`${ach.icon} Achievement Unlocked!<br><strong>${ach.name}</strong><br>Nickname earned: [${ach.nick}]`;
+  n.classList.add('show');
+  clearTimeout(notifTimeout);
+  notifTimeout=setTimeout(()=>n.classList.remove('show'),3500);
+}
+
+function applyNick(nick, btnEl){
+  data.activeNick=nick;
+  data.nickChangeCount=(data.nickChangeCount||0)+1;
+  if(data.nickChangeCount>=5) unlock('h20');
+  if(data.nickChangeCount>=20) unlock('x16');
+  saveData(data);
+  updatePlayerTag();
+  unlock('e29');
+  // update button states
+  document.querySelectorAll('.apply-btn').forEach(b=>b.classList.remove('active-nick'));
+  if(btnEl) btnEl.classList.add('active-nick');
+}
+
+function renderAchievements(){
+  const container=document.getElementById('achContainer');
+  container.innerHTML='';
+
+  const u=data.unlocked.length;
+  const total=ACHIEVEMENTS.length;
+  document.getElementById('statUnlocked').textContent=u;
+  document.getElementById('statTotal').textContent=total;
+  document.getElementById('statPct').textContent=Math.round(u/total*100)+'%';
+  document.getElementById('achSubtitle').textContent=data.name ? `${data.name}'S LEGACY` : 'YOUR FOOTBALL LEGACY';
+
+  const tiers=[
+    {key:'easy',label:'🟢 EASY',badge:'badge-easy'},
+    {key:'medium',label:'🔵 MEDIUM',badge:'badge-medium'},
+    {key:'hard',label:'🟡 HARD',badge:'badge-hard'},
+    {key:'extreme',label:'🔴 EXTREME',badge:'badge-extreme'},
+    {key:'goat',label:'🐐 GOAT',badge:'badge-goat'},
+  ];
+
+  tiers.forEach(tier=>{
+    const achs=ACHIEVEMENTS.filter(a=>a.tier===tier.key);
+    const lbl=document.createElement('div');
+    lbl.className='tier-label';
+    lbl.textContent=tier.label+` (${achs.filter(a=>data.unlocked.includes(a.id)).length}/${achs.length})`;
+    container.appendChild(lbl);
+
+    const grid=document.createElement('div');
+    grid.className='ach-grid';
+
+    achs.forEach(ach=>{
+      const isUnlocked=data.unlocked.includes(ach.id);
+      const card=document.createElement('div');
+      card.className='ach-card'+(isUnlocked?' unlocked':'')+(ach.tier==='goat'?' goat-card':'');
+
+      const applyId='apply_'+ach.id;
+      const isActive=data.activeNick===ach.nick;
+
+      card.innerHTML=`
+        <div class="ach-icon">${ach.icon}</div>
+        <div class="ach-info">
+          <div class="ach-name">${ach.name}</div>
+          <div class="ach-desc">${ach.desc}</div>
+          <div class="ach-nick"><span>Nickname: </span>${ach.nick}</div>
+          ${isUnlocked?`<button class="apply-btn${isActive?' active-nick':''}" id="${applyId}" onclick="applyNick('${ach.nick}', this)">${isActive?'✓ ACTIVE':'APPLY NICKNAME'}</button>`:''}
+        </div>
+        <div class="ach-badge ${tier.badge}">${tier.key.toUpperCase()}</div>
+      `;
+      grid.appendChild(card);
+    });
+    container.appendChild(grid);
+  });
+}
+
+// init on load
+render("b"); render("t");
+checkUnlockMilestones();
 
 </script>
 
-</body>
-</html>
+
+</body></html>
