@@ -13,7 +13,6 @@ gtag('js', new Date());
 gtag('config', 'G-L56NXTTZ66');
 </script>
 
-<!-- POPUNDER AD -->
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
@@ -159,6 +158,41 @@ label{font-size:.72rem;opacity:.7;display:block;margin-bottom:7px;letter-spacing
 .footer-thanks{width:fit-content;margin:40px auto 20px;padding:12px 22px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(12px);font-family:'Cinzel';font-size:.8rem;letter-spacing:2px;text-align:center;}
 .footer-thanks span{background:linear-gradient(90deg,var(--gold),#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;}
 
+/* CHANGE NAME MODAL */
+#changeName-screen{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;justify-content:center;align-items:center;flex-direction:column;z-index:99999;backdrop-filter:blur(20px);}
+.changeName-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:45px 40px;text-align:center;max-width:420px;width:90%;}
+.changeName-title{font-family:'Cinzel';font-size:1.5rem;background:linear-gradient(90deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px;}
+.changeName-sub{opacity:.55;font-size:.82rem;letter-spacing:2px;margin-bottom:28px;}
+.changeName-input{width:100%;padding:16px 20px;border:2px solid rgba(255,255,255,.15);outline:none;border-radius:14px;background:rgba(0,0,0,.5);color:#fff;font-size:1rem;font-family:'Cinzel';text-align:center;letter-spacing:2px;margin-bottom:16px;transition:.3s;}
+.changeName-input:focus{border-color:var(--cyan);}
+.changeName-btns{display:flex;gap:12px;}
+.changeName-save{flex:1;padding:15px;border:none;border-radius:14px;font-family:'Cinzel';font-weight:900;font-size:.95rem;cursor:pointer;background:linear-gradient(90deg,var(--gold),var(--cyan));color:#000;transition:.3s;}
+.changeName-save:hover{transform:translateY(-2px);}
+.changeName-cancel{flex:1;padding:15px;border:none;border-radius:14px;font-family:'Cinzel';font-weight:900;font-size:.95rem;cursor:pointer;background:rgba(255,255,255,.12);color:#fff;transition:.3s;}
+.changeName-cancel:hover{background:rgba(255,255,255,.2);}
+
+/* CHANGE NAME FLOATING BUTTON */
+.change-name-btn{position:fixed;bottom:15px;left:15px;background:linear-gradient(90deg,var(--gold),var(--cyan));color:#000;border:none;border-radius:999px;padding:11px 20px;font-family:'Cinzel';font-size:.72rem;font-weight:900;cursor:pointer;z-index:9999;transition:.3s;letter-spacing:1px;}
+.change-name-btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,229,255,.3);}
+
+/* NICKNAMES ICON BUTTON */
+.nick-icon-btn{position:fixed;top:55px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);border:1px solid rgba(212,175,55,.4);border-radius:999px;width:38px;height:38px;font-size:1.1rem;cursor:pointer;z-index:9999;transition:.3s;display:flex;align-items:center;justify-content:center;}
+.nick-icon-btn:hover{background:rgba(212,175,55,.2);}
+
+/* NICKNAMES PANEL */
+#nickPanel{position:fixed;top:100px;right:12px;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);border:1px solid rgba(212,175,55,.35);border-radius:22px;padding:20px;z-index:99998;display:none;min-width:260px;max-width:90vw;max-height:70vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.7);}
+#nickPanel h3{font-family:'Cinzel';font-size:.9rem;text-align:center;margin-bottom:14px;background:linear-gradient(90deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nick-panel-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:12px;margin-bottom:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);transition:.2s;}
+.nick-panel-item:hover{background:rgba(255,255,255,.1);}
+.nick-panel-name{font-family:'Cinzel';font-size:.78rem;color:var(--gold);}
+.nick-panel-source{font-size:.65rem;opacity:.45;margin-top:2px;}
+.nick-panel-apply{padding:5px 12px;border:1px solid rgba(212,175,55,.5);border-radius:999px;background:transparent;color:var(--gold);font-family:'Cinzel';font-size:.6rem;cursor:pointer;transition:.2s;white-space:nowrap;}
+.nick-panel-apply:hover{background:rgba(212,175,55,.2);}
+.nick-panel-apply.active{background:rgba(212,175,55,.3);border-color:var(--gold);}
+.nick-panel-empty{text-align:center;opacity:.4;font-size:.78rem;font-family:'Cinzel';padding:10px 0;}
+.nick-panel-close{display:block;margin:14px auto 0;padding:8px 24px;border:none;border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-family:'Cinzel';font-size:.7rem;cursor:pointer;}
+.nick-panel-close:hover{background:rgba(255,255,255,.2);}
+
 @media(max-width:900px){
   .main-title{font-size:2.3rem;}
   .home-btn{width:100%;max-width:360px;height:270px;}
@@ -195,6 +229,33 @@ label{font-size:.72rem;opacity:.7;display:block;margin-bottom:7px;letter-spacing
 <div class="live-counter"><span class="live-dot"></span><span id="liveFans">140 fans online</span></div>
 <div class="ach-notif" id="achNotif">⚽ Achievement Unlocked!</div>
 <div class="particles" id="particles"></div>
+
+<!-- CHANGE NAME FLOATING BUTTON -->
+<button class="change-name-btn" onclick="openChangeName()">✏️ CHANGE NAME</button>
+
+<!-- NICKNAMES ICON BUTTON -->
+<button class="nick-icon-btn" title="My Nicknames" onclick="toggleNickPanel()">🏷️</button>
+
+<!-- NICKNAMES PANEL -->
+<div id="nickPanel">
+  <h3>🏷️ MY NICKNAMES</h3>
+  <div id="nickPanelList"></div>
+  <button class="nick-panel-close" onclick="toggleNickPanel()">CLOSE</button>
+</div>
+
+<!-- CHANGE NAME MODAL -->
+<div id="changeName-screen">
+  <div class="changeName-card">
+    <div style="font-size:2.5rem;margin-bottom:14px;">✏️</div>
+    <div class="changeName-title">CHANGE YOUR NAME</div>
+    <div class="changeName-sub">YOUR ACHIEVEMENTS & NICKNAMES ARE SAFE</div>
+    <input class="changeName-input" id="changeNameInput" type="text" placeholder="NEW NAME..." maxlength="20" autocomplete="off">
+    <div class="changeName-btns">
+      <button class="changeName-save" onclick="saveChangedName()">SAVE</button>
+      <button class="changeName-cancel" onclick="closeChangeName()">CANCEL</button>
+    </div>
+  </div>
+</div>
 
 <!-- HOME -->
 <section id="home" class="page active">
@@ -924,7 +985,87 @@ function renderAchievements(){
 render("b"); render("t");
 checkUnlockMilestones();
 
-/* ===================== ADS (injected safely after all JS) ===================== */
+/* ===================== CHANGE NAME ===================== */
+function openChangeName(){
+  const modal = document.getElementById('changeName-screen');
+  document.getElementById('changeNameInput').value = data.name || '';
+  modal.style.display = 'flex';
+  setTimeout(()=>document.getElementById('changeNameInput').focus(), 100);
+}
+
+function closeChangeName(){
+  document.getElementById('changeName-screen').style.display = 'none';
+}
+
+function saveChangedName(){
+  const val = document.getElementById('changeNameInput').value.trim();
+  if(!val){ alert('Please enter a name!'); return; }
+  data.name = val;
+  saveData(data);
+  closeChangeName();
+  updatePlayerTag();
+  renderAchievements();
+}
+
+// Allow Enter key to save
+document.getElementById('changeNameInput').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') saveChangedName();
+});
+
+/* ===================== NICKNAMES PANEL ===================== */
+let nickPanelOpen = false;
+
+function toggleNickPanel(){
+  nickPanelOpen = !nickPanelOpen;
+  const panel = document.getElementById('nickPanel');
+  if(nickPanelOpen){
+    renderNickPanel();
+    panel.style.display = 'block';
+  } else {
+    panel.style.display = 'none';
+  }
+}
+
+function renderNickPanel(){
+  const list = document.getElementById('nickPanelList');
+  list.innerHTML = '';
+  // Collect all unlocked nicknames
+  const unlockedNicks = ACHIEVEMENTS.filter(a => data.unlocked.includes(a.id));
+  if(unlockedNicks.length === 0){
+    list.innerHTML = '<div class="nick-panel-empty">No nicknames unlocked yet!<br>Complete achievements to earn them.</div>';
+    return;
+  }
+  unlockedNicks.forEach(ach => {
+    const isActive = data.activeNick === ach.nick;
+    const item = document.createElement('div');
+    item.className = 'nick-panel-item';
+    item.innerHTML = `
+      <div>
+        <div class="nick-panel-name">${ach.icon} [${ach.nick}]</div>
+        <div class="nick-panel-source">${ach.name}</div>
+      </div>
+      <button class="nick-panel-apply${isActive?' active':''}" onclick="applyNickFromPanel('${ach.nick}', this)">${isActive ? '✓ ACTIVE' : 'USE'}</button>
+    `;
+    list.appendChild(item);
+  });
+}
+
+function applyNickFromPanel(nick, btnEl){
+  applyNick(nick, null);
+  renderNickPanel();
+}
+
+// Close nick panel when clicking outside
+document.addEventListener('click', function(e){
+  const panel = document.getElementById('nickPanel');
+  const iconBtn = document.querySelector('.nick-icon-btn');
+  if(nickPanelOpen && !panel.contains(e.target) && !iconBtn.contains(e.target)){
+    nickPanelOpen = false;
+    panel.style.display = 'none';
+  }
+});
+
+
 function injectAd(containerId){
   const container = document.getElementById(containerId);
   if(!container) return;
